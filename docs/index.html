@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAD Fixture Recipes · Dutchman CAD</title>
+<meta name="description" content="Small, known CAD test files made by volunteers from short recipes, to check open CAD readers against ground truth.">
+<style>
+:root{--bg:#f6f7f5;--card:#fff;--ink:#16201c;--muted:#5b6762;--line:#dde3df;--teal:#2f6b5c;--amber:#c08a2e}
+@media (prefers-color-scheme:dark){:root{--bg:#121816;--card:#1a221f;--ink:#e6ece9;--muted:#9aa8a2;--line:#2b3631;--teal:#6fb7a2;--amber:#e0ad55}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:40px 16px 64px}
+header .brand{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+header .brand a{color:inherit;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:6px 0 12px}
+h2{font-size:20px;margin:40px 0 12px}
+p{margin:0 0 12px}
+a{color:var(--teal)}
+.lead{font-size:18px;color:var(--muted)}
+.cta{display:inline-block;margin:16px 12px 0 0;padding:10px 18px;border-radius:8px;background:var(--teal);color:#fff;text-decoration:none;font-weight:600}
+.cta.alt{background:transparent;color:var(--teal);border:1px solid var(--teal)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.step .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#1b1408;font-weight:700;margin-bottom:8px}
+.step h3{margin:0 0 6px;font-size:16px}
+.step p{color:var(--muted);font-size:15px;margin:0}
+ul{padding-left:20px;margin:0}
+li{margin:0 0 8px}
+.apps{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
+.app{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:14px}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="brand"><a href="https://github.com/dutchman-cad">Dutchman CAD</a> · Fixtures</div>
+  <h1>CAD Fixture Recipes</h1>
+  <p class="lead">We're building open, clean-room readers for native CAD files (<a href="https://github.com/cadmpeg/cadmpeg">cadmpeg</a> and <a href="https://github.com/tangency-labs/solidcraft">SolidCraft</a>, used by <a href="https://github.com/dutchman-cad/dutchman">Dutchman</a>). To test them we need small, known files made in the real apps: a block, a fillet, a flange, and two parts with a mate, each changing one thing at a time. Volunteers make them from short recipes, and every file helps.</p>
+  <a class="cta" href="https://fixtures.tailb5574c.ts.net/">Open the portal</a>
+  <a class="cta alt" href="https://github.com/dutchman-cad/fixtures">Repository</a>
+</header>
+
+<h2>How it works</h2>
+<div class="steps">
+  <div class="step"><div class="n">1</div><h3>Build a tiny part</h3><p>Follow the recipe on screen. Example: P01a is a 20 × 30 mm rectangle pulled up 10 mm.</p></div>
+  <div class="step"><div class="n">2</div><h3>Make its twin</h3><p>Open P01a, change one thing, and Save As P01b. Here, 10 mm becomes 12 mm.</p></div>
+  <div class="step"><div class="n">3</div><h3>Upload it</h3><p>Each file is checked right away. If something's off, you'll see what and why. Then on to the next one.</p></div>
+</div>
+
+<h2>Join in</h2>
+<ul>
+  <li><strong>Get your personal link:</strong> ask in Discord. It signs you in; there's no account or password.</li>
+  <li><strong>Pick your app and year.</strong> The portal walks you through each file, one per screen, with the recipe and a drawing. It takes about 15 to 45 minutes, depending on how far you go, and partial sets are welcome.</li>
+  <li><strong>Drop each file on its box.</strong> It's checked in seconds and you see the result. Questions go to a chat with the team.</li>
+  <li><strong>You choose</strong> whether your files join a public test collection (CC0) or stay private, for testing only.</li>
+</ul>
+
+<h2>Programs</h2>
+<div class="apps"><span class="app">Inventor</span><span class="app">Fusion</span><span class="app">SolidWorks</span><span class="app">Creo</span></div>
+<p>The recipes work in any year or release. Each year stores files a little differently, so a year nobody has covered yet is especially welcome; the <a href="https://fixtures.tailb5574c.ts.net/">portal</a> shows which ones are wanted. Fusion updates every month, so several sets from different people are worth more than one.</p>
+<p>Use something else? Tell us in Discord which program and year, and we'll add recipes for it.</p>
+<p>The latest recipe booklet (PDF) is linked from the portal. Already helping and lost your link? Ask in Discord for a new one.</p>
+
+<footer>Part of <a href="https://github.com/dutchman-cad">Dutchman CAD</a>, open CAD tools.</footer>
+</main>
+</body>
+</html>

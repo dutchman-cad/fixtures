@@ -46,6 +46,14 @@ li{margin:0 0 8px}
 .apps{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
 .app{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:14px}
 footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.examples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.example{min-width:0;margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.example h3{margin:0 0 8px;font-size:16px;color:var(--teal)}
+.example .recipe{font-size:14px;color:var(--muted)}
+.example-images{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:8px;align-items:center}
+.example-images img{display:block;width:100%;height:auto;min-width:0;background:#f6f7f5;border-radius:6px}
+.example figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+@media(max-width:700px){.examples{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -58,6 +66,49 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:v
   <a class="cta alt" href="https://github.com/dutchman-cad/fixtures">Repository</a>
   <a class="cta alt" href="https://discord.gg/yTcseBEdeu">Discord</a>
 </header>
+
+<section aria-labelledby="examples-title">
+<h2 id="examples-title">Examples</h2>
+<p>A block, a flange, two parts with a mate, and a centred hole.</p>
+<div class="examples">
+  <figure class="example">
+    <h3>P01a</h3>
+    <p class="recipe">Sketch on XY: rectangle 20 (X) × 30 (Y) centred on the origin, dimensioned. Extrude 10 upward (+Z).</p>
+    <div class="example-images">
+      <img src="img/p01a-drawing.svg" alt="Booklet plan of the block: 20 mm along X, 30 mm along Y, centred on the origin, and 10 mm tall; corner and top edges marked." width="340" height="230" loading="lazy">
+      <img src="img/p01a-render.svg" alt="Isometric view of the finished rectangular block, 20 × 30 mm and 10 mm tall." width="340" height="230" loading="lazy">
+    </div>
+    <figcaption>P01a · a 20 × 30 mm block, 10 tall</figcaption>
+  </figure>
+  <figure class="example">
+    <h3>S02a</h3>
+    <p class="recipe">S01a + Flange on the top edge along X at y = 60, height 20, angle 90°, flange going up.</p>
+    <div class="example-images">
+      <img src="img/s02a-drawing.svg" alt="Booklet side sections showing three datums for the 20 mm flange height; base 100 × 60 mm, thickness 2 mm, inside bend radius 1 mm, and angle 90°." width="480" height="245" loading="lazy">
+      <img src="img/s02a-render.svg" alt="Isometric view of a 100 × 60 mm sheet with an upright 90° flange, 20 mm overall height, 2 mm thickness, and a 1 mm inside bend radius." width="340" height="230" loading="lazy">
+    </div>
+    <figcaption>S02a · a 100 × 60 mm sheet with a 20 mm flange at 90°</figcaption>
+  </figure>
+  <figure class="example">
+    <h3>A02a</h3>
+    <p class="recipe">A01a + one Mate: P02a bottom face (z = 0) to P01a top face (z = 10), offset 0.</p>
+    <div class="example-images">
+      <img src="img/a02a-drawing.svg" alt="Dimensioned side section of a 20 × 30 × 10 mm block mated to the bottom of a 40 mm tall ring, outside diameter 60 mm and inside diameter 40 mm, with zero offset." width="340" height="260" loading="lazy">
+      <img src="img/a02a-render.svg" alt="Isometric view of a 60 mm outside diameter, 40 mm inside diameter, and 40 mm tall ring touching the top of a 20 × 30 × 10 mm block at zero offset." width="340" height="230" loading="lazy">
+    </div>
+    <figcaption>A02a · a block and a ring with one mate, offset 0 mm</figcaption>
+  </figure>
+  <figure class="example">
+    <h3>F04a</h3>
+    <p class="recipe">F01a + hole Ø5 through, at the top face centre (0, 0, 10).</p>
+    <div class="example-images">
+      <img src="img/f04a-drawing.svg" alt="Top view of a 20 × 30 mm block, 10 mm tall, with a centred 5 mm diameter through hole at (0, 0, 10)." width="340" height="230" loading="lazy">
+      <img src="img/f04a-render.svg" alt="Isometric view of the finished 20 × 30 × 10 mm block with a 5 mm diameter hole through its centre." width="340" height="230" loading="lazy">
+    </div>
+    <figcaption>F04a · a 20 × 30 × 10 mm block with a centred Ø5 mm through hole</figcaption>
+  </figure>
+</div>
+</section>
 
 <h2>How it works</h2>
 <div class="steps">

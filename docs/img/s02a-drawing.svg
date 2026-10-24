@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="245" viewBox="0 0 480 245"><style>text{font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:11px;fill:#1d2321}.b{font-weight:600}.w{fill:#8a5a00}.a{fill:#1f6f5c}</style><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9z" fill="#1d2321"/></marker><g id="lshape"><path d="M10,150 L90,150 A20,20 0 0 0 110,130 L110,30 L98,30 L98,130 A8,8 0 0 1 90,138 L10,138 Z" fill="#e2efe9" stroke="#1d2321" stroke-width="1.5"/></g></defs>
+<use href="#lshape"/>
+<line x1="98" y1="30" x2="145" y2="30" stroke="#5b6662"/>
+<line x1="90" y1="150" x2="145" y2="150" stroke="#1f6f5c" stroke-width="1.5"/>
+<line x1="132" y1="148" x2="132" y2="32" stroke="#1d2321" marker-start="url(#ar)" marker-end="url(#ar)"/>
+<text x="136" y="94" class="b">20</text>
+<text x="10" y="20" class="b">A</text><text x="10" y="172">from the outside face</text><text x="10" y="186">(the sheet's bottom, z 0)</text>
+<g transform="translate(160,0)">
+<use href="#lshape"/>
+<line x1="98" y1="30" x2="145" y2="30" stroke="#5b6662"/>
+<line x1="20" y1="138" x2="145" y2="138" stroke="#1f6f5c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="132" y1="136" x2="132" y2="32" stroke="#1d2321" marker-start="url(#ar)" marker-end="url(#ar)"/>
+<text x="136" y="94" class="b">20</text>
+<text x="10" y="20" class="b">B</text><text x="10" y="172">from the inside face</text><text x="10" y="186">(the sheet's top, z 2)</text>
+</g>
+<g transform="translate(320,0)">
+<use href="#lshape"/>
+<line x1="98" y1="30" x2="145" y2="30" stroke="#5b6662"/>
+<line x1="98" y1="130" x2="145" y2="130" stroke="#1f6f5c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="132" y1="128" x2="132" y2="32" stroke="#1d2321" marker-start="url(#ar)" marker-end="url(#ar)"/>
+<text x="136" y="94" class="b">20</text>
+<text x="10" y="20" class="b">C</text><text x="10" y="172">from where the bend ends</text><text x="10" y="186">(tangent to the bend)</text>
+</g>
+<text x="10" y="214" class="b">S02a: 100 × 60 mm base · thickness 2 · inside R1 · 90°</text>
+<text x="10" y="232">Height 20 mm; datum and bend position follow the part's defaults.</text></svg>

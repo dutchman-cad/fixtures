@@ -1,0 +1,7982 @@
+{
+  "schema": 1,
+  "set": "freecad-0.21.2",
+  "freecad": {
+    "version": "0.21.2",
+    "build": "0 21 2 33771 (Git) https://github.com/FreeCAD/FreeCAD 2023/11/14 02:33:39 (HEAD detached at 0.21.2) b9bfa5c5507506e4515816414cd27f4851d00489",
+    "addons": {
+      "SheetMetal": "0.8.26"
+    }
+  },
+  "booklet": "1.23",
+  "license": "CC0-1.0",
+  "tolerance": {
+    "length_mm": 0.01,
+    "volume_rel": 0.0001,
+    "angle_deg": 0.01
+  },
+  "fixtures": [
+    {
+      "id": "F01a",
+      "recipe": "F01",
+      "variant": "a",
+      "file": "F01a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F01b",
+      "recipe": "F01",
+      "variant": "b",
+      "file": "F01b.FCStd",
+      "kind": "part",
+      "twin_of": "F01a",
+      "change": "12",
+      "expected": {
+        "volume_mm3": 7200,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            12
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 7200.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            12.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F02a",
+      "recipe": "F02",
+      "variant": "a",
+      "file": "F02a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "plate_w",
+            "value": 20.0,
+            "unit": "mm"
+          }
+        ]
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F02b",
+      "recipe": "F02",
+      "variant": "b",
+      "file": "F02b.FCStd",
+      "kind": "part",
+      "twin_of": "F02a",
+      "change": "plate_w = 25",
+      "expected": {
+        "volume_mm3": 9375,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 9375.0,
+        "bbox_mm": [
+          [
+            -12.5,
+            -15.0,
+            0.0
+          ],
+          [
+            12.5,
+            15.0,
+            12.5
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "plate_w",
+            "value": 25.0,
+            "unit": "mm"
+          }
+        ]
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F03a",
+      "recipe": "F03",
+      "variant": "a",
+      "file": "F03a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 5991.42,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5991.41592654,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Fillet",
+            "name": "Fillet",
+            "label": "Fillet"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F03b",
+      "recipe": "F03",
+      "variant": "b",
+      "file": "F03b.FCStd",
+      "kind": "part",
+      "twin_of": "F03a",
+      "change": "R3",
+      "expected": {
+        "volume_mm3": 5980.69,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5980.68583471,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Fillet",
+            "name": "Fillet",
+            "label": "Fillet"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F04a",
+      "recipe": "F04",
+      "variant": "a",
+      "file": "F04a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 5803.65,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5803.65045915,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F04b",
+      "recipe": "F04",
+      "variant": "b",
+      "file": "F04b.FCStd",
+      "kind": "part",
+      "twin_of": "F04a",
+      "change": "counterbore Ø9 depth 3",
+      "expected": {
+        "volume_mm3": 5671.7,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5671.7035677,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 9,
+        "edges": 18,
+        "vertices": 12,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F04c",
+      "recipe": "F04",
+      "variant": "c",
+      "file": "F04c.FCStd",
+      "kind": "part",
+      "twin_of": "F04a",
+      "change": "Extents Distance, depth 6, Drill Point Flat (a blind hole)",
+      "expected": {
+        "volume_mm3": 5882.19,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5882.19027549,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 8,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F04e",
+      "recipe": "F04",
+      "variant": "e",
+      "file": "F04e.FCStd",
+      "kind": "part",
+      "twin_of": "F04c",
+      "change": "from c: Drill Point Angle, 118° (Fusion's default tip), depth still 6",
+      "expected": {
+        "volume_mm3": 5872.36,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5872.3587166,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 8,
+        "edges": 17,
+        "vertices": 11,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F05a",
+      "recipe": "F05",
+      "variant": "a",
+      "file": "F05a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 11623.01,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            60,
+            40,
+            5
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11623.00888157,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            60.0,
+            40.0,
+            5.0
+          ]
+        ],
+        "faces": 12,
+        "edges": 30,
+        "vertices": 20,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPattern",
+            "label": "LinearPattern"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPatternY",
+            "label": "LinearPatternY"
+          },
+          {
+            "kind": "PartDesign::MultiTransform",
+            "name": "MultiTransform",
+            "label": "MultiTransform"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F05b",
+      "recipe": "F05",
+      "variant": "b",
+      "file": "F05b.FCStd",
+      "kind": "part",
+      "twin_of": "F05a",
+      "change": "4 × 2",
+      "expected": {
+        "volume_mm3": 11497.35,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            60,
+            40,
+            5
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11497.34517543,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            60.0,
+            40.0,
+            5.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 36,
+        "vertices": 24,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPattern",
+            "label": "LinearPattern"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPatternY",
+            "label": "LinearPatternY"
+          },
+          {
+            "kind": "PartDesign::MultiTransform",
+            "name": "MultiTransform",
+            "label": "MultiTransform"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F06a",
+      "recipe": "F06",
+      "variant": "a",
+      "file": "F06a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 62831.85,
+        "bbox_mm": [
+          [
+            -30,
+            -30,
+            0
+          ],
+          [
+            30,
+            30,
+            40
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 62831.8530718,
+        "bbox_mm": [
+          [
+            -30.0,
+            -30.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            40.0
+          ]
+        ],
+        "faces": 4,
+        "edges": 6,
+        "vertices": 4,
+        "features": [
+          {
+            "kind": "PartDesign::Revolution",
+            "name": "Revolution",
+            "label": "Revolution"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 4,
+            "constraints": 12,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "DistanceX": 1,
+              "Horizontal": 2,
+              "PointOnObject": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F06b",
+      "recipe": "F06",
+      "variant": "b",
+      "file": "F06b.FCStd",
+      "kind": "part",
+      "twin_of": "F06a",
+      "change": "270°",
+      "expected": {
+        "volume_mm3": 47123.89,
+        "bbox_mm": [
+          [
+            null,
+            null,
+            0
+          ],
+          [
+            null,
+            null,
+            40
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 47123.88980385,
+        "bbox_mm": [
+          [
+            -30.0,
+            -30.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            40.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Revolution",
+            "name": "Revolution",
+            "label": "Revolution"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 4,
+            "constraints": 12,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "DistanceX": 1,
+              "Horizontal": 2,
+              "PointOnObject": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F11a",
+      "recipe": "F11",
+      "variant": "a",
+      "file": "F11a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F11b",
+      "recipe": "F11",
+      "variant": "b",
+      "file": "F11b.FCStd",
+      "kind": "part",
+      "twin_of": "F11a",
+      "change": "top face blue",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F13a",
+      "recipe": "F13",
+      "variant": "a",
+      "file": "F13a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 792.06438482,
+        "bbox_mm": [
+          [
+            -11.0000001,
+            -11.0000001,
+            -0.99684877
+          ],
+          [
+            11.0000001,
+            11.0000001,
+            20.99684878
+          ]
+        ],
+        "faces": 6,
+        "edges": 9,
+        "vertices": 5,
+        "features": [
+          {
+            "kind": "PartDesign::AdditiveHelix",
+            "name": "AdditiveHelix",
+            "label": "AdditiveHelix"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "PointOnObject": 1
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "pitch",
+            "value": 5.0,
+            "unit": "mm"
+          },
+          {
+            "name": "radius",
+            "value": 10.0,
+            "unit": "mm"
+          },
+          {
+            "name": "turns",
+            "value": 4.0,
+            "unit": ""
+          },
+          {
+            "name": "left_handed",
+            "value": 0.0,
+            "unit": ""
+          }
+        ]
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F13b",
+      "recipe": "F13",
+      "variant": "b",
+      "file": "F13b.FCStd",
+      "kind": "part",
+      "twin_of": "F13a",
+      "change": "the left-hand coil, its mirror image: looking down from above (+Z), the wire turns clockwise as it climbs. Tick Fusion's rotation checkbox and change nothing else (Fig. 6)",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 792.06438482,
+        "bbox_mm": [
+          [
+            -11.0000001,
+            -11.0000001,
+            -0.99684877
+          ],
+          [
+            11.0000001,
+            11.0000001,
+            20.99684878
+          ]
+        ],
+        "faces": 6,
+        "edges": 9,
+        "vertices": 5,
+        "features": [
+          {
+            "kind": "PartDesign::AdditiveHelix",
+            "name": "AdditiveHelix",
+            "label": "AdditiveHelix"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "PointOnObject": 1
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "pitch",
+            "value": 5.0,
+            "unit": "mm"
+          },
+          {
+            "name": "radius",
+            "value": 10.0,
+            "unit": "mm"
+          },
+          {
+            "name": "turns",
+            "value": 4.0,
+            "unit": ""
+          },
+          {
+            "name": "left_handed",
+            "value": 1.0,
+            "unit": ""
+          }
+        ]
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F14a",
+      "recipe": "F14",
+      "variant": "a",
+      "file": "F14a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            30,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            20.0,
+            30.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::AdditiveBox",
+            "name": "AdditiveBox",
+            "label": "AdditiveBox"
+          }
+        ],
+        "sketches": [],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F14b",
+      "recipe": "F14",
+      "variant": "b",
+      "file": "F14b.FCStd",
+      "kind": "part",
+      "twin_of": "F14a",
+      "change": "new design: the same box with its first corner on a sketch point at (5, −7) (sketch on XY, Point, dimension it 5 and 7 from the origin, Finish Sketch, then Box with the first corner snapped to that point), so it spans x 5…25, y −7…23, z 0…10",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            5,
+            -7,
+            0
+          ],
+          [
+            25,
+            23,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            5.0,
+            -7.0,
+            0.0
+          ],
+          [
+            25.0,
+            23.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::AdditiveBox",
+            "name": "AdditiveBox",
+            "label": "AdditiveBox"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F14c",
+      "recipe": "F14",
+      "variant": "c",
+      "file": "F14c.FCStd",
+      "kind": "part",
+      "twin_of": "F14a",
+      "change": "new design: the same box on the XZ plane, first corner at the origin, 20 along +X, 30 along +Z, height 10 off the plane; note whether it went to +Y or −Y",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            0,
+            null,
+            0
+          ],
+          [
+            20,
+            null,
+            30
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            0.0,
+            -10.0,
+            0.0
+          ],
+          [
+            20.0,
+            0.0,
+            30.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::AdditiveBox",
+            "name": "AdditiveBox",
+            "label": "AdditiveBox"
+          }
+        ],
+        "sketches": [],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F14d",
+      "recipe": "F14",
+      "variant": "d",
+      "file": "F14d.FCStd",
+      "kind": "part",
+      "twin_of": "F14a",
+      "change": "new design: a Cylinder primitive (Create → Cylinder): an offset plane 3 above XY, a sketch point on it at (5, −7), the cylinder's centre snapped to that point, diameter 8, height 12 upward, so it spans x 1…9, y −11…−3, z 3…15",
+      "expected": {
+        "volume_mm3": 603.19,
+        "bbox_mm": [
+          [
+            1,
+            -11,
+            3
+          ],
+          [
+            9,
+            -3,
+            15
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 603.18578949,
+        "bbox_mm": [
+          [
+            1.0,
+            -11.0,
+            3.0
+          ],
+          [
+            9.0,
+            -3.0,
+            15.0
+          ]
+        ],
+        "faces": 3,
+        "edges": 3,
+        "vertices": 2,
+        "features": [
+          {
+            "kind": "PartDesign::AdditiveCylinder",
+            "name": "AdditiveCylinder",
+            "label": "AdditiveCylinder"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "DatumPlane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F15a",
+      "recipe": "F15",
+      "variant": "a",
+      "file": "F15a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 15707.96,
+        "bbox_mm": [
+          [
+            0,
+            null,
+            0
+          ],
+          [
+            30,
+            null,
+            40
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 15707.96326795,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            40.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Revolution",
+            "name": "Revolution",
+            "label": "Revolution"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 4,
+            "constraints": 12,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "DistanceX": 1,
+              "Horizontal": 2,
+              "PointOnObject": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F15c",
+      "recipe": "F15",
+      "variant": "c",
+      "file": "F15c.FCStd",
+      "kind": "part",
+      "twin_of": "F15a",
+      "change": "Direction Symmetric, Angle 180 (the whole sweep, so 90 each way)",
+      "expected": {
+        "volume_mm3": 31415.93,
+        "bbox_mm": [
+          [
+            0,
+            -30,
+            0
+          ],
+          [
+            30,
+            30,
+            40
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 31415.9265359,
+        "bbox_mm": [
+          [
+            0.0,
+            -30.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            40.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Revolution",
+            "name": "Revolution",
+            "label": "Revolution"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 4,
+            "constraints": 12,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "DistanceX": 1,
+              "Horizontal": 2,
+              "PointOnObject": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F15d",
+      "recipe": "F15",
+      "variant": "d",
+      "file": "F15d.FCStd",
+      "kind": "part",
+      "twin_of": "F15a",
+      "change": "about a sketch line instead: in the same sketch, a line from (40, 0) to (40, 40), and the revolve's Axis that line, One Side, Type Full (360°)",
+      "expected": {
+        "volume_mm3": 37699.11,
+        "bbox_mm": [
+          [
+            20,
+            -20,
+            0
+          ],
+          [
+            60,
+            20,
+            40
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 37699.11184308,
+        "bbox_mm": [
+          [
+            20.0,
+            -20.0,
+            0.0
+          ],
+          [
+            60.0,
+            20.0,
+            40.0
+          ]
+        ],
+        "faces": 4,
+        "edges": 6,
+        "vertices": 4,
+        "features": [
+          {
+            "kind": "PartDesign::Revolution",
+            "name": "Revolution",
+            "label": "Revolution"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 5,
+            "constraints": 16,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 3,
+              "DistanceX": 2,
+              "Horizontal": 2,
+              "PointOnObject": 2,
+              "Vertical": 3
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F15e",
+      "recipe": "F15",
+      "variant": "e",
+      "file": "F15e.FCStd",
+      "kind": "part",
+      "twin_of": "F15a",
+      "change": "new design: a rectangle x 0–10, z 0–40 on XZ (touching the Z axis) revolved about the Z axis, Type Full, so it makes a solid cylinder",
+      "expected": {
+        "volume_mm3": 12566.37,
+        "bbox_mm": [
+          [
+            -10,
+            -10,
+            0
+          ],
+          [
+            10,
+            10,
+            40
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 12566.37061436,
+        "bbox_mm": [
+          [
+            -10.0,
+            -10.0,
+            0.0
+          ],
+          [
+            10.0,
+            10.0,
+            40.0
+          ]
+        ],
+        "faces": 3,
+        "edges": 3,
+        "vertices": 2,
+        "features": [
+          {
+            "kind": "PartDesign::Revolution",
+            "name": "Revolution",
+            "label": "Revolution"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F16a",
+      "recipe": "F16",
+      "variant": "a",
+      "file": "F16a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F16b",
+      "recipe": "F16",
+      "variant": "b",
+      "file": "F16b.FCStd",
+      "kind": "part",
+      "twin_of": "F16a",
+      "change": "Offset Plane from the XY origin plane, distance 20; sketch on it a rectangle 20 × 30 centred on the origin, Extrude 5 up, New Body (it spans z 20…25)",
+      "expected": {
+        "volume_mm3": 9000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            25
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 2,
+        "volume_mm3": 9000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            25.0
+          ]
+        ],
+        "faces": 12,
+        "edges": 24,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad001",
+            "label": "Pad001"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "DatumReference.Face1",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F16c",
+      "recipe": "F16",
+      "variant": "c",
+      "file": "F16c.FCStd",
+      "kind": "part",
+      "twin_of": "F16a",
+      "change": "Offset Plane from the block's top face, distance 5; sketch on it a rectangle 20 × 30 centred on the origin, Extrude 5 up, New Body (it spans z 15…20)",
+      "expected": {
+        "volume_mm3": 9000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 2,
+        "volume_mm3": 9000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            20.0
+          ]
+        ],
+        "faces": 12,
+        "edges": 24,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad001",
+            "label": "Pad001"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "DatumReference.Face1",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F16d",
+      "recipe": "F16",
+      "variant": "d",
+      "file": "F16d.FCStd",
+      "kind": "part",
+      "twin_of": "F16a",
+      "change": "Plane at Angle on the top edge at y = +15 (the edge along X), angle 30",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F16e",
+      "recipe": "F16",
+      "variant": "e",
+      "file": "F16e.FCStd",
+      "kind": "part",
+      "twin_of": "F16a",
+      "change": "Midplane between the top and bottom faces",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F16f",
+      "recipe": "F16",
+      "variant": "f",
+      "file": "F16f.FCStd",
+      "kind": "part",
+      "twin_of": "F16a",
+      "change": "new design: a cylinder Ø20 × 10 (circle Ø20 at the origin on XY, Extrude 10 up), then Tangent Plane on its side face, with the XZ plane as the reference and angle 0",
+      "expected": {
+        "volume_mm3": 3141.59,
+        "bbox_mm": [
+          [
+            -10,
+            -10,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 3141.59265359,
+        "bbox_mm": [
+          [
+            -10.0,
+            -10.0,
+            0.0
+          ],
+          [
+            10.0,
+            10.0,
+            10.0
+          ]
+        ],
+        "faces": 3,
+        "edges": 3,
+        "vertices": 2,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "XY_Plane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "DistanceY": 1,
+              "PointOnObject": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F16g",
+      "recipe": "F16",
+      "variant": "g",
+      "file": "F16g.FCStd",
+      "kind": "part",
+      "twin_of": "F16a",
+      "change": "Plane Through Three Points: the top corners (−10, −15, 10) and (10, −15, 10), and the bottom corner (10, 15, 0)",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F16h",
+      "recipe": "F16",
+      "variant": "h",
+      "file": "F16h.FCStd",
+      "kind": "part",
+      "twin_of": "F16a",
+      "change": "Plane Along Path: the vertical edge at x = +10, y = +15, distance 0.5 (halfway up)",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F18a",
+      "recipe": "F18",
+      "variant": "a",
+      "file": "F18a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F18b",
+      "recipe": "F18",
+      "variant": "b",
+      "file": "F18b.FCStd",
+      "kind": "part",
+      "twin_of": "F18a",
+      "change": "one Joint Origin snapped to the top-face centre (0, 0, 10)",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F18c",
+      "recipe": "F18",
+      "variant": "c",
+      "file": "F18c.FCStd",
+      "kind": "part",
+      "twin_of": "F18a",
+      "change": "a sketch on the top face with one Point at (5, 5), dimensioned from the origin, Finish Sketch, and a Joint Origin snapped to that point",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F18d",
+      "recipe": "F18",
+      "variant": "d",
+      "file": "F18d.FCStd",
+      "kind": "part",
+      "twin_of": "F18a",
+      "change": "one Joint Origin at the top-face centre with Angle 45 and Offset Z 5",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F18e",
+      "recipe": "F18",
+      "variant": "e",
+      "file": "F18e.FCStd",
+      "kind": "part",
+      "twin_of": "F18a",
+      "change": "two Joint Origins: the top-face centre and the bottom-face centre (0, 0, 0)",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F18f",
+      "recipe": "F18",
+      "variant": "f",
+      "file": "F18f.FCStd",
+      "kind": "part",
+      "twin_of": "F18a",
+      "change": "Type Between Two Faces: the top and bottom faces, snapped to the centre, so it sits at (0, 0, 5)",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F20a",
+      "recipe": "F20",
+      "variant": "a",
+      "file": "F20a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 8400,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            -4
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 8400.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            -4.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F20b",
+      "recipe": "F20",
+      "variant": "b",
+      "file": "F20b.FCStd",
+      "kind": "part",
+      "twin_of": "F20a",
+      "change": "first add an Offset Plane 12 above XY; then edit the extrude: Direction One Side, Extent To Object, and pick that plane (it spans z 0…12)",
+      "expected": {
+        "volume_mm3": 7200,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            12
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 7200.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            12.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F20c",
+      "recipe": "F20",
+      "variant": "c",
+      "file": "F20c.FCStd",
+      "kind": "part",
+      "twin_of": "F20a",
+      "change": "Direction One Side, distance 10 up, Taper Angle −5 (the sides lean in, so the top is smaller)",
+      "expected": {
+        "volume_mm3": 5572.76,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5572.7623707,
+        "bbox_mm": [
+          [
+            -10.0000001,
+            -15.0000001,
+            -1e-07
+          ],
+          [
+            10.0000001,
+            15.0000001,
+            10.0000001
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F21a",
+      "recipe": "F21",
+      "variant": "a",
+      "file": "F21a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6200,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            12
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6200.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            12.0
+          ]
+        ],
+        "faces": 11,
+        "edges": 24,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Pad",
+            "name": "EmbossPad",
+            "label": "EmbossPad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "F21b",
+      "recipe": "F21",
+      "variant": "b",
+      "file": "F21b.FCStd",
+      "kind": "part",
+      "twin_of": "F21a",
+      "change": "Effect Deboss (cut 2 deep)",
+      "expected": {
+        "volume_mm3": 5800,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5800.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 11,
+        "edges": 24,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Pocket",
+            "name": "DebossPocket",
+            "label": "DebossPocket"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P01a",
+      "recipe": "P01",
+      "variant": "a",
+      "file": "P01a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P01b",
+      "recipe": "P01",
+      "variant": "b",
+      "file": "P01b.FCStd",
+      "kind": "part",
+      "twin_of": "P01a",
+      "change": "extrude 12",
+      "expected": {
+        "volume_mm3": 7200,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            12
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 7200.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            12.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P02a",
+      "recipe": "P02",
+      "variant": "a",
+      "file": "P02a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 62831.85,
+        "bbox_mm": [
+          [
+            -30,
+            -30,
+            0
+          ],
+          [
+            30,
+            30,
+            40
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 62831.8530718,
+        "bbox_mm": [
+          [
+            -30.0,
+            -30.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            40.0
+          ]
+        ],
+        "faces": 4,
+        "edges": 6,
+        "vertices": 4,
+        "features": [
+          {
+            "kind": "PartDesign::Revolution",
+            "name": "Revolution",
+            "label": "Revolution"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 4,
+            "constraints": 12,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "DistanceX": 1,
+              "Horizontal": 2,
+              "PointOnObject": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P02b",
+      "recipe": "P02",
+      "variant": "b",
+      "file": "P02b.FCStd",
+      "kind": "part",
+      "twin_of": "P02a",
+      "change": "angle 270°",
+      "expected": {
+        "volume_mm3": 47123.89,
+        "bbox_mm": [
+          [
+            null,
+            null,
+            0
+          ],
+          [
+            null,
+            null,
+            40
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 47123.88980385,
+        "bbox_mm": [
+          [
+            -30.0,
+            -30.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            40.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Revolution",
+            "name": "Revolution",
+            "label": "Revolution"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 4,
+            "constraints": 12,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "DistanceX": 1,
+              "Horizontal": 2,
+              "PointOnObject": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P03a",
+      "recipe": "P03",
+      "variant": "a",
+      "file": "P03a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 5803.65,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5803.65045915,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P03b",
+      "recipe": "P03",
+      "variant": "b",
+      "file": "P03b.FCStd",
+      "kind": "part",
+      "twin_of": "P03a",
+      "change": "counterbore Ø9, depth 3",
+      "expected": {
+        "volume_mm3": 5671.7,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5671.7035677,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 9,
+        "edges": 18,
+        "vertices": 12,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P04a",
+      "recipe": "P04",
+      "variant": "a",
+      "file": "P04a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 5991.42,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5991.41592654,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Fillet",
+            "name": "Fillet",
+            "label": "Fillet"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P04b",
+      "recipe": "P04",
+      "variant": "b",
+      "file": "P04b.FCStd",
+      "kind": "part",
+      "twin_of": "P04a",
+      "change": "R3",
+      "expected": {
+        "volume_mm3": 5980.69,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5980.68583471,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Fillet",
+            "name": "Fillet",
+            "label": "Fillet"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P04c",
+      "recipe": "P04",
+      "variant": "c",
+      "file": "P04c.FCStd",
+      "kind": "part",
+      "twin_of": "P04a",
+      "change": "add the vertical edge at x = −10, y = +15 to the same fillet",
+      "expected": {
+        "volume_mm3": 5982.83,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5982.83185307,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 8,
+        "edges": 18,
+        "vertices": 12,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Fillet",
+            "name": "Fillet",
+            "label": "Fillet"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P05a",
+      "recipe": "P05",
+      "variant": "a",
+      "file": "P05a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 5990,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5990.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Chamfer",
+            "name": "Chamfer",
+            "label": "Chamfer"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P05b",
+      "recipe": "P05",
+      "variant": "b",
+      "file": "P05b.FCStd",
+      "kind": "part",
+      "twin_of": "P05a",
+      "change": "1.5",
+      "expected": {
+        "volume_mm3": 5977.5,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 5977.5,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Chamfer",
+            "name": "Chamfer",
+            "label": "Chamfer"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P06a",
+      "recipe": "P06",
+      "variant": "a",
+      "file": "P06a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 2098.5,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 2098.5,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 11,
+        "edges": 24,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Thickness",
+            "name": "Thickness",
+            "label": "Thickness"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P06b",
+      "recipe": "P06",
+      "variant": "b",
+      "file": "P06b.FCStd",
+      "kind": "part",
+      "twin_of": "P06a",
+      "change": "2",
+      "expected": {
+        "volume_mm3": 2672,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 2672.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 11,
+        "edges": 24,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Thickness",
+            "name": "Thickness",
+            "label": "Thickness"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P07a",
+      "recipe": "P07",
+      "variant": "a",
+      "file": "P07a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 11623.01,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            60,
+            40,
+            5
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11623.00888157,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            60.0,
+            40.0,
+            5.0
+          ]
+        ],
+        "faces": 12,
+        "edges": 30,
+        "vertices": 20,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPattern",
+            "label": "LinearPattern"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPatternY",
+            "label": "LinearPatternY"
+          },
+          {
+            "kind": "PartDesign::MultiTransform",
+            "name": "MultiTransform",
+            "label": "MultiTransform"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P07b",
+      "recipe": "P07",
+      "variant": "b",
+      "file": "P07b.FCStd",
+      "kind": "part",
+      "twin_of": "P07a",
+      "change": "4 × 2",
+      "expected": {
+        "volume_mm3": 11497.35,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            60,
+            40,
+            5
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11497.34517543,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            60.0,
+            40.0,
+            5.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 36,
+        "vertices": 24,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPattern",
+            "label": "LinearPattern"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPatternY",
+            "label": "LinearPatternY"
+          },
+          {
+            "kind": "PartDesign::MultiTransform",
+            "name": "MultiTransform",
+            "label": "MultiTransform"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P08a",
+      "recipe": "P08",
+      "variant": "a",
+      "file": "P08a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 13288.94,
+        "bbox_mm": [
+          [
+            -30,
+            -30,
+            0
+          ],
+          [
+            30,
+            30,
+            5
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 13288.93692468,
+        "bbox_mm": [
+          [
+            -30.0,
+            -30.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            5.0
+          ]
+        ],
+        "faces": 9,
+        "edges": 21,
+        "vertices": 14,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          },
+          {
+            "kind": "PartDesign::PolarPattern",
+            "name": "PolarPattern",
+            "label": "PolarPattern"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face3",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "PointOnObject": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P08b",
+      "recipe": "P08",
+      "variant": "b",
+      "file": "P08b.FCStd",
+      "kind": "part",
+      "twin_of": "P08a",
+      "change": "8",
+      "expected": {
+        "volume_mm3": 13006.19,
+        "bbox_mm": [
+          [
+            -30,
+            -30,
+            0
+          ],
+          [
+            30,
+            30,
+            5
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 13006.19358586,
+        "bbox_mm": [
+          [
+            -30.0,
+            -30.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            5.0
+          ]
+        ],
+        "faces": 11,
+        "edges": 27,
+        "vertices": 18,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          },
+          {
+            "kind": "PartDesign::PolarPattern",
+            "name": "PolarPattern",
+            "label": "PolarPattern"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face3",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "PointOnObject": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P09a",
+      "recipe": "P09",
+      "variant": "a",
+      "file": "P09a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6250,
+        "bbox_mm": [
+          [
+            -10,
+            -20,
+            0
+          ],
+          [
+            10,
+            20,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6250.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -20.0,
+            0.0
+          ],
+          [
+            10.0,
+            20.0,
+            10.0
+          ]
+        ],
+        "faces": 16,
+        "edges": 36,
+        "vertices": 24,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Pad",
+            "name": "BossPad",
+            "label": "BossPad"
+          },
+          {
+            "kind": "PartDesign::Mirrored",
+            "name": "Mirrored",
+            "label": "Mirrored"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face3",
+            "geometry": 4,
+            "constraints": 12,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "DistanceX": 1,
+              "DistanceY": 1,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P09b",
+      "recipe": "P09",
+      "variant": "b",
+      "file": "P09b.FCStd",
+      "kind": "part",
+      "twin_of": "P09a",
+      "change": "boss 6 (along X) × 5 × 5",
+      "expected": {
+        "volume_mm3": 6300,
+        "bbox_mm": [
+          [
+            -10,
+            -20,
+            0
+          ],
+          [
+            10,
+            20,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6300.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -20.0,
+            0.0
+          ],
+          [
+            10.0,
+            20.0,
+            10.0
+          ]
+        ],
+        "faces": 16,
+        "edges": 36,
+        "vertices": 24,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Pad",
+            "name": "BossPad",
+            "label": "BossPad"
+          },
+          {
+            "kind": "PartDesign::Mirrored",
+            "name": "Mirrored",
+            "label": "Mirrored"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face3",
+            "geometry": 4,
+            "constraints": 12,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "DistanceX": 1,
+              "DistanceY": 1,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P10a",
+      "recipe": "P10",
+      "variant": "a",
+      "file": "P10a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 825.71,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 825.71061874,
+        "bbox_mm": [
+          [
+            0.0,
+            -2.9887064,
+            -2.0
+          ],
+          [
+            42.9887064,
+            30.0,
+            2.0
+          ]
+        ],
+        "faces": 5,
+        "edges": 7,
+        "vertices": 4,
+        "features": [
+          {
+            "kind": "PartDesign::AdditivePipe",
+            "name": "AdditivePipe",
+            "label": "AdditivePipe"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "PathSketch",
+            "support": "XY_Plane",
+            "geometry": 3,
+            "constraints": 8,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "DistanceX": 1,
+              "DistanceY": 1,
+              "Horizontal": 1,
+              "Radius": 1,
+              "Tangent": 2,
+              "Vertical": 1
+            }
+          },
+          {
+            "name": "Sketch",
+            "support": "YZ_Plane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P10b",
+      "recipe": "P10",
+      "variant": "b",
+      "file": "P10b.FCStd",
+      "kind": "part",
+      "twin_of": "P10a",
+      "change": "circle Ø5",
+      "expected": {
+        "volume_mm3": 1290.17,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 1290.17284178,
+        "bbox_mm": [
+          [
+            0.0,
+            -3.5299025,
+            -2.5
+          ],
+          [
+            43.5299025,
+            30.0,
+            2.5
+          ]
+        ],
+        "faces": 5,
+        "edges": 7,
+        "vertices": 4,
+        "features": [
+          {
+            "kind": "PartDesign::AdditivePipe",
+            "name": "AdditivePipe",
+            "label": "AdditivePipe"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "PathSketch",
+            "support": "XY_Plane",
+            "geometry": 3,
+            "constraints": 8,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "DistanceX": 1,
+              "DistanceY": 1,
+              "Horizontal": 1,
+              "Radius": 1,
+              "Tangent": 2,
+              "Vertical": 1
+            }
+          },
+          {
+            "name": "Sketch",
+            "support": "YZ_Plane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P11a",
+      "recipe": "P11",
+      "variant": "a",
+      "file": "P11a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            -10,
+            -10,
+            0
+          ],
+          [
+            10,
+            10,
+            30
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6586.03079573,
+        "bbox_mm": [
+          [
+            -10.0,
+            -10.0,
+            0.0
+          ],
+          [
+            10.0,
+            10.0,
+            30.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::AdditiveLoft",
+            "name": "AdditiveLoft",
+            "label": "AdditiveLoft"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "DatumPlane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P11b",
+      "recipe": "P11",
+      "variant": "b",
+      "file": "P11b.FCStd",
+      "kind": "part",
+      "twin_of": "P11a",
+      "change": "offset 40",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            -10,
+            -10,
+            0
+          ],
+          [
+            10,
+            10,
+            40
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 8781.37439431,
+        "bbox_mm": [
+          [
+            -10.0,
+            -10.0,
+            0.0
+          ],
+          [
+            10.0,
+            10.0,
+            40.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::AdditiveLoft",
+            "name": "AdditiveLoft",
+            "label": "AdditiveLoft"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "DatumPlane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P12a",
+      "recipe": "P12",
+      "variant": "a",
+      "file": "P12a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "plate_w",
+            "value": 20.0,
+            "unit": "mm"
+          }
+        ]
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P12b",
+      "recipe": "P12",
+      "variant": "b",
+      "file": "P12b.FCStd",
+      "kind": "part",
+      "twin_of": "P12a",
+      "change": "plate_w = 25",
+      "expected": {
+        "volume_mm3": 9375,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 9375.0,
+        "bbox_mm": [
+          [
+            -12.5,
+            -15.0,
+            0.0
+          ],
+          [
+            12.5,
+            15.0,
+            12.5
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "plate_w",
+            "value": 25.0,
+            "unit": "mm"
+          }
+        ]
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P13a",
+      "recipe": "P13",
+      "variant": "a",
+      "file": "P13a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 392.7,
+        "bbox_mm": [
+          [
+            -5,
+            -5,
+            15
+          ],
+          [
+            5,
+            5,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 392.6990817,
+        "bbox_mm": [
+          [
+            -5.0,
+            -5.0,
+            15.0
+          ],
+          [
+            5.0,
+            5.0,
+            20.0
+          ]
+        ],
+        "faces": 3,
+        "edges": 3,
+        "vertices": 2,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "DatumPlane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P13b",
+      "recipe": "P13",
+      "variant": "b",
+      "file": "P13b.FCStd",
+      "kind": "part",
+      "twin_of": "P13a",
+      "change": "offset 20",
+      "expected": {
+        "volume_mm3": 392.7,
+        "bbox_mm": [
+          [
+            -5,
+            -5,
+            20
+          ],
+          [
+            5,
+            5,
+            25
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 392.6990817,
+        "bbox_mm": [
+          [
+            -5.0,
+            -5.0,
+            20.0
+          ],
+          [
+            5.0,
+            5.0,
+            25.0
+          ]
+        ],
+        "faces": 3,
+        "edges": 3,
+        "vertices": 2,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "DatumPlane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P15a",
+      "recipe": "P15",
+      "variant": "a",
+      "file": "P15a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P15b",
+      "recipe": "P15",
+      "variant": "b",
+      "file": "P15b.FCStd",
+      "kind": "part",
+      "twin_of": "P15a",
+      "change": "also make the top face blue",
+      "expected": {
+        "volume_mm3": 6000,
+        "bbox_mm": [
+          [
+            -10,
+            -15,
+            0
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6000.0,
+        "bbox_mm": [
+          [
+            -10.0,
+            -15.0,
+            0.0
+          ],
+          [
+            10.0,
+            15.0,
+            10.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Symmetric": 1,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "P16a",
+      "recipe": "P16",
+      "variant": "a",
+      "file": "P16a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 392.7,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 392.6990817,
+        "bbox_mm": [
+          [
+            -2.5,
+            -2.5,
+            0.0
+          ],
+          [
+            2.5,
+            2.5,
+            20.0
+          ]
+        ],
+        "faces": 3,
+        "edges": 3,
+        "vertices": 2,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 1,
+            "constraints": 2,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Diameter": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S01a",
+      "recipe": "S01",
+      "variant": "a",
+      "file": "S01a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 12000,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            60,
+            2
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 12000.0,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            2.0
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S01b",
+      "recipe": "S01",
+      "variant": "b",
+      "file": "S01b.FCStd",
+      "kind": "part",
+      "twin_of": "S01a",
+      "change": "thickness 2.5",
+      "expected": {
+        "volume_mm3": 15000,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            60,
+            2.5
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 15000.0,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            2.5
+          ]
+        ],
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S02a",
+      "recipe": "S02",
+      "variant": "a",
+      "file": "S02a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 15428.32,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 15428.31853072,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            20.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S02b",
+      "recipe": "S02",
+      "variant": "b",
+      "file": "S02b.FCStd",
+      "kind": "part",
+      "twin_of": "S02a",
+      "change": "height 25",
+      "expected": {
+        "volume_mm3": 16428.32,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            null,
+            25
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 16428.31853072,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            25.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S02c",
+      "recipe": "S02",
+      "variant": "c",
+      "file": "S02c.FCStd",
+      "kind": "part",
+      "twin_of": "S02a",
+      "change": "angle 60°",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 15472.46885896,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            68.73205081,
+            18.32050808
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S02d",
+      "recipe": "S02",
+      "variant": "d",
+      "file": "S02d.FCStd",
+      "kind": "part",
+      "twin_of": "S02a",
+      "change": "change only the height datum, i.e. which face the 20 is measured from (Height Extents → Measurement; Fig. 3), keep 20 and 90°; note which option",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 15828.31853072,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            22.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S02e",
+      "recipe": "S02",
+      "variant": "e",
+      "file": "S02e.FCStd",
+      "kind": "part",
+      "twin_of": "S02a",
+      "change": "change only the bend position (Fig. 4); note which option",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 16028.31853072,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            63.0,
+            20.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S02f",
+      "recipe": "S02",
+      "variant": "f",
+      "file": "S02f.FCStd",
+      "kind": "part",
+      "twin_of": "S02a",
+      "change": "change only the flange's width: Width Extents type Width, Offset 20 from the corner at x = 0, Width 50, so the flange spans x 20…70",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 13701.35926536,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            20.0
+          ]
+        ],
+        "faces": 24,
+        "edges": 58,
+        "vertices": 36,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S02g",
+      "recipe": "S02",
+      "variant": "g",
+      "file": "S02g.FCStd",
+      "kind": "part",
+      "twin_of": "S02a",
+      "change": "change only the flange's width: Width Extents type Offset, Offset 1 is 10 from x = 0 and Offset 2 is 30 from x = 100, so the flange spans x 10…70",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 14044.19111843,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            20.0
+          ]
+        ],
+        "faces": 24,
+        "edges": 58,
+        "vertices": 36,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S03a",
+      "recipe": "S03",
+      "variant": "a",
+      "file": "S03a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            null,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 17241.16009888,
+        "bbox_mm": [
+          [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          [
+            100.0000001,
+            60.0000001,
+            20.0
+          ]
+        ],
+        "faces": 25,
+        "edges": 53,
+        "vertices": 30,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "CornerRelief",
+            "label": "CornerRelief"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S03b",
+      "recipe": "S03",
+      "variant": "b",
+      "file": "S03b.FCStd",
+      "kind": "part",
+      "twin_of": "S03a",
+      "change": "relief shape square",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            null,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 17264.95291035,
+        "bbox_mm": [
+          [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          [
+            100.0000001,
+            60.0000001,
+            20.0
+          ]
+        ],
+        "faces": 28,
+        "edges": 62,
+        "vertices": 36,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "CornerRelief",
+            "label": "CornerRelief"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S03d",
+      "recipe": "S03",
+      "variant": "d",
+      "file": "S03d.FCStd",
+      "kind": "part",
+      "twin_of": "S03a",
+      "change": "relief size 5",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            null,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 17201.91857225,
+        "bbox_mm": [
+          [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          [
+            100.0000001,
+            60.0000001,
+            20.0
+          ]
+        ],
+        "faces": 25,
+        "edges": 53,
+        "vertices": 30,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "CornerRelief",
+            "label": "CornerRelief"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S03e",
+      "recipe": "S03",
+      "variant": "e",
+      "file": "S03e.FCStd",
+      "kind": "part",
+      "twin_of": "S03a",
+      "change": "corner gap 0.8",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            null,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 17223.5926654,
+        "bbox_mm": [
+          [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          [
+            100.0000001,
+            60.0000001,
+            20.0
+          ]
+        ],
+        "faces": 25,
+        "edges": 53,
+        "vertices": 30,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "CornerRelief",
+            "label": "CornerRelief"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S05a",
+      "recipe": "S05",
+      "variant": "a",
+      "file": "S05a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            null,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": [
+          116.95,
+          76.95
+        ]
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 17241.16009888,
+        "bbox_mm": [
+          [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          [
+            100.0000001,
+            60.0000001,
+            20.0
+          ]
+        ],
+        "faces": 25,
+        "edges": 53,
+        "vertices": 30,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "CornerRelief",
+            "label": "CornerRelief"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "FlatPattern",
+            "label": "FlatPattern"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S06a",
+      "recipe": "S06",
+      "variant": "a",
+      "file": "S06a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 15428.32,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 15428.31853072,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            20.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S06b",
+      "recipe": "S06",
+      "variant": "b",
+      "file": "S06b.FCStd",
+      "kind": "part",
+      "twin_of": "S06a",
+      "change": "straight",
+      "expected": {
+        "volume_mm3": 15428.32,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 15428.31853072,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            20.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S07a",
+      "recipe": "S07",
+      "variant": "a",
+      "file": "S07a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 11996.14,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            60,
+            2
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11996.13716694,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            2.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Fillet",
+            "name": "CornerRound",
+            "label": "CornerRound"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S07b",
+      "recipe": "S07",
+      "variant": "b",
+      "file": "S07b.FCStd",
+      "kind": "part",
+      "twin_of": "S07a",
+      "change": "R5",
+      "expected": {
+        "volume_mm3": 11989.27,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            60,
+            2
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11989.26990817,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            2.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Fillet",
+            "name": "CornerRound",
+            "label": "CornerRound"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S07c",
+      "recipe": "S07",
+      "variant": "c",
+      "file": "S07c.FCStd",
+      "kind": "part",
+      "twin_of": "S07a",
+      "change": "R3 on all four corners of the face, in one Corner Round",
+      "expected": {
+        "volume_mm3": 11984.55,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            60,
+            2
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11984.54866776,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            2.0
+          ]
+        ],
+        "faces": 10,
+        "edges": 24,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Fillet",
+            "name": "CornerRound",
+            "label": "CornerRound"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S08a",
+      "recipe": "S08",
+      "variant": "a",
+      "file": "S08a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 6491.32741242,
+        "bbox_mm": [
+          [
+            -1e-07,
+            -40.0000001,
+            -2.0000001
+          ],
+          [
+            52.0000001,
+            1e-07,
+            30.0000001
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "BaseBend",
+            "label": "BaseBend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 2,
+            "constraints": 6,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 2,
+              "Distance": 2,
+              "Horizontal": 1,
+              "Vertical": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S08b",
+      "recipe": "S08",
+      "variant": "b",
+      "file": "S08b.FCStd",
+      "kind": "part",
+      "twin_of": "S08a",
+      "change": "distance 50",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": null,
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 8114.15926553,
+        "bbox_mm": [
+          [
+            -1e-07,
+            -50.0000001,
+            -2.0000001
+          ],
+          [
+            52.0000001,
+            1e-07,
+            30.0000001
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "BaseBend",
+            "label": "BaseBend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XZ_Plane",
+            "geometry": 2,
+            "constraints": 6,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 2,
+              "Distance": 2,
+              "Horizontal": 1,
+              "Vertical": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S09a",
+      "recipe": "S09",
+      "variant": "a",
+      "file": "S09a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            null,
+            null
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 16856.63706144,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            17.0
+          ]
+        ],
+        "faces": 22,
+        "edges": 44,
+        "vertices": 24,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "ContourSketch",
+            "support": "YZ_Plane",
+            "geometry": 2,
+            "constraints": 7,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Distance": 2,
+              "DistanceX": 1,
+              "DistanceY": 1,
+              "Horizontal": 1,
+              "Vertical": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S09b",
+      "recipe": "S09",
+      "variant": "b",
+      "file": "S09b.FCStd",
+      "kind": "part",
+      "twin_of": "S09a",
+      "change": "the second line 15 instead of 10",
+      "expected": {
+        "volume_mm3": null,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            null,
+            null
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 17856.63706144,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            17.0
+          ]
+        ],
+        "faces": 22,
+        "edges": 44,
+        "vertices": 24,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "ContourSketch",
+            "support": "YZ_Plane",
+            "geometry": 2,
+            "constraints": 7,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 1,
+              "Distance": 2,
+              "DistanceX": 1,
+              "DistanceY": 1,
+              "Horizontal": 1,
+              "Vertical": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S11a",
+      "recipe": "S11",
+      "variant": "a",
+      "file": "S11a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 15390.62,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            76.95,
+            2
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 15390.61941887,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            76.95309709,
+            2.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S11b",
+      "recipe": "S11",
+      "variant": "b",
+      "file": "S11b.FCStd",
+      "kind": "part",
+      "twin_of": "S11a",
+      "change": "after the Unfold, Refold the same bend, then save",
+      "expected": {
+        "volume_mm3": 15428.32,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 15428.31853072,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            20.0
+          ]
+        ],
+        "faces": 14,
+        "edges": 28,
+        "vertices": 16,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S12a",
+      "recipe": "S12",
+      "variant": "a",
+      "file": "S12a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 14780.78,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            null,
+            20
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 14780.77870862,
+        "bbox_mm": [
+          [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          [
+            100.0000001,
+            60.0000001,
+            20.0000001
+          ]
+        ],
+        "faces": 24,
+        "edges": 56,
+        "vertices": 32,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Bend",
+            "label": "Bend"
+          },
+          {
+            "kind": "PartDesign::Pocket",
+            "name": "FlatCut",
+            "label": "FlatCut"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "Refold",
+            "label": "Refold"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Bend.Face11",
+            "geometry": 4,
+            "constraints": 12,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 4,
+              "Distance": 2,
+              "DistanceX": 1,
+              "DistanceY": 1,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "FoldLine",
+            "support": "XY_Plane",
+            "geometry": 1,
+            "constraints": 4,
+            "dof": 0,
+            "by_type": {
+              "Distance": 1,
+              "DistanceY": 1,
+              "Horizontal": 1,
+              "PointOnObject": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S13a",
+      "recipe": "S13",
+      "variant": "a",
+      "file": "S13a.FCStd",
+      "kind": "part",
+      "twin_of": null,
+      "change": null,
+      "expected": {
+        "volume_mm3": 11943.45,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            60,
+            2
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11943.45133224,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            2.0
+          ]
+        ],
+        "faces": 7,
+        "edges": 15,
+        "vertices": 10,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S13b",
+      "recipe": "S13",
+      "variant": "b",
+      "file": "S13b.FCStd",
+      "kind": "part",
+      "twin_of": "S13a",
+      "change": "add a Rectangular Pattern of the hole: 3 along +X, spacing 15, so holes at x 10, 25, and 40",
+      "expected": {
+        "volume_mm3": 11830.35,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            60,
+            2
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11830.35399671,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            2.0
+          ]
+        ],
+        "faces": 9,
+        "edges": 21,
+        "vertices": 14,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPattern",
+            "label": "LinearPattern"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S13c",
+      "recipe": "S13",
+      "variant": "c",
+      "file": "S13c.FCStd",
+      "kind": "part",
+      "twin_of": "S13b",
+      "change": "from b: add a Work Plane offset 50 from the YZ plane, then Mirror the hole and the pattern about it, so there are six holes (x 60, 75, and 90 too)",
+      "expected": {
+        "volume_mm3": 11660.71,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            60,
+            2
+          ]
+        ],
+        "flat_mm": null
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11660.70799341,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            2.0
+          ]
+        ],
+        "faces": 12,
+        "edges": 30,
+        "vertices": 20,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPattern",
+            "label": "LinearPattern"
+          },
+          {
+            "kind": "PartDesign::Mirrored",
+            "name": "Mirrored",
+            "label": "Mirrored"
+          },
+          {
+            "kind": "PartDesign::MultiTransform",
+            "name": "MultiTransform",
+            "label": "MultiTransform"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    },
+    {
+      "id": "S13d",
+      "recipe": "S13",
+      "variant": "d",
+      "file": "S13d.FCStd",
+      "kind": "part",
+      "twin_of": "S13c",
+      "change": "from c: Create Flat Pattern, then Go To Folded Part, save",
+      "expected": {
+        "volume_mm3": 11660.71,
+        "bbox_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            60,
+            2
+          ]
+        ],
+        "flat_mm": [
+          100,
+          60
+        ]
+      },
+      "measured": {
+        "solids": 1,
+        "volume_mm3": 11660.70799341,
+        "bbox_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            60.0,
+            2.0
+          ]
+        ],
+        "faces": 12,
+        "edges": 30,
+        "vertices": 20,
+        "features": [
+          {
+            "kind": "PartDesign::Pad",
+            "name": "Pad",
+            "label": "Pad"
+          },
+          {
+            "kind": "PartDesign::Hole",
+            "name": "Hole",
+            "label": "Hole"
+          },
+          {
+            "kind": "PartDesign::LinearPattern",
+            "name": "LinearPattern",
+            "label": "LinearPattern"
+          },
+          {
+            "kind": "PartDesign::Mirrored",
+            "name": "Mirrored",
+            "label": "Mirrored"
+          },
+          {
+            "kind": "PartDesign::MultiTransform",
+            "name": "MultiTransform",
+            "label": "MultiTransform"
+          },
+          {
+            "kind": "PartDesign::FeaturePython",
+            "name": "FlatPattern",
+            "label": "FlatPattern"
+          }
+        ],
+        "sketches": [
+          {
+            "name": "Sketch",
+            "support": "XY_Plane",
+            "geometry": 4,
+            "constraints": 11,
+            "dof": 0,
+            "by_type": {
+              "Coincident": 5,
+              "Distance": 2,
+              "Horizontal": 2,
+              "Vertical": 2
+            }
+          },
+          {
+            "name": "Sketch001",
+            "support": "Pad.Face6",
+            "geometry": 1,
+            "constraints": 3,
+            "dof": 0,
+            "by_type": {
+              "Diameter": 1,
+              "DistanceX": 1,
+              "DistanceY": 1
+            }
+          }
+        ],
+        "parameters": []
+      },
+      "check": "pass"
+    }
+  ],
+  "not_made": [
+    {
+      "recipe": "A",
+      "reason": "FreeCAD 0.21.2 has no built-in Assembly workbench"
+    },
+    {
+      "recipe": "F04d",
+      "reason": "The native Hole DepthType supports Dimension and ThroughAll, but not a To-face extent."
+    },
+    {
+      "recipe": "F07",
+      "reason": "Sheet metal requires the SheetMetal add-on, rather than a direct PartDesign feature."
+    },
+    {
+      "recipe": "F08",
+      "reason": "Sheet-metal flanges require the SheetMetal add-on, rather than a direct PartDesign feature."
+    },
+    {
+      "recipe": "F09",
+      "reason": "A sheet-metal flat pattern has no direct PartDesign feature."
+    },
+    {
+      "recipe": "F10",
+      "reason": "Fusion component joints and driven positions are assembly history, not PartDesign features."
+    },
+    {
+      "recipe": "F12",
+      "reason": "Fusion joint motion history and rest positions are not PartDesign features."
+    },
+    {
+      "recipe": "F15b",
+      "reason": "This release has no native two-angle Revolution extent."
+    },
+    {
+      "recipe": "F15f",
+      "reason": "This release has no native Revolution To-face extent."
+    },
+    {
+      "recipe": "F17",
+      "reason": "Fusion cosmetic external threads and their modeled-history switch have no direct PartDesign equivalent."
+    },
+    {
+      "recipe": "F19",
+      "reason": "Fusion Base Feature editing has no direct parametric PartDesign history equivalent."
+    },
+    {
+      "recipe": "F20d",
+      "reason": "A native Pad has no Thin Extrude mode; changing the profile to a ring would change the requested history."
+    },
+    {
+      "recipe": "F21c",
+      "reason": "Text emboss depends on a font and has no direct Sketcher text feature."
+    },
+    {
+      "recipe": "F22",
+      "reason": "Fusion Align and Move/Copy history has no direct PartDesign feature."
+    },
+    {
+      "recipe": "F23",
+      "reason": "PartDesign patterns features, not selected boundary faces."
+    },
+    {
+      "recipe": "F24",
+      "reason": "A pattern of disconnected bodies is not a direct single-body PartDesign feature."
+    },
+    {
+      "recipe": "P14",
+      "reason": "P14a and P14b require a 3D polyline sketch. Sketcher is planar; splitting the path across sketches or using a static wire would change the requested editable feature history."
+    },
+    {
+      "recipe": "S03c",
+      "reason": "The native SheetMetal corner-relief proxy has Circle, Square, and Sketch modes, but no Tear mode."
+    },
+    {
+      "recipe": "S04",
+      "reason": "A 180-degree wall can approximate a hem, but there is no native single-hem gap/default-extent feature; the booklet leaves the hem length implicit."
+    },
+    {
+      "recipe": "S10",
+      "reason": "The add-on has no direct Bend joining the two separate Face features with these unspecified default bend options."
+    }
+  ]
+}

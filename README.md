@@ -26,6 +26,12 @@ FreeCAD is free and scriptable, so we make its sets ourselves from the same reci
 
 Use something else? Tell us in [Discord](https://discord.gg/yTcseBEdeu) which program and year, and we'll add recipes for it.
 
+## Test files
+
+Public test files live in `files/<program>/<version>/`, one file per recipe and twin (`P01a.FCStd`), with a `manifest.json` per set: the recipe ID, the program build, the expected values from the booklet, what was measured, and the check result. They are CC0, so cadmpeg, other CAD readers, or anyone else may use them as an external test set.
+
+Today that is the FreeCAD 0.21.2, 1.0.2, and 1.1.4 sets, which we make from the recipes. Volunteer files join only when their sender chose CC0, and only after a check that nothing private is inside them. The release zips are built from these folders (`tools/release/freecad-zips.sh`), so the two always match.
+
 ## Help
 
 Ask anything in the [Dutchman CAD Discord](https://discord.gg/yTcseBEdeu), or use the team chat inside the portal. The latest recipe booklet (PDF) is linked from the portal. Already helping and lost your link? Ask in Discord for a new one.

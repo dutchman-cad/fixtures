@@ -1,0 +1,3 @@
+# Local FreeCAD home, meshes, and validation artifacts.
+.render-tmp/
+__pycache__/

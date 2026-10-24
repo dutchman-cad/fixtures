@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="230" viewBox="0 0 340 230"><style>text{font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:11px;fill:#1d2321}.b{font-weight:600}.w{fill:#8a5a00}.a{fill:#1f6f5c}</style><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9z" fill="#1d2321"/></marker><g id="lshape"><path d="M10,150 L90,150 A20,20 0 0 0 110,130 L110,30 L98,30 L98,130 A8,8 0 0 1 90,138 L10,138 Z" fill="#e2efe9" stroke="#1d2321" stroke-width="1.5"/></g></defs>
+<text x="18" y="18" class="b">F04a · top view · mm</text>
+<rect x="72" y="38" width="80" height="120" fill="#e2efe9" stroke="#1d2321" stroke-width="1.5"/>
+<circle cx="112" cy="98" r="10" fill="white" stroke="#1d2321" stroke-width="1.5"/>
+<path d="M95 98H129M112 81V115" stroke="#5b6662" stroke-dasharray="3 3"/>
+<path d="M72 165V187M152 165V187M74 180H150" stroke="#1d2321" fill="none" marker-start="url(#ar)" marker-end="url(#ar)"/>
+<text x="112" y="197" text-anchor="middle">20 (X)</text>
+<path d="M159 38H183M159 158H183M176 40V156" stroke="#1d2321" fill="none" marker-start="url(#ar)" marker-end="url(#ar)"/>
+<text x="184" y="103">30 (Y)</text>
+<path d="M235 57H161L120 91" stroke="#1d2321" fill="none" marker-end="url(#ar)"/>
+<text x="210" y="48" class="b">Ø5 through</text>
+<text x="210" y="73">at (0, 0, 10)</text>
+<text x="18" y="219">Height 10 mm · hole at the top face centre.</text>
+</svg>

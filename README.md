@@ -22,6 +22,8 @@ We're building open, clean-room readers for native CAD files ([cadmpeg](https://
 
 The recipes are written for **Inventor**, **Fusion**, **SolidWorks**, **Creo**, and **CATIA**, in any year or release. Each year stores files a little differently, so a year nobody has covered yet is especially welcome; the portal shows which ones are wanted. Fusion updates every month, so several sets from different people are worth more than one.
 
+FreeCAD is free and scriptable, so we make its sets ourselves from the same recipes: no FreeCAD files needed from volunteers.
+
 Use something else? Tell us in [Discord](https://discord.gg/yTcseBEdeu) which program and year, and we'll add recipes for it.
 
 ## Help

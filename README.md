@@ -26,6 +26,14 @@ FreeCAD is free and scriptable, so we make its sets ourselves from the same reci
 
 Use something else? Tell us in [Discord](https://discord.gg/yTcseBEdeu) which program and year, and we'll add recipes for it.
 
+## Want to help us improve?
+
+Send us a design of your own: one CAD file and, if you can, a STEP export of the same design. Direct-message it to Dutchy on the [Discord](https://discord.gg/yTcseBEdeu), or, if you already have a portal link, use **Your own files** there. We compare what our readers get from your file with the STEP your program wrote.
+
+Formats: Fusion (.f3d, .f3z), Inventor (.ipt, .iam), SolidWorks (.sldprt, .sldasm), CATIA V5 (.CATPart), Creo and NX (.prt, including numbered saves such as .prt.3), Creo View (.pvz), Rhino (.3dm), ACIS (.sat, .sab, .smt, .smb), FreeCAD (.FCStd), and IGES (.igs, .iges).
+
+For the STEP export, pick AP242 if your program offers it, otherwise AP214; solid (B-rep), not mesh; the same units as the design; one file for an assembly. You choose whether your files stay private or join the public test collection (CC0).
+
 ## Test files
 
 Public test files live in `files/<program>/<version>/`, one file per recipe and twin (`P01a.FCStd`), with a `manifest.json` per set: the recipe ID, the program build, the expected values from the booklet, what was measured, and the check result. They are CC0, so cadmpeg, other CAD readers, or anyone else may use them as an external test set.

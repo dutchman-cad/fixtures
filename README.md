@@ -1,6 +1,6 @@
 # CAD Fixture Recipes
 
-We're building open, clean-room readers for native CAD files ([cadmpeg](https://github.com/cadmpeg/cadmpeg) and [SolidCraft](https://github.com/tangency-labs/solidcraft), used by [Dutchman](https://github.com/dutchman-cad/dutchman)). To test them we need small, known files made in the real apps: a block, a fillet, a flange, and two parts with a mate, each changing one thing at a time. Volunteers make them from short recipes, and every file helps.
+We're building open, clean-room readers for native CAD files ([cadmpeg](https://github.com/cadmpeg/cadmpeg) and [SolidCraft](https://github.com/tangency-labs/solidcraft), used by [Dutchman](https://github.com/dutchman-cad/dutchman)). To test them we need small, known files made in the real apps: a block, a fillet, a flange, two parts with a mate, and a drawing of a part, each changing one thing at a time. Volunteers make them from short recipes, and every file helps.
 
 **Portal:** https://fixtures.tailb5574c.ts.net/
 **Community:** [Dutchman CAD on Discord](https://discord.gg/yTcseBEdeu)

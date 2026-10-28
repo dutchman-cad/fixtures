@@ -13,7 +13,7 @@ We're building open, clean-room readers for native CAD files ([cadmpeg](https://
 
 ## Join in
 
-- **Get your personal link:** ask in [Discord](https://discord.gg/yTcseBEdeu). It signs you in; there's no account or password.
+- **Get your personal link:** join the [Discord](https://discord.gg/yTcseBEdeu) and type **/volunteer**. The link signs you in; there's no account or password.
 - **Pick your app and year.** The portal walks you through each file, one per screen, with the recipe and a drawing. It takes about 15 to 45 minutes, depending on how far you go, and partial sets are welcome.
 - **Drop each file on its box.** It's checked in seconds and you see the result. Questions go to a chat with the team.
 - **You choose** whether your files join a public test collection (CC0) or stay private, for testing only.

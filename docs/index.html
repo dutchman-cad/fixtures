@@ -54,6 +54,36 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:v
 .example-images img{display:block;width:100%;height:auto;min-width:0;background:#f6f7f5;border-radius:6px}
 .example figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
 @media(max-width:700px){.examples{grid-template-columns:minmax(0,1fr)}}
+.need{margin:28px 0 8px;padding:22px;border-radius:14px;background:linear-gradient(135deg,rgba(88,101,242,.12),rgba(47,107,92,.10));border:1px solid var(--line)}
+.need h2{margin:0 0 6px;font-size:24px}
+.need p{margin:0 0 14px}
+.need .big{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:10px;background:#5865f2;color:#fff;font-weight:700;font-size:17px;text-decoration:none}
+.need .big:hover{background:#4752c4}
+.need .big svg{width:22px;height:22px;fill:#fff}
+.need .small{display:block;margin-top:10px;font-size:14px;color:var(--muted)}
+.dc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:18px}
+@media(max-width:700px){.dc{grid-template-columns:minmax(0,1fr)}}
+.dcard{background:#2b2d31;color:#dbdee1;border-radius:10px;padding:16px;font:14px/1.4 "gg sans","Noto Sans",system-ui,sans-serif;min-width:0}
+.dcard .label{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#b5bac1;margin-bottom:10px}
+.dcard .row{display:flex;align-items:center;gap:12px}
+.dcard .icon{flex:none;width:52px;height:52px;border-radius:14px;background:#f6f7f5;display:grid;place-items:center}
+.dcard .icon img{width:38px;height:38px}
+.dcard .name{font-weight:700;color:#f2f3f5;font-size:16px}
+.dcard .meta{font-size:13px;color:#b5bac1}
+.dcard .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#23a55a;margin-right:4px}
+.dcard .join{margin-left:auto;flex:none;background:#248046;color:#fff;border-radius:4px;padding:8px 16px;font-weight:600;text-decoration:none}
+.dcard .join:hover{background:#1a6334}
+.chat{background:#383a40;border-radius:8px;padding:10px 12px;color:#dbdee1;display:flex;align-items:center;gap:8px;margin-top:10px}
+.chat .slash{color:#f2f3f5;font-weight:600}
+.chat .cursor{display:inline-block;width:1px;height:16px;background:#dbdee1;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.suggest{background:#2b2d31;border:1px solid #1e1f22;border-radius:8px;padding:6px;margin-top:8px}
+.suggest .item{display:flex;gap:10px;align-items:center;padding:6px 8px;border-radius:6px;background:#35373c}
+.suggest .item img{width:22px;height:22px;border-radius:50%;background:#f6f7f5;padding:2px}
+.suggest .cmd{color:#f2f3f5;font-weight:600}
+.suggest .desc{color:#b5bac1;font-size:13px}
+.steps3{margin:14px 0 0;padding-left:20px}
+.steps3 li{margin:0 0 6px}
 </style>
 </head>
 <body>
@@ -62,10 +92,38 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:v
   <div class="brand"><a href="https://dutchman-cad.github.io/">Dutchman CAD</a> · Fixtures</div>
   <h1>CAD Fixture Recipes</h1>
   <p class="lead">We're building open, clean-room readers for native CAD files (<a href="https://github.com/cadmpeg/cadmpeg">cadmpeg</a> and <a href="https://github.com/tangency-labs/solidcraft">SolidCraft</a>, used by <a href="https://github.com/dutchman-cad/dutchman">Dutchman</a>). To test them we need small, known files made in the real apps: a block, a fillet, a flange, two parts with a mate, and a drawing of a part, each changing one thing at a time. Volunteers make them from short recipes, and every file helps.</p>
-  <a class="cta" href="https://fixtures.tailb5574c.ts.net/">Open the portal</a>
-  <a class="cta alt" href="https://github.com/dutchman-cad/fixtures">Repository</a>
-  <a class="cta alt" href="https://discord.gg/yTcseBEdeu">Discord</a>
 </header>
+
+<section class="need" aria-labelledby="need-title">
+  <h2 id="need-title">We need test files, and we need you</h2>
+  <p>Our readers only get better when someone with the real program makes the small files they're checked against. If you have Inventor, Fusion, SolidWorks, Creo, or CATIA, 15 minutes of your time moves the whole project forward.</p>
+  <a class="big" href="https://discord.gg/yTcseBEdeu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9.1-.3 13.6.1 18.1a19.9 19.9 0 0 0 6 3l1.3-2.1a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.8 19.8 0 0 0 6-3c.5-5.2-.8-9.7-3.6-13.7zM8 15.3c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.5 8 10.5s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4z"/></svg>Join our Discord</a>
+  <span class="small">Then type <strong>/volunteer</strong> in any channel. That's the whole sign-up.</span>
+  <div class="dc">
+    <div class="dcard">
+      <div class="label">You've been invited to join a server</div>
+      <div class="row">
+        <div class="icon"><img src="img/dutchman-mark.svg" alt=""></div>
+        <div style="min-width:0">
+          <div class="name">Dutchman CAD</div>
+          <div class="meta"><span class="dot"></span>Open CAD tools · Fixtures volunteers</div>
+        </div>
+        <a class="join" href="https://discord.gg/yTcseBEdeu">Join</a>
+      </div>
+    </div>
+    <div class="dcard" aria-label="Typing /volunteer in Discord">
+      <div class="label">Then, in any channel</div>
+      <div class="suggest"><div class="item"><img src="img/dutchman-mark.svg" alt=""><div><div class="cmd">/volunteer</div><div class="desc">Make small test files for open CAD readers · Dutchy</div></div></div></div>
+      <div class="chat"><span class="slash">/volunteer</span><span class="cursor"></span></div>
+    </div>
+  </div>
+  <ol class="steps3">
+    <li>Tell Dutchy which programs and years you have.</li>
+    <li>We say hello and send your personal portal link (no account, no password).</li>
+    <li>Follow the recipes one screen at a time and drop each file on its box. Partial sets are welcome.</li>
+  </ol>
+  <span class="small">Already have a link? <a href="https://fixtures.tailb5574c.ts.net/">Open the portal</a> · <a href="https://github.com/dutchman-cad/fixtures">Repository</a></span>
+</section>
 
 <section aria-labelledby="examples-title">
 <h2 id="examples-title">Examples</h2>
@@ -119,7 +177,7 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:v
 
 <h2>Join in</h2>
 <ul>
-  <li><strong>Get your personal link:</strong> ask in <a href="https://discord.gg/yTcseBEdeu">Discord</a>. It signs you in; there's no account or password.</li>
+  <li><strong>Get your personal link:</strong> join the <a href="https://discord.gg/yTcseBEdeu">Discord</a> and type <strong>/volunteer</strong>. The link signs you in; there's no account or password.</li>
   <li><strong>Pick your app and year.</strong> The portal walks you through each file, one per screen, with the recipe and a drawing. It takes about 15 to 45 minutes, depending on how far you go, and partial sets are welcome.</li>
   <li><strong>Drop each file on its box.</strong> It's checked in seconds and you see the result. Questions go to a chat with the team.</li>
   <li><strong>You choose</strong> whether your files join a public test collection (CC0) or stay private, for testing only.</li>
@@ -134,7 +192,7 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:v
 <p>Send us a design of your own: one CAD file and, if you can, a STEP export of the same design. Direct-message it to Dutchy on the <a href="https://discord.gg/yTcseBEdeu">Discord</a>, or, if you already have a portal link, use <strong>Your own files</strong> there. We compare what our readers get from your file with the STEP your program wrote.</p>
 <p>Formats: Fusion (.f3d, .f3z), Inventor (.ipt, .iam), SolidWorks (.sldprt, .sldasm), CATIA V5 (.CATPart), Creo and NX (.prt, including numbered saves such as .prt.3), Creo View (.pvz), Rhino (.3dm), ACIS (.sat, .sab, .smt, .smb), FreeCAD (.FCStd), and IGES (.igs, .iges).</p>
 <p>For the STEP export, pick AP242 if your program offers it, otherwise AP214; solid (B-rep), not mesh; the same units as the design; one file for an assembly. You choose whether your files stay private or join the public test collection (CC0).</p>
-<p>The latest recipe booklet (PDF) is linked from the portal. Already helping and lost your link? Ask in Discord for a new one.</p>
+<p>The latest recipe booklet (PDF) is linked from the portal. Already helping and lost your link? Ask in Discord for a new one, or type <strong>/volunteer</strong> again.</p>
 
 <footer>Part of <a href="https://dutchman-cad.github.io/">Dutchman CAD</a>, open CAD tools · <a href="https://discord.gg/yTcseBEdeu">Discord</a></footer>
 </main>

@@ -24,7 +24,7 @@ The recipes are written for **Inventor**, **Fusion**, **SolidWorks**, **Creo**, 
 
 Drawings are wanted too: Fusion, Inventor, and SolidWorks drawings each have their own recipes, from a single view to two sheets with views at three scales and dimensions. Each drawing is sent with a DXF of its sheets; a PDF is welcome but optional.
 
-FreeCAD is free and scriptable, so we make its sets ourselves from the same recipes: no FreeCAD files needed from volunteers. The sets for FreeCAD 0.21.2, 1.0.2, and 1.1.4 (parts, sheet metal, history recipes, and, from 1.0, assemblies) are [free to download (CC0)](https://github.com/dutchman-cad/fixtures/releases).
+FreeCAD is free and scriptable, so we make its sets ourselves from the same recipes: no FreeCAD files needed from volunteers. The sets for FreeCAD 0.21.2, 1.0.2, and 1.1.4 (parts, sheet metal, history recipes, FreeCAD-only recipes, and, from 1.0, assemblies) are [free to download (CC0)](https://github.com/dutchman-cad/fixtures/releases).
 
 Use something else? Tell us in [Discord](https://discord.gg/yTcseBEdeu) which program and year, and we'll add recipes for it.
 

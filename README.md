@@ -34,6 +34,8 @@ Formats: Fusion (.f3d, .f3z), Inventor (.ipt, .iam), SolidWorks (.sldprt, .sldas
 
 For the STEP export, pick AP242 if your program offers it, otherwise AP214; solid (B-rep), not mesh; the same units as the design; one file for an assembly. You choose whether your files stay private or join the public test collection (CC0).
 
+A drawing helps too: send the drawing (Inventor .idw or .dwg, SolidWorks .slddrw, Creo .drw, CATIA .CATDrawing, or a Fusion drawing exported as a Fusion Archive, .f3z), the part or assembly it shows, and a DXF export of each sheet (or one .zip of them), all in one message; a PDF of the sheets is welcome but optional. The DXF is what we check the drawing against, so export it at scale 1:1, in millimetres, with text kept as text (not exploded), as AutoCAD 2000 or 2018 DXF.
+
 ## Test files
 
 Public test files live in `files/<program>/<version>/`, one file per recipe and twin (`P01a.FCStd`), with a `manifest.json` per set: the recipe ID, the program build, the expected values from the booklet, what was measured, and the check result. They are CC0, so cadmpeg, other CAD readers, or anyone else may use them as an external test set.

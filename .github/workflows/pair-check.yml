@@ -1,4 +1,6 @@
 name: Check a public pair
+# The request id lets the caller find its own run among others.
+run-name: pair ${{ inputs.pair_id }} ${{ inputs.request_id }}
 
 # Checks ONE public (CC0) fixture pair with the same tools and steps as the private checker
 # (tools/pair-check/pair_check.py mirrors the portal's fixture-check). The inputs are the files of
@@ -34,6 +36,11 @@ on:
         description: SolidCraft release, such as v0.28.0
         required: true
         type: string
+      request_id:
+        description: Caller's id for this run (letters, digits, dashes), shown in the run name
+        required: false
+        default: ""
+        type: string
       timeout_secs:
         description: Time limit for each tool, in seconds (at most 6000)
         required: false
@@ -59,6 +66,7 @@ env:
   CADMPEG_REV: ${{ inputs.cadmpeg_rev }}
   SOLIDCRAFT_VERSION: ${{ inputs.solidcraft_version }}
   TIMEOUT_SECS: ${{ inputs.timeout_secs }}
+  REQUEST_ID: ${{ inputs.request_id }}
 
 jobs:
   fetch:

@@ -99,7 +99,7 @@ jobs:
           echo "fetched $(ls "$WORK" | wc -l) file(s)"
 
       - name: Hand the files to the check job
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: pair-${{ inputs.pair_id }}-inputs
           path: ${{ runner.temp }}/pair-work
@@ -195,7 +195,7 @@ jobs:
 
       - name: Upload the result
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: pair-${{ inputs.pair_id }}-result
           path: ${{ runner.temp }}/pair-out

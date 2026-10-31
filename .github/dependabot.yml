@@ -1,0 +1,10 @@
+version: 2
+updates:
+  # Workflow actions, pinned by commit: one grouped weekly PR for minor and patch updates.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        update-types: [minor, patch]

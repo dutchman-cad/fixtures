@@ -40,62 +40,48 @@ on:
         default: 3600
         type: number
 
-# contents: write only because a DRAFT release and its assets are visible to tokens with push access
-# alone; the job never changes the repository or any release.
+# The workflow token can write only in the fetch job, which runs no CAD tools: a draft release and
+# its assets are visible to tokens with push access alone. The check job, which runs the tools on
+# the files, has a read-only token. Neither job changes the repository or any release.
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: pair-check-${{ inputs.pair_id }}
   cancel-in-progress: false
 
-jobs:
-  check:
-    runs-on: ubuntu-latest
-    # Three tools at the limit, plus the time to fetch the tools and build cadmpeg.
-    timeout-minutes: ${{ fromJSON(inputs.timeout_secs) * 3 / 60 + 45 }}
-    env:
-      # Values only ever reach scripts as environment variables, quoted there.
-      PAIR_ID: ${{ inputs.pair_id }}
-      RELEASE_TAG: ${{ inputs.release_tag }}
-      NATIVE_ASSET: ${{ inputs.native_asset }}
-      STEP_ASSET: ${{ inputs.step_asset }}
-      CADMPEG_REV: ${{ inputs.cadmpeg_rev }}
-      SOLIDCRAFT_VERSION: ${{ inputs.solidcraft_version }}
-      TIMEOUT_SECS: ${{ inputs.timeout_secs }}
-      GH_TOKEN: ${{ github.token }}
-    steps:
-      - name: Validate inputs
-        run: |
-          set -euo pipefail
-          fail() { echo "::error::$1"; exit 1; }
-          [[ $PAIR_ID =~ ^[0-9]{1,9}$ ]] || fail "pair_id must be digits"
-          [[ $CADMPEG_REV =~ ^[0-9a-fA-F]{7,40}$ ]] || fail "cadmpeg_rev must be 7 to 40 hex digits"
-          [[ $SOLIDCRAFT_VERSION =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || fail "solidcraft_version must look like v0.28.0"
-          [[ $TIMEOUT_SECS =~ ^[0-9]{1,4}$ ]] && ((TIMEOUT_SECS >= 10 && TIMEOUT_SECS <= 6000)) \
-            || fail "timeout_secs must be 10 to 6000"
-          [[ $RELEASE_TAG =~ ^[A-Za-z0-9._-]{1,200}$ ]] || fail "release_tag has characters that are not allowed"
-          [[ $NATIVE_ASSET =~ ^[A-Za-z0-9._-]{1,200}$ ]] || fail "native_asset has characters that are not allowed"
-          [[ -z $STEP_ASSET || $STEP_ASSET =~ ^[A-Za-z0-9._-]{1,200}$ ]] || fail "step_asset has characters that are not allowed"
-          # The file type, as the portal stores it: ".prt.3" (a numbered save) is "prt".
-          if [[ $NATIVE_ASSET =~ \.[Pp][Rr][Tt]\.[0-9]+$ ]]; then ext=prt
-          elif [[ $NATIVE_ASSET =~ \.([A-Za-z0-9_]{1,16})$ ]]; then ext=${BASH_REMATCH[1]}
-          else fail "native_asset needs a file type"; fi
-          echo "NATIVE_EXT=$ext" >>"$GITHUB_ENV"
-          echo "HAS_STEP=$([[ -n $STEP_ASSET ]] && echo 1 || echo 0)" >>"$GITHUB_ENV"
-          echo "WORK=$RUNNER_TEMP/pair-work" >>"$GITHUB_ENV"
-          echo "OUT=$RUNNER_TEMP/pair-out" >>"$GITHUB_ENV"
+env:
+  # Values only ever reach scripts as environment variables, quoted there.
+  PAIR_ID: ${{ inputs.pair_id }}
+  RELEASE_TAG: ${{ inputs.release_tag }}
+  NATIVE_ASSET: ${{ inputs.native_asset }}
+  STEP_ASSET: ${{ inputs.step_asset }}
+  CADMPEG_REV: ${{ inputs.cadmpeg_rev }}
+  SOLIDCRAFT_VERSION: ${{ inputs.solidcraft_version }}
+  TIMEOUT_SECS: ${{ inputs.timeout_secs }}
 
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
       - name: Check out the checker
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           sparse-checkout: tools/pair-check
           persist-credentials: false
 
+      - name: Validate inputs
+        run: tools/pair-check/validate.sh
+
       - name: Fetch the pair's files
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          mkdir -m 700 "$WORK" "$OUT"
+          mkdir -m 700 "$WORK"
           # A draft release has no tag yet, so it is found in the release list and its assets are
           # downloaded by id.
           gh api --paginate "repos/$GITHUB_REPOSITORY/releases?per_page=100" | jq -s 'add' >"$RUNNER_TEMP/releases.json"
@@ -112,7 +98,43 @@ jobs:
           rm -f "$RUNNER_TEMP/releases.json"
           echo "fetched $(ls "$WORK" | wc -l) file(s)"
 
+      - name: Hand the files to the check job
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: pair-${{ inputs.pair_id }}-inputs
+          path: ${{ runner.temp }}/pair-work
+          retention-days: 1
+          if-no-files-found: error
+
+  check:
+    needs: fetch
+    runs-on: ubuntu-latest
+    # The most a job may run: three tools at the limit, plus fetching the tools and building cadmpeg.
+    timeout-minutes: 360
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the checker
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          sparse-checkout: tools/pair-check
+          persist-credentials: false
+
+      - name: Validate inputs
+        run: tools/pair-check/validate.sh
+
+      - name: Take the pair's files
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: pair-${{ inputs.pair_id }}-inputs
+          path: ${{ runner.temp }}/pair-work
+
+      - name: Output folder
+        run: mkdir -m 700 "$OUT"
+
       - name: Fetch solidcraft-cli
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           # As portal/deploy/solidcraft-cli-update.sh: the Linux tarball must match SHA256SUMS.txt.

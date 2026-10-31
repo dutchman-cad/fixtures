@@ -44,6 +44,10 @@ Public test files live in `files/<program>/<version>/`, one file per recipe and 
 
 Today that is the FreeCAD 0.21.2, 1.0.2, and 1.1.4 sets, which we make from the recipes. Volunteer files join only when their sender chose CC0, and only after a check that nothing private is inside them. The release zips are built from these folders (`tools/release/freecad-zips.sh`), so the two always match.
 
+## Checking public pairs
+
+Public (CC0) pairs are checked on GitHub's own runners, with the same tools and the same steps as private ones: the CAD file and its STEP export are read by cadmpeg, measured by SolidCraft, and compared. Each check leaves a short result file, the tool versions it used, and a preview picture, and keeps them for a week. The design files themselves are never attached to a check. The steps are in `.github/workflows/pair-check.yml` and `tools/pair-check/`.
+
 ## Help
 
 Ask anything in the [Dutchman CAD Discord](https://discord.gg/yTcseBEdeu), or use the team chat inside the portal. The latest recipe booklet (PDF) is linked from the portal. Already helping and lost your link? Ask in Discord for a new one.

@@ -1,0 +1,181 @@
+name: Check a public pair
+
+# Checks ONE public (CC0) fixture pair with the same tools and steps as the private checker
+# (tools/pair-check/pair_check.py mirrors the portal's fixture-check). The inputs are the files of
+# one pair, uploaded as assets of a draft release in this repository; the result is the run
+# artifact `pair-<id>-result` (result.json, logs, and a preview picture). The design files are
+# never uploaded as artifacts.
+
+on:
+  workflow_dispatch:
+    inputs:
+      pair_id:
+        description: Pair number (digits)
+        required: true
+        type: number
+      release_tag:
+        description: Tag of the draft release that holds the files
+        required: true
+        type: string
+      native_asset:
+        description: Asset name of the CAD file
+        required: true
+        type: string
+      step_asset:
+        description: Asset name of its STEP export (optional)
+        required: false
+        default: ""
+        type: string
+      cadmpeg_rev:
+        description: cadmpeg commit (7 to 40 hex digits)
+        required: true
+        type: string
+      solidcraft_version:
+        description: SolidCraft release, such as v0.28.0
+        required: true
+        type: string
+      timeout_secs:
+        description: Time limit for each tool, in seconds (at most 6000)
+        required: false
+        default: 3600
+        type: number
+
+# contents: write only because a DRAFT release and its assets are visible to tokens with push access
+# alone; the job never changes the repository or any release.
+permissions:
+  contents: write
+
+concurrency:
+  group: pair-check-${{ inputs.pair_id }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    # Three tools at the limit, plus the time to fetch the tools and build cadmpeg.
+    timeout-minutes: ${{ fromJSON(inputs.timeout_secs) * 3 / 60 + 45 }}
+    env:
+      # Values only ever reach scripts as environment variables, quoted there.
+      PAIR_ID: ${{ inputs.pair_id }}
+      RELEASE_TAG: ${{ inputs.release_tag }}
+      NATIVE_ASSET: ${{ inputs.native_asset }}
+      STEP_ASSET: ${{ inputs.step_asset }}
+      CADMPEG_REV: ${{ inputs.cadmpeg_rev }}
+      SOLIDCRAFT_VERSION: ${{ inputs.solidcraft_version }}
+      TIMEOUT_SECS: ${{ inputs.timeout_secs }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Validate inputs
+        run: |
+          set -euo pipefail
+          fail() { echo "::error::$1"; exit 1; }
+          [[ $PAIR_ID =~ ^[0-9]{1,9}$ ]] || fail "pair_id must be digits"
+          [[ $CADMPEG_REV =~ ^[0-9a-fA-F]{7,40}$ ]] || fail "cadmpeg_rev must be 7 to 40 hex digits"
+          [[ $SOLIDCRAFT_VERSION =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || fail "solidcraft_version must look like v0.28.0"
+          [[ $TIMEOUT_SECS =~ ^[0-9]{1,4}$ ]] && ((TIMEOUT_SECS >= 10 && TIMEOUT_SECS <= 6000)) \
+            || fail "timeout_secs must be 10 to 6000"
+          [[ $RELEASE_TAG =~ ^[A-Za-z0-9._-]{1,200}$ ]] || fail "release_tag has characters that are not allowed"
+          [[ $NATIVE_ASSET =~ ^[A-Za-z0-9._-]{1,200}$ ]] || fail "native_asset has characters that are not allowed"
+          [[ -z $STEP_ASSET || $STEP_ASSET =~ ^[A-Za-z0-9._-]{1,200}$ ]] || fail "step_asset has characters that are not allowed"
+          # The file type, as the portal stores it: ".prt.3" (a numbered save) is "prt".
+          if [[ $NATIVE_ASSET =~ \.[Pp][Rr][Tt]\.[0-9]+$ ]]; then ext=prt
+          elif [[ $NATIVE_ASSET =~ \.([A-Za-z0-9_]{1,16})$ ]]; then ext=${BASH_REMATCH[1]}
+          else fail "native_asset needs a file type"; fi
+          echo "NATIVE_EXT=$ext" >>"$GITHUB_ENV"
+          echo "HAS_STEP=$([[ -n $STEP_ASSET ]] && echo 1 || echo 0)" >>"$GITHUB_ENV"
+          echo "WORK=$RUNNER_TEMP/pair-work" >>"$GITHUB_ENV"
+          echo "OUT=$RUNNER_TEMP/pair-out" >>"$GITHUB_ENV"
+
+      - name: Check out the checker
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          sparse-checkout: tools/pair-check
+          persist-credentials: false
+
+      - name: Fetch the pair's files
+        run: |
+          set -euo pipefail
+          mkdir -m 700 "$WORK" "$OUT"
+          # A draft release has no tag yet, so it is found in the release list and its assets are
+          # downloaded by id.
+          gh api --paginate "repos/$GITHUB_REPOSITORY/releases?per_page=100" | jq -s 'add' >"$RUNNER_TEMP/releases.json"
+          fetch() { # asset name -> local file name
+            local id
+            id=$(jq -r --arg t "$RELEASE_TAG" --arg n "$1" \
+              '[.[] | select(.tag_name == $t) | .assets[] | select(.name == $n and .size <= 5368709120) | .id][0] // empty' \
+              "$RUNNER_TEMP/releases.json")
+            [[ $id =~ ^[0-9]+$ ]] || { echo "::error::no asset named $1 on release $RELEASE_TAG"; exit 1; }
+            gh api -H 'Accept: application/octet-stream' "repos/$GITHUB_REPOSITORY/releases/assets/$id" >"$WORK/$2"
+          }
+          fetch "$NATIVE_ASSET" "native.$NATIVE_EXT"
+          [[ $HAS_STEP == 0 ]] || fetch "$STEP_ASSET" reference.step
+          rm -f "$RUNNER_TEMP/releases.json"
+          echo "fetched $(ls "$WORK" | wc -l) file(s)"
+
+      - name: Fetch solidcraft-cli
+        run: |
+          set -euo pipefail
+          # As portal/deploy/solidcraft-cli-update.sh: the Linux tarball must match SHA256SUMS.txt.
+          ver=${SOLIDCRAFT_VERSION#v}
+          tarball="solidcraft-$ver-linux-x86_64.tar.gz"
+          d="$RUNNER_TEMP/solidcraft"
+          mkdir "$d"
+          gh release download "$SOLIDCRAFT_VERSION" -R tangency-labs/solidcraft -D "$d" -p "$tarball" -p SHA256SUMS.txt
+          (cd "$d" && grep -E "^[0-9a-f]{64} [ *]$tarball\$" SHA256SUMS.txt | sha256sum -c --status -) \
+            || { echo "::error::$tarball does not match the release's SHA256SUMS.txt"; exit 1; }
+          tar -xzf "$d/$tarball" -C "$d" "solidcraft-$ver-linux-x86_64/bin/solidcraft-cli"
+          cli="$d/solidcraft-$ver-linux-x86_64/bin/solidcraft-cli"
+          [[ $("$cli" --version 2>/dev/null | head -1) == "solidcraft-cli $ver" ]] \
+            || { echo "::error::the downloaded CLI does not report version $ver"; exit 1; }
+          echo "SOLIDCRAFT_CLI=$cli" >>"$GITHUB_ENV"
+
+      - name: Software renderer libraries
+        # The preview is drawn on the CPU. Best effort: a missing library only skips the preview.
+        run: sudo apt-get install -y --no-install-recommends libvulkan1 mesa-vulkan-drivers libegl1 || true
+
+      - name: Fetch cadmpeg source
+        run: |
+          set -euo pipefail
+          git clone --quiet --filter=blob:none https://github.com/cadmpeg/cadmpeg.git "$RUNNER_TEMP/cadmpeg"
+          git -C "$RUNNER_TEMP/cadmpeg" checkout --quiet --detach "$CADMPEG_REV"
+          echo "cadmpeg at $(git -C "$RUNNER_TEMP/cadmpeg" rev-parse HEAD)"
+
+      - name: Cache cadmpeg build
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            ${{ runner.temp }}/cadmpeg/target
+          key: cadmpeg-build-${{ runner.os }}-${{ inputs.cadmpeg_rev }}
+          restore-keys: |
+            cadmpeg-build-${{ runner.os }}-
+
+      - name: Build cadmpeg
+        timeout-minutes: 40
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/cadmpeg"
+          cargo build --release --locked -p cadmpeg
+          echo "CADMPEG=$RUNNER_TEMP/cadmpeg/target/release/cadmpeg" >>"$GITHUB_ENV"
+
+      - name: Check the pair
+        id: check
+        run: python3 -I tools/pair-check/pair_check.py "$WORK" "$OUT"
+
+      - name: Summary
+        if: always() && steps.check.conclusion == 'success'
+        run: |
+          {
+            echo "### Pair $PAIR_ID"
+            jq -r '"Outcome: \(.outcome). Verdict: \(.report.status // "none") (\(.report.reason // "no reason"))."' "$OUT/result.json"
+          } >>"$GITHUB_STEP_SUMMARY"
+
+      - name: Upload the result
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: pair-${{ inputs.pair_id }}-result
+          path: ${{ runner.temp }}/pair-out
+          retention-days: 7
+          if-no-files-found: error

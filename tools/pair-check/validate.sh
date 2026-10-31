@@ -7,6 +7,7 @@ fail() { echo "::error::$1"; exit 1; }
 [[ $SOLIDCRAFT_VERSION =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || fail "solidcraft_version must look like v0.28.0"
 [[ $TIMEOUT_SECS =~ ^[0-9]{1,4}$ ]] && ((TIMEOUT_SECS >= 10 && TIMEOUT_SECS <= 6000)) \
   || fail "timeout_secs must be 10 to 6000"
+[[ -z $REQUEST_ID || $REQUEST_ID =~ ^[A-Za-z0-9-]{1,64}$ ]] || fail "request_id has characters that are not allowed"
 [[ $RELEASE_TAG =~ ^[A-Za-z0-9._-]{1,200}$ ]] || fail "release_tag has characters that are not allowed"
 [[ $NATIVE_ASSET =~ ^[A-Za-z0-9._-]{1,200}$ ]] || fail "native_asset has characters that are not allowed"
 [[ -z $STEP_ASSET || $STEP_ASSET =~ ^[A-Za-z0-9._-]{1,200}$ ]] || fail "step_asset has characters that are not allowed"

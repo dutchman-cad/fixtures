@@ -170,8 +170,9 @@ jobs:
           git -C "$RUNNER_TEMP/cadmpeg" checkout --quiet --detach "$CADMPEG_REV"
           echo "cadmpeg at $(git -C "$RUNNER_TEMP/cadmpeg" rev-parse HEAD)"
 
-      - name: Cache cadmpeg build
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      - name: Restore cadmpeg build
+        id: cadmpeg-cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             ~/.cargo/registry
@@ -182,7 +183,10 @@ jobs:
             cadmpeg-build-${{ runner.os }}-
 
       - name: Build cadmpeg
-        timeout-minutes: 40
+        # With 2 jobs and no LTO (to stay inside 16 GB) a cold build takes longer than 40 minutes; both runs on
+        # 2026-11-21 after that change timed out. The build is saved to the cache right after it finishes (next
+        # step), so a cold build is paid once per cadmpeg revision, even if the pair check after it fails.
+        timeout-minutes: 150
         # The free runner (16 GB) was SIGTERMed (exit 143) about 5 minutes into this build on every run of
         # 2026-11-21, while cadmpeg's large codec crates compiled in parallel. Fewer parallel jobs and no
         # LTO lower the peak memory; they do not change what cadmpeg computes.
@@ -195,6 +199,16 @@ jobs:
           cd "$RUNNER_TEMP/cadmpeg"
           cargo build --release --locked -p cadmpeg
           echo "CADMPEG=$RUNNER_TEMP/cadmpeg/target/release/cadmpeg" >>"$GITHUB_ENV"
+
+      - name: Save cadmpeg build
+        if: steps.cadmpeg-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            ${{ runner.temp }}/cadmpeg/target
+          key: cadmpeg-build-${{ runner.os }}-${{ inputs.cadmpeg_rev }}
 
       - name: Check the pair
         id: check

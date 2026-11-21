@@ -2,7 +2,7 @@
 """Check one public (CC0) fixture pair with the same steps as the portal's pair checker.
 
 Mirrors the portal's `fixture-check` (src/bin/fixture-check.rs): `analyze` per file
-(cadmpeg check --json, cadmpeg convert --allow-errors, solidcraft-cli eval), `verdict`,
+(cadmpeg check --json, cadmpeg convert, solidcraft-cli eval), `verdict`,
 `pair_report`, `mesh_only_step`, the preview, and the `Report` shape. Standard library only.
 
 Usage: pair_check.py WORK_DIR OUT_DIR
@@ -274,8 +274,13 @@ def analyze(r, prefix, name):
             os.remove(os.path.join(r.work, n))
         except FileNotFoundError:
             pass
-    ok, _ = r.run(f"{prefix}.convert", r.cadmpeg, ["convert", name, "-o", "measure.step", "--allow-errors"],
-                  r.memory, r.limit())
+    # Same arguments as the portal's fixture-check: cadmpeg 0.6.12 writes the output when its check finds errors
+    # (and reports them) and has no --allow-errors flag any more (11-21: pairs 2 and 304 failed on it). A STEP
+    # reference is re-written for measuring in AP214, named explicitly.
+    args = ["convert", name, "-o", "measure.step"]
+    if name.lower().endswith((".step", ".stp")):
+        args += ["--to", "step:ap214"]
+    ok, _ = r.run(f"{prefix}.convert", r.cadmpeg, args, r.memory, r.limit())
     if not ok:
         raise FileErr("convert failed")
     ok, _ = r.run(f"{prefix}.eval", r.renderer, ["eval", "measure.step", "--json-out", "eval.json"],

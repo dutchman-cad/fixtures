@@ -183,6 +183,13 @@ jobs:
 
       - name: Build cadmpeg
         timeout-minutes: 40
+        # The free runner (16 GB) was SIGTERMed (exit 143) about 5 minutes into this build on every run of
+        # 2026-11-21, while cadmpeg's large codec crates compiled in parallel. Fewer parallel jobs and no
+        # LTO lower the peak memory; they do not change what cadmpeg computes.
+        env:
+          CARGO_BUILD_JOBS: "2"
+          CARGO_PROFILE_RELEASE_LTO: "false"
+          CARGO_PROFILE_RELEASE_CODEGEN_UNITS: "16"
         run: |
           set -euo pipefail
           cd "$RUNNER_TEMP/cadmpeg"

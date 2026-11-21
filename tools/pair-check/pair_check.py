@@ -218,7 +218,7 @@ def eval_measure(ev):
     bodies = ev.get("bodies") if isinstance(ev, dict) else None
     if not isinstance(bodies, list):
         raise bad
-    faces, volume = 0, 0.0
+    faces, volume, parts = 0, 0.0, []
     lo_all, hi_all = [float("inf")] * 3, [float("-inf")] * 3
     for b in bodies:
         f = get(b, "faces")
@@ -232,7 +232,9 @@ def eval_measure(ev):
             if lo is None or hi is None or hi < lo:
                 raise bad
             lo_all[i], hi_all[i] = min(lo_all[i], lo), max(hi_all[i], hi)
-    return {"bodies": len(bodies), "faces": faces, "volume": volume,
+        parts.append({"faces": f, "volume": vol,
+                      "dims": [finite(b["bbox"]["max"][i]) - finite(b["bbox"]["min"][i]) for i in range(3)]})
+    return {"bodies": len(bodies), "faces": faces, "volume": volume, "parts": parts,
             "bbox": None if not bodies else (lo_all, hi_all)}
 
 
@@ -251,6 +253,7 @@ def parse(check, ev):
     rev = gen if isinstance(gen, str) and len(gen) <= 150 and re.fullmatch(r"[A-Za-z0-9 ._+\-]*", gen) else None
     sev = lambda s: float(sum(1 for f in findings if isinstance(f, dict) and f.get("severity") == s))
     return {"rev": rev, "bodies": float(ev["bodies"]), "faces": float(ev["faces"]), "volume": ev["volume"],
+            "parts": ev["parts"],
             "bbox": bbox, "errors": sev("error"), "warnings": sev("warning"), "seconds": 0.0, "losses": codes}
 
 
@@ -325,6 +328,37 @@ def num(x):
     return str(int(x)) if x == int(x) else repr(x)
 
 
+def same_part(n, s):
+    """fixture-check.rs `same_part`: the whole-design rules, applied to one body."""
+    if n["volume"] is None or s["volume"] is None:
+        return False
+    tol = max(0.01, 1e-5 * sum(v * v for v in s["dims"]) ** 0.5)
+    return (n["faces"] == s["faces"] and abs(n["volume"] - s["volume"]) <= abs(s["volume"]) * 0.001
+            and all(abs(n["dims"][i] - s["dims"][i]) <= tol for i in range(3)))
+
+
+def extra_bodies(nat, stp):
+    """fixture-check.rs `extra_bodies`: volumes of the native bodies left over when EVERY STEP body is matched
+    by its own native body and the native side has more. None for anything else or without per-body data."""
+    n, s = len(nat["parts"]), len(stp["parts"])
+    if s == 0 or n <= s or n != nat["bodies"] or s != stp["bodies"]:
+        return None
+    used = [False] * n
+    for sp in stp["parts"]:
+        found = next((i for i in range(n) if not used[i] and same_part(nat["parts"][i], sp)), None)
+        if found is None:
+            return None
+        used[found] = True
+    return [p["volume"] if p["volume"] is not None else 0.0 for p, u in zip(nat["parts"], used) if not u]
+
+
+def incomplete_reason(extra):
+    more = max(0, len(extra) - 5)
+    return (f"pass, reference incomplete: every STEP body matched; the design has {len(extra)} more "
+            f"{'body' if len(extra) == 1 else 'bodies'} ({', '.join(f'{v:.1f}' for v in extra[:5])} mm3"
+            f"{f', and {more} more' if more else ''}) that the STEP doesn't contain")
+
+
 def verdict(nat, stp):
     if stp is not None and stp["bodies"] == 0:
         return "partial", TESSELLATED
@@ -341,6 +375,10 @@ def verdict(nat, stp):
         if a is not None and b is not None and abs(a - b) <= tol:
             continue
         if a is not None and b is not None:
+            if key == "bodies":
+                extra = extra_bodies(nat, stp)
+                if extra is not None:
+                    return "pass", incomplete_reason(extra)
             return "partial", f"{key}: native {num(a)} vs STEP {num(b)}"
         return "partial", (f"{key}: native {'unavailable' if a is None else num(a)} "
                            f"vs STEP {'unavailable' if b is None else num(b)}")
@@ -406,6 +444,12 @@ def pair_report(nat, step, step_path, rev):
     rep = Report(status, reason, rev)
     rep.add("native", nat)
     if stp is not None:
+        extra = extra_bodies(nat, stp) if status == "pass" and reason.startswith("pass, reference incomplete") else None
+        if extra is not None:
+            rep.metrics["reference_incomplete"] = 1.0
+            rep.metrics["extra_bodies"] = float(len(extra))
+            for i, v in enumerate(extra[:10]):
+                rep.metrics[f"extra_body_{i + 1}_volume_mm3"] = v
         rep.add("step", stp)
     return rep
 

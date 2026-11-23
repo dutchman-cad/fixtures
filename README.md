@@ -26,6 +26,8 @@ Drawings are wanted too: Fusion, Inventor, and SolidWorks drawings each have the
 
 FreeCAD is free and scriptable, so we make its sets ourselves from the same recipes: no FreeCAD files needed from volunteers. The sets for FreeCAD 0.21.2, 1.0.2, and 1.1.4 (parts, sheet metal, history recipes, FreeCAD-only recipes, and, from 1.0, assemblies) are [free to download (CC0)](https://github.com/dutchman-cad/fixtures/releases).
 
+**Fixture Builders** make a whole set inside the program in one run: <https://fixtures.dutchmancad.xyz/builders/>. Help script a program we can't run ourselves, starting with Creo (Creo.JS): see [builders/](builders/).
+
 Use something else? Tell us in [Discord](https://discord.gg/yTcseBEdeu) which program and year, and we'll add recipes for it.
 
 ## Want to help us improve?

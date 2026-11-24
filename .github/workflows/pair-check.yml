@@ -167,7 +167,12 @@ jobs:
         run: |
           set -euo pipefail
           git clone --quiet --filter=blob:none https://github.com/cadmpeg/cadmpeg.git "$RUNNER_TEMP/cadmpeg"
-          git -C "$RUNNER_TEMP/cadmpeg" checkout --quiet --detach "$CADMPEG_REV"
+          # A pinned revision can be a pull request commit that no branch holds any more (squash-merged or the branch
+          # deleted); a clone has no pull request refs, so fetch them before giving up.
+          if ! git -C "$RUNNER_TEMP/cadmpeg" rev-parse --quiet --verify "$CADMPEG_REV^{commit}" >/dev/null; then
+            git -C "$RUNNER_TEMP/cadmpeg" fetch --quiet origin '+refs/pull/*/head:refs/remotes/origin/pr/*'
+          fi
+          git -C "$RUNNER_TEMP/cadmpeg" checkout --quiet --detach "$CADMPEG_REV^{commit}"
           echo "cadmpeg at $(git -C "$RUNNER_TEMP/cadmpeg" rev-parse HEAD)"
 
       - name: Restore cadmpeg build

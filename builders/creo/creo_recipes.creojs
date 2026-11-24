@@ -1,0 +1,203 @@
+// Creo Fixture Builder: one function per design. Generated once from creo_fixtures.json; this file is yours to edit.
+// Each function gets ctx (KIT.md, "Writing a design function") and returns the model it built, or calls
+// ctx.notScripted("<the Creo fact that stops it>"). For a design left commented out, the parent opens your
+// hand-made file when there is one, makes a twin whose only change is one number from its base, or reports
+// it not scripted. Original code only: never paste PTC sample code here.
+var RECIPES = {
+  // P01a: Sketch on XY: rectangle 20 (X) × 30 (Y) centred on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1
+  // Template route, as an example: a block you made once by hand and saved as template_block.prt in this
+  // folder (20 x 30 x 10, the extrude depth its only 10 mm dimension), copied and edited to the recipe.
+  // P01a: (ctx) => ctx.fromTemplate('template_block.prt', [[10, 10]]),
+  // P01b: extrude 12
+  // P01b: (ctx) => ctx.notScripted('not written yet'),
+  // P02a: Sketch on XZ: rectangle from x=20 to x=30, z=0 to z=40, so the ring sits above the XY plane. Revolve 360° about Z. Fig. 2
+  // P02a: (ctx) => ctx.notScripted('not written yet'),
+  // P02b: angle 270°
+  // P02b: (ctx) => ctx.notScripted('not written yet'),
+  // P03a: Copy of P01a. Simple hole Ø5 through all, at the centre of the top face (0, 0, 10).
+  // P03a: (ctx) => ctx.notScripted('not written yet'),
+  // P03b: counterbore Ø9, depth 3
+  // P03b: (ctx) => ctx.notScripted('not written yet'),
+  // P04a: Copy of P01a. Fillet the vertical edge at x = +10, y = +15, R2. Fig. 1
+  // P04a: (ctx) => ctx.notScripted('not written yet'),
+  // P04b: R3
+  // P04b: (ctx) => ctx.notScripted('not written yet'),
+  // P04c: add the vertical edge at x = −10, y = +15 to the same fillet
+  // P04c: (ctx) => ctx.notScripted('not written yet'),
+  // P04d: edit a's fillet to a variable radius (Variable tab) on the same vertical edge (x = +10, y = +15): R1 at its bottom end (z = 0, on the XY plane) and R3
+  // P04d: (ctx) => ctx.notScripted('not written yet'),
+  // P04e: from d: edit the same variable-radius fillet on the vertical edge at x = +10, y = +15, changing only the two radii: R3 at its bottom end (z = 0, on th
+  // P04e: (ctx) => ctx.notScripted('not written yet'),
+  // P05a: Copy of P01a. Chamfer the top edge along X at y = +15, z = 10, distance 1. Fig. 1
+  // P05a: (ctx) => ctx.notScripted('not written yet'),
+  // P05b: 1.5
+  // P05b: (ctx) => ctx.notScripted('not written yet'),
+  // P05c: edit a's chamfer to two unequal distances on the same edge (the top edge along X at y = +15, z = 10): Distance 1 = 1, Distance 2 = 2. Leave the sides 
+  // P05c: (ctx) => ctx.notScripted('not written yet'),
+  // P05d: from c: edit the chamfer, press Flip once, so the 1 and the 2 swap faces, OK. Change nothing else, and write on the card which face got the 2
+  // P05d: (ctx) => ctx.notScripted('not written yet'),
+  // P05e: edit a's chamfer to Distance and Angle on the same edge: Distance 2, Angle 30°. If your app asks for a face, pick the top face (z = 10). Leave the sid
+  // P05e: (ctx) => ctx.notScripted('not written yet'),
+  // P05f: from e: edit the chamfer, press Flip once (or, if there is no Flip, pick the +Y end face instead of the top face), OK, so the 2 runs along the other f
+  // P05f: (ctx) => ctx.notScripted('not written yet'),
+  // P06a: Copy of P01a. Shell, remove the top face (z = 10), thickness 1.5, inside.
+  // P06a: (ctx) => ctx.notScripted('not written yet'),
+  // P06b: 2
+  // P06b: (ctx) => ctx.notScripted('not written yet'),
+  // P07a: Plate x 0…60, y 0…40, z 0…5. One Ø4 hole at (5, 5). Rectangular pattern 3 along +X × 2 along +Y, spacing 10.
+  // P07a: (ctx) => ctx.notScripted('not written yet'),
+  // P07b: 4 × 2
+  // P07b: (ctx) => ctx.notScripted('not written yet'),
+  // P08a: Disc Ø60 × 5 centred on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z.
+  // P08a: (ctx) => ctx.notScripted('not written yet'),
+  // P08b: 8
+  // P08b: (ctx) => ctx.notScripted('not written yet'),
+  // P09a: Copy of P01a. Boss 5×5×5 centred on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0).
+  // P09a: (ctx) => ctx.notScripted('not written yet'),
+  // P09b: boss 6 (along X) × 5 × 5
+  // P09b: (ctx) => ctx.notScripted('not written yet'),
+  // P10a: Path on XY: line (0,0) → (40,0) → (40,30), R10 sketch fillet at (40,0). Circle Ø4 on a plane normal to its start. Sweep.
+  // P10a: (ctx) => ctx.notScripted('not written yet'),
+  // P10b: circle Ø5
+  // P10b: (ctx) => ctx.notScripted('not written yet'),
+  // P11a: Square 20 × 20 centred on the origin on XY. Circle Ø10 centred on the Z axis on a work plane offset +30. Loft.
+  // P11a: (ctx) => ctx.notScripted('not written yet'),
+  // P11b: offset 40
+  // P11b: (ctx) => ctx.notScripted('not written yet'),
+  // P12a: User parameter plate_w = 20 mm. Rectangle plate_w × 30, extrude plate_w/2.
+  // P12a: (ctx) => ctx.notScripted('not written yet'),
+  // P12b: plate_w = 25
+  // P12b: (ctx) => ctx.notScripted('not written yet'),
+  // P13a: Work plane offset +15 from XY. Circle Ø10 centred on the Z axis, extrude 5 upward.
+  // P13a: (ctx) => ctx.notScripted('not written yet'),
+  // P13b: offset 20
+  // P13b: (ctx) => ctx.notScripted('not written yet'),
+  // P14a: 3D sketch: polyline (0,0,0) → (20,0,0) → (20,20,10). Sweep a Ø3 circle along it.
+  // P14a: (ctx) => ctx.notScripted('not written yet'),
+  // P14b: last point z = 15
+  // P14b: (ctx) => ctx.notScripted('not written yet'),
+  // P15a: Copy of P01a. Set the part appearance to the built-in red.
+  // P15a: (ctx) => ctx.notScripted('not written yet'),
+  // P15b: also make the top face blue
+  // P15b: (ctx) => ctx.notScripted('not written yet'),
+  // P16a: Pin: cylinder Ø5 × 20 (for the assembly recipes).
+  // P16a: (ctx) => ctx.notScripted('not written yet'),
+  // S01a: Face from the rectangle x 0…100, y 0…60 on XY, thickness upward.
+  // S01a: (ctx) => ctx.notScripted('not written yet'),
+  // S01b: thickness 2.5 Reference drawing (PNG)
+  // S01b: (ctx) => ctx.notScripted('not written yet'),
+  // S02a: S01a + Flange on the top edge along X at y = 60, height 20, angle 90°, flange going up. Fig. 3, 4
+  // S02a: (ctx) => ctx.notScripted('not written yet'),
+  // S02b: height 25 Reference drawing (PNG)
+  // S02b: (ctx) => ctx.notScripted('not written yet'),
+  // S02c: angle 60° Reference drawing (PNG)
+  // S02c: (ctx) => ctx.notScripted('not written yet'),
+  // S02d: change only the height datum, i.e. which face the 20 is measured from (Height Extents → Measurement; Fig. 3), keep 20 and 90°; note which option Refer
+  // S02d: (ctx) => ctx.notScripted('not written yet'),
+  // S02e: change only the bend position (Fig. 4); note which option Reference drawing (PNG)
+  // S02e: (ctx) => ctx.notScripted('not written yet'),
+  // S02f: change only the flange's width: Width Extents type Width, Offset 20 from the corner at x = 0, Width 50, so the flange spans x 20…70 Reference drawing 
+  // S02f: (ctx) => ctx.notScripted('not written yet'),
+  // S02g: change only the flange's width: Width Extents type Offset, Offset 1 is 10 from x = 0 and Offset 2 is 30 from x = 100, so the flange spans x 10…70 Refe
+  // S02g: (ctx) => ctx.notScripted('not written yet'),
+  // S02h: change only the bend relief depth to 1 (Bend tab, Relief Depth), shape and width left as they come
+  // S02h: (ctx) => ctx.notScripted('not written yet'),
+  // S02i: change only the bend transition (Bend tab, Bend Transition) to Arc, bend relief left as it comes. If it already shows Arc, choose Straight Line instea
+  // S02i: (ctx) => ctx.notScripted('not written yet'),
+  // S03a: S01a + one Flange feature on the top edges at y = 60 and at x = 100, height 20, bend radius 1, meeting at the corner (100, 60). Fig. 5
+  // S03a: (ctx) => ctx.notScripted('not written yet'),
+  // S03b: relief shape square Reference drawing (PNG)
+  // S03b: (ctx) => ctx.notScripted('not written yet'),
+  // S03c: tear
+  // S03c: (ctx) => ctx.notScripted('not written yet'),
+  // S03d: relief size 5 Reference drawing (PNG)
+  // S03d: (ctx) => ctx.notScripted('not written yet'),
+  // S03e: corner gap 0.8 Reference drawing (PNG)
+  // S03e: (ctx) => ctx.notScripted('not written yet'),
+  // S03f: on the Bend tab (not the Corner tab), bend relief shape round, its width as it comes; corner settings untouched
+  // S03f: (ctx) => ctx.notScripted('not written yet'),
+  // S04a: S02a + single Hem on the flange's free (top) edge, folded toward −Y, gap 1, Length 8.
+  // S04a: (ctx) => ctx.notScripted('not written yet'),
+  // S04b: gap 1.5
+  // S04b: (ctx) => ctx.notScripted('not written yet'),
+  // S04c: type Double, its other values as they come
+  // S04c: (ctx) => ctx.notScripted('not written yet'),
+  // S04d: type Teardrop, its other values as they come
+  // S04d: (ctx) => ctx.notScripted('not written yet'),
+  // S04e: type Rolled, its other values as they come
+  // S04e: (ctx) => ctx.notScripted('not written yet'),
+  // S04f: the same single hem folded toward +Y (flip its direction)
+  // S04f: (ctx) => ctx.notScripted('not written yet'),
+  // S04g: the single hem with Length 12
+  // S04g: (ctx) => ctx.notScripted('not written yet'),
+  // S05a: S03a + Create Flat Pattern, then Go To Folded Part, save.
+  // S05a: (ctx) => ctx.notScripted('not written yet'),
+  // S06a: S02a with bend relief shape round, relief width 3.
+  // S06a: (ctx) => ctx.notScripted('not written yet'),
+  // S06b: straight Reference drawing (PNG)
+  // S06b: (ctx) => ctx.notScripted('not written yet'),
+  // S06c: relief shape back to the default (as S02a has it), width 3 kept
+  // S06c: (ctx) => ctx.notScripted('not written yet'),
+  // S06d: relief width back to the default (as S02a has it), shape round kept
+  // S06d: (ctx) => ctx.notScripted('not written yet'),
+  // S07a: S01a + Corner Round R3 on the corner at (100, 60).
+  // S07a: (ctx) => ctx.notScripted('not written yet'),
+  // S07b: R5 Reference drawing (PNG)
+  // S07b: (ctx) => ctx.notScripted('not written yet'),
+  // S07c: R3 on all four corners of the face, in one Corner Round Reference drawing (PNG)
+  // S07c: (ctx) => ctx.notScripted('not written yet'),
+  // S13a: High priorityS01a + a Hole Ø6 through at (10, 10).
+  // S13a: (ctx) => ctx.notScripted('not written yet'),
+  // S13b: add a Rectangular Pattern of the hole: 3 along +X, spacing 15, so holes at x 10, 25, and 40 Reference drawing (PNG)
+  // S13b: (ctx) => ctx.notScripted('not written yet'),
+  // S13c: from b: add a Work Plane offset 50 from the YZ plane, then Mirror the hole and the pattern about it, so there are six holes (x 60, 75, and 90 too) Ref
+  // S13c: (ctx) => ctx.notScripted('not written yet'),
+  // S13d: from c: Create Flat Pattern, then Go To Folded Part, save Reference drawing (PNG)
+  // S13d: (ctx) => ctx.notScripted('not written yet'),
+  // A01a: Place P01a and P02a, no constraints.
+  // A01a: (ctx) => ctx.notScripted('not written yet'),
+  // A01b: unground P01a
+  // A01b: (ctx) => ctx.notScripted('not written yet'),
+  // A01c: ground both
+  // A01c: (ctx) => ctx.notScripted('not written yet'),
+  // A01d: hide P02a (visibility off)
+  // A01d: (ctx) => ctx.notScripted('not written yet'),
+  // A01e: suppress P02a
+  // A01e: (ctx) => ctx.notScripted('not written yet'),
+  // A02a: A01a + one Mate: P02a bottom face (z = 0) to P01a top face (z = 10), offset 0.
+  // A02a: (ctx) => ctx.notScripted('not written yet'),
+  // A02b: offset 5
+  // A02b: (ctx) => ctx.notScripted('not written yet'),
+  // A03a: A01a + one Flush: P02a bottom face to P01a bottom face, offset 0.
+  // A03a: (ctx) => ctx.notScripted('not written yet'),
+  // A03b: offset 5
+  // A03b: (ctx) => ctx.notScripted('not written yet'),
+  // A04a: A01a + one Angle constraint between P01a top face and P02a top face, 30°.
+  // A04a: (ctx) => ctx.notScripted('not written yet'),
+  // A04b: 45°
+  // A04b: (ctx) => ctx.notScripted('not written yet'),
+  // A05a: P03a + P16. Insert: pin bottom circular edge into the hole top edge.
+  // A05a: (ctx) => ctx.notScripted('not written yet'),
+  // A05b: offset 2
+  // A05b: (ctx) => ctx.notScripted('not written yet'),
+  // A06a: P01a + P16. Tangent: the pin's cylindrical face to P01a top face (z = 10).
+  // A06a: (ctx) => ctx.notScripted('not written yet'),
+  // A06b: outside ↔ inside
+  // A06b: (ctx) => ctx.notScripted('not written yet'),
+  // A07a: A01a + rectangular component pattern of P02a, 3 × 1, spacing 70.
+  // A07a: (ctx) => ctx.notScripted('not written yet'),
+  // A07b: 4 × 1
+  // A07b: (ctx) => ctx.notScripted('not written yet'),
+  // A08a: A01a + a second model state where P02a is suppressed. Save with the master active.
+  // A08a: (ctx) => ctx.notScripted('not written yet'),
+  // A08b: save with the second state active
+  // A08b: (ctx) => ctx.notScripted('not written yet'),
+  // A09a: A01a + a View Representation "View1" where P02a is hidden. Save with Default active.
+  // A09a: (ctx) => ctx.notScripted('not written yet'),
+  // A09b: save with View1 active
+  // A09b: (ctx) => ctx.notScripted('not written yet'),
+  // A10a: A01a + colour override in the assembly: P01a blue.
+  // A10a: (ctx) => ctx.notScripted('not written yet'),
+  // A10b: green
+  // A10b: (ctx) => ctx.notScripted('not written yet'),
+};

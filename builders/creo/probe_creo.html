@@ -1,0 +1,132 @@
+<!doctype html>
+<!-- Creo.JS probe for the Fixture Builders: what this Creo can do through Creo.JS. Open it in Creo's own browser,
+     next to the creojs.js of your Creo.JS install, with an EMPTY folder as Creo's working directory. It makes an empty
+     part and assembly named cfprobe_* in that folder, saves them, exports STEP, and erases them from the session
+     again. It never opens or changes your own models. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Creo.JS probe</title>
+<style>
+  body { font: 14px/1.4 system-ui, sans-serif; margin: 16px; background: #fff; color: #111; }
+  button { font-size: 14px; padding: 6px 14px; margin-right: 8px; }
+  textarea { width: 100%; height: 360px; font: 12px/1.3 monospace; }
+  .muted { color: #555; }
+</style>
+<script src="creojs.js"></script>
+<script type="text/creojs" id="probe.creojs">
+// Runs inside Creo (Creo.JS engine). Returns the report as JSON text.
+function creoProbe(version) {
+  const report = { probe: version, engine: 'Creo.JS', checks: {} };
+  let passed = 0, total = 0;
+  // Home folders become %USERPROFILE%: nothing personal leaves the page.
+  const scrub = (text) => String(text).replace(/[A-Za-z]:\\Users\\[^\\\/"]+/gi, '%USERPROFILE%').replace(/\/(home|Users)\/[^\/"]+/g, '/%USERPROFILE%');
+  function check(name, fn) {
+    total++;
+    const t0 = Date.now();
+    let row;
+    try {
+      const v = fn();
+      row = { status: 'ok' };
+      if (v !== undefined && v !== null) row.value = JSON.parse(scrub(JSON.stringify(v)));
+      passed++;
+    } catch (e) {
+      const type = (e && e.constructor && e.constructor.name) || 'Error';
+      row = { status: 'failed', error: scrub(type + ': ' + ((e && (e.message || e.toString())) || e)) };
+    }
+    row.seconds = (Date.now() - t0) / 1000;
+    report.checks[name] = row;
+    return row.status === 'ok';
+  }
+  const keep = {};
+  check('globals', () => ({
+    pfcGetCurrentSession: typeof pfcGetCurrentSession, pfcCreate: typeof pfcCreate,
+    writeFileAsString: typeof writeFileAsString, readFileAsString: typeof readFileAsString, require: typeof require,
+    pfcExportType: typeof pfcExportType, pfcFeatureType: typeof pfcFeatureType
+  }));
+  check('session', () => { keep.s = pfcGetCurrentSession(); return typeof keep.s; });
+  const s = keep.s;
+  if (!s) return JSON.stringify(Object.assign(report, { passed, total }));
+  check('working_folder', () => s.GetCurrentDirectory());
+  check('config_options', () => {
+    const c = {};
+    for (const o of ['template_solidpart', 'template_designasm', 'template_sheetmetalpart', 'pro_unit_length', 'web_link_file_read']) {
+      try { c[o] = s.GetConfigOption(o); } catch (e) { c[o] = 'unreadable'; }
+    }
+    return c;
+  });
+  check('session_members', () => {
+    const names = [];
+    for (let o = s; o && names.length < 600; o = Object.getPrototypeOf(o)) names.push(...Object.getOwnPropertyNames(o));
+    return Array.from(new Set(names)).sort();
+  });
+  check('create_part', () => { keep.p = s.CreatePart('cfprobe_p'); return keep.p.FileName; });
+  const p = keep.p;
+  if (p) {
+    check('part_features', () => {
+      const f = p.ListFeaturesByType(false, void 0), out = [];
+      for (let i = 0; i < f.Count; i++) out.push(f.Item(i).FeatTypeName);
+      return out;
+    });
+    check('create_feature_call', () => { p.CreateFeature(null); return 'returned'; });
+    check('create_parameter', () => {
+      const prm = p.CreateParam('cf_probe_w', pfcCreateDoubleParamValue(20.0));
+      return prm.Value.DoubleValue;
+    });
+    check('save_part', () => { p.Save(); return 'saved'; });
+    check('mass_property', () => { const m = p.GetMassProperty(void 0); return { volume: m.Volume, area: m.SurfaceArea }; });
+    check('export_step_part', () => { p.ExportIntf3D('cfprobe_p', pfcExportType.EXPORT_STEP, void 0); return 'exported'; });
+    check('copy_part', () => { keep.q = p.CopyAndRetrieve('cfprobe_q', null); keep.q.Save(); return keep.q.FileName; });
+    check('create_assembly', () => { keep.a = s.CreateAssembly('cfprobe_a'); return keep.a.FileName; });
+    if (keep.a) {
+      check('assemble_component', () => keep.a.AssembleComponent(p, void 0).FeatTypeName);
+      check('save_assembly', () => { keep.a.Save(); return 'saved'; });
+      check('export_step_assembly', () => { keep.a.ExportIntf3D('cfprobe_a', pfcExportType.EXPORT_STEP, void 0); return 'exported'; });
+    }
+    check('erase_probe_models', () => {
+      for (const m of [keep.a, keep.q, p]) { if (m) { try { m.Erase(); } catch (e) { } } }
+      return 'erased';
+    });
+  }
+  report.passed = passed;
+  report.total = total;
+  const text = JSON.stringify(report, null, 1);
+  if (typeof writeFileAsString === 'function') {
+    try { writeFileAsString('creo_probe.json', text); report.saved = 'creo_probe.json'; } catch (e) { }
+  }
+  return text;
+}
+</script>
+<script>
+  const PROBE_VERSION = '2026.11.23.1';
+  function show(text) {
+    document.getElementById('out').value = text;
+    try {
+      const r = JSON.parse(text);
+      document.getElementById('summary').textContent = 'Creo probe: ' + r.passed + ' of ' + r.total +
+        ' checks passed. Next: click Download (or copy the text) and send it to Dutchy in a Discord direct message.';
+    } catch (e) { document.getElementById('summary').textContent = 'The probe returned text that is not a report; send it as it is.'; }
+  }
+  function run() {
+    document.getElementById('summary').textContent = 'Running (about a minute)...';
+    try {
+      CreoJS.creoProbe(PROBE_VERSION).then(show, (e) => show('Creo.JS call failed: ' + e));
+    } catch (e) { show('Creo.JS is not reachable from this page: ' + e + '. Is creojs.js next to this file?'); }
+  }
+  function download() {
+    const blob = new Blob([document.getElementById('out').value], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'creo_probe_js.json';
+    a.click();
+  }
+</script>
+</head>
+<body>
+<h1>Creo.JS probe</h1>
+<p class="muted">Before you click Run: set Creo's working directory to an empty folder (File, Manage Session, Select Working Directory).</p>
+<p><button onclick="run()">Run</button><button onclick="download()">Download</button></p>
+<p id="summary"></p>
+<textarea id="out" readonly></textarea>
+</body>
+</html>

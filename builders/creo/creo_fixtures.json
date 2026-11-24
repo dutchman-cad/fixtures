@@ -1,6 +1,6 @@
 {
  "app": "Creo",
- "builder": "2026.11.24.1",
+ "builder": "2026.11.24.2",
  "creo_tools": [
   [
    "Planes XY · XZ · YZ (coordinates as written)",
@@ -7919,6 +7919,9004 @@
    "uses": [
     "p01a.prt",
     "p02a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       55.0,
+       15.0,
+       10.0
+      ]
+     ],
+     "dof": 6,
+     "free": {
+      "block2": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "solids": 2
+    }
+   },
+   "file": "a11a.asm",
+   "id": "A11a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       40,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a",
+      "rotate": {
+       "axis": [
+        0,
+        0,
+        1
+       ],
+       "deg": 90
+      }
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a11a.step",
+   "steps": "P01a placed twice, same part, different placements. Instance \"block\" at (0, 0, 0), grounded. Instance \"block2\" at (40, 0, 0) turned 90° about Z, not grounded. Free motion: block2 turns about X, Y and Z and moves along X, Y and Z (block is grounded).How: Place Component P01a twice (the second is another instance of the same file, not a copy). Move the second to x = 40 and rotate it 90° about Z by typing the numbers (Move/Rotate component, Component Placement, Transform).",
+   "template": "mmns_asm_design_abs",
+   "title": "P01a placed twice, same part, different placements.",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       50.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 6,
+     "free": {
+      "block2": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         -1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        40.0,
+        0.0,
+        20.0
+       ]
+      }
+     ],
+     "solids": 2
+    }
+   },
+   "file": "a11b.asm",
+   "id": "A11b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       40,
+       0,
+       20
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a",
+      "rotate": {
+       "axis": [
+        1,
+        0,
+        0
+       ],
+       "deg": 180
+      }
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a11b.step",
+   "steps": "P01a placed twice, same part, different placements. Instance \"block\" at (0, 0, 0), grounded. Instance \"block2\" at (40, 0, 0) turned 90° about Z, not grounded. Free motion: block2 turns about X, Y and Z and moves along X, Y and Z (block is grounded).How: Place Component P01a twice (the second is another instance of the same file, not a copy). Move the second to x = 40 and rotate it 90° about Z by typing the numbers (Move/Rotate component, Component Placement, Transform).",
+   "template": "mmns_asm_design_abs",
+   "title": "P01a placed twice, same part, different placements.",
+   "twin_change": "block2 at (40, 0, 20) turned 180° about X (upside down, still z 10…20)",
+   "twin_of": "A11a",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       -10.0
+      ],
+      [
+       50.0,
+       15.0,
+       10.0
+      ]
+     ],
+     "dof": 6,
+     "free": {
+      "block2": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.0,
+         0.0,
+         1.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         -1.0,
+         0.0,
+         0.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "solids": 2
+    }
+   },
+   "file": "a11c.asm",
+   "id": "A11c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       40,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a",
+      "rotate": {
+       "axis": [
+        0,
+        1,
+        0
+       ],
+       "deg": 90
+      }
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a11c.step",
+   "steps": "P01a placed twice, same part, different placements. Instance \"block\" at (0, 0, 0), grounded. Instance \"block2\" at (40, 0, 0) turned 90° about Z, not grounded. Free motion: block2 turns about X, Y and Z and moves along X, Y and Z (block is grounded).How: Place Component P01a twice (the second is another instance of the same file, not a copy). Move the second to x = 40 and rotate it 90° about Z by typing the numbers (Move/Rotate component, Component Placement, Transform).",
+   "template": "mmns_asm_design_abs",
+   "title": "P01a placed twice, same part, different placements.",
+   "twin_change": "block2 at (40, 0, 0) turned 90° about Y (lying on its side, z −10…10)",
+   "twin_of": "A11a",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       70.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 6,
+     "free": {
+      "sub": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "sub/block",
+       "t": [
+        60.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "sub/pin",
+       "t": [
+        60.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "levels": 2,
+     "solids": 3
+    }
+   },
+   "file": "a12a.asm",
+   "id": "A12a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A12-sub",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "grounded": true,
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       60,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "sub",
+      "recipe": "A12-sub"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a12a.step",
+   "steps": "A nested subassembly, 2 levels. Subassembly A12-sub = P01a \"block\" at (0, 0, 0) + P16 \"pin\" at (0, 0, 10) (standing on the block's top face), both grounded in the sub. Top A12a = P02a \"ring\" at (0, 0, 0), grounded, + A12-sub placed at (60, 0, 0), not grounded. Free motion: the sub, as one rigid body, turns about X, Y, Z and moves along X, Y, Z (the ring is grounded). b: none.How: Make A12-sub first (new assembly, place P01a, place P16 and type its position, ground both, save). New top assembly: place P02a, then place A12-sub as a component (Insert Subassembly / Component / Part Instance). Move it to x = 60. Onshape: a subassembly is flexible by default, so make it rigid with Lock position / Group.",
+   "template": "mmns_asm_design_abs",
+   "title": "A nested subassembly, 2 levels.",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       70.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "sub/block",
+       "t": [
+        60.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P16a",
+       "path": "sub/pin",
+       "t": [
+        60.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "levels": 2,
+     "solids": 3
+    }
+   },
+   "file": "a12b.asm",
+   "id": "A12b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A12-sub",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "grounded": true,
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       60,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "sub",
+      "recipe": "A12-sub"
+     },
+     "type": "assembly"
+    },
+    {
+     "component": "sub",
+     "grounded": true,
+     "type": "assembly"
+    }
+   ],
+   "step": "a12b.step",
+   "steps": "A nested subassembly, 2 levels. Subassembly A12-sub = P01a \"block\" at (0, 0, 0) + P16 \"pin\" at (0, 0, 10) (standing on the block's top face), both grounded in the sub. Top A12a = P02a \"ring\" at (0, 0, 0), grounded, + A12-sub placed at (60, 0, 0), not grounded. Free motion: the sub, as one rigid body, turns about X, Y, Z and moves along X, Y, Z (the ring is grounded). b: none.How: Make A12-sub first (new assembly, place P01a, place P16 and type its position, ground both, save). New top assembly: place P02a, then place A12-sub as a component (Insert Subassembly / Component / Part Instance). Move it to x = 60. Onshape: a subassembly is flexible by default, so make it rigid with Lock position / Group.",
+   "template": "mmns_asm_design_abs",
+   "title": "A nested subassembly, 2 levels.",
+   "twin_change": "ground the sub in the top too",
+   "twin_of": "A12a",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       75.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 6,
+     "free": {
+      "sub": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "sub/block",
+       "t": [
+        60.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "sub/pin",
+       "t": [
+        60.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "levels": 2,
+     "solids": 3
+    }
+   },
+   "file": "a12c.asm",
+   "id": "A12c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A12-sub",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "grounded": true,
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       60,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "sub",
+      "recipe": "A12-sub",
+      "rotate": {
+       "axis": [
+        0,
+        0,
+        1
+       ],
+       "deg": 90
+      }
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a12c.step",
+   "steps": "A nested subassembly, 2 levels. Subassembly A12-sub = P01a \"block\" at (0, 0, 0) + P16 \"pin\" at (0, 0, 10) (standing on the block's top face), both grounded in the sub. Top A12a = P02a \"ring\" at (0, 0, 0), grounded, + A12-sub placed at (60, 0, 0), not grounded. Free motion: the sub, as one rigid body, turns about X, Y, Z and moves along X, Y, Z (the ring is grounded). b: none.How: Make A12-sub first (new assembly, place P01a, place P16 and type its position, ground both, save). New top assembly: place P02a, then place A12-sub as a component (Insert Subassembly / Component / Part Instance). Move it to x = 60. Onshape: a subassembly is flexible by default, so make it rigid with Lock position / Group.",
+   "template": "mmns_asm_design_abs",
+   "title": "A nested subassembly, 2 levels.",
+   "twin_change": "the sub placed at (60, 0, 0) turned 90° about Z",
+   "twin_of": "A12a",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       30.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "mid/ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "mid/pair/block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P16a",
+       "path": "mid/pair/pin",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "levels": 3,
+     "solids": 3
+    }
+   },
+   "file": "a13a.asm",
+   "id": "A13a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A13-pair",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "grounded": true,
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "subassembly": {
+      "file": "A13-mid",
+      "ops": [
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "ring",
+         "recipe": "P02a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "pair",
+         "recipe": "A13-pair"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "mid",
+      "recipe": "A13-mid"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a13a.step",
+   "steps": "A nested subassembly, 3 levels. A13-pair = P01a \"block\" at (0, 0, 0) + P16 \"pin\" at (0, 0, 10), both grounded. A13-mid = P02a \"ring\" at (0, 0, 0) + A13-pair at (0, 0, 0), both grounded. Top A13a = A13-mid at (0, 0, 0), grounded. The block and pin sit inside the ring (the block's corner is 18.03 from the axis, the ring's hole radius is 20). Free motion: none (everything is grounded). b: mid2, as one rigid body, turns about X, Y, Z and moves along X, Y, Z.How: Build bottom-up: pair, then mid, then the top; save each file under the name given. Onshape: make each subassembly rigid with Lock position / Group.",
+   "template": "mmns_asm_design_abs",
+   "title": "A nested subassembly, 3 levels.",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       110.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 6,
+     "free": {
+      "mid2": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "mid/ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "mid/pair/block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P16a",
+       "path": "mid/pair/pin",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P02a",
+       "path": "mid2/ring",
+       "t": [
+        80.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "mid2/pair/block",
+       "t": [
+        80.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "mid2/pair/pin",
+       "t": [
+        80.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "levels": 3,
+     "solids": 6
+    }
+   },
+   "file": "a13b.asm",
+   "id": "A13b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A13-pair",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "grounded": true,
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "subassembly": {
+      "file": "A13-mid",
+      "ops": [
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "ring",
+         "recipe": "P02a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "pair",
+         "recipe": "A13-pair"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "mid",
+      "recipe": "A13-mid"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       80,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "mid2",
+      "recipe": "A13-mid",
+      "rotate": {
+       "axis": [
+        0,
+        0,
+        1
+       ],
+       "deg": 90
+      }
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a13b.step",
+   "steps": "A nested subassembly, 3 levels. A13-pair = P01a \"block\" at (0, 0, 0) + P16 \"pin\" at (0, 0, 10), both grounded. A13-mid = P02a \"ring\" at (0, 0, 0) + A13-pair at (0, 0, 0), both grounded. Top A13a = A13-mid at (0, 0, 0), grounded. The block and pin sit inside the ring (the block's corner is 18.03 from the axis, the ring's hole radius is 20). Free motion: none (everything is grounded). b: mid2, as one rigid body, turns about X, Y, Z and moves along X, Y, Z.How: Build bottom-up: pair, then mid, then the top; save each file under the name given. Onshape: make each subassembly rigid with Lock position / Group.",
+   "template": "mmns_asm_design_abs",
+   "title": "A nested subassembly, 3 levels.",
+   "twin_change": "add a second A13-mid instance \"mid2\" at (80, 0, 0) turned 90° about Z, not grounded",
+   "twin_of": "A13a",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       10.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "joint": "rigid",
+     "solids": 2
+    }
+   },
+   "file": "a14a.asm",
+   "id": "A14a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a14a.step",
+   "steps": "High priorityRigid joint (no motion). P01a \"block\" at (0, 0, 0) grounded + P01a \"block2\" on top of it at (0, 0, 10), joined rigidly: block2's bottom face to block's top face, side faces aligned (x = ±10, y = ±15). 0 degrees of freedom. Free motion: none (0 degrees of freedom).How: Joint / Assemble: Rigid (Fusion, Inventor Joint, Onshape Fastened, Creo Rigid, FreeCAD Fixed). Constraint programs: three planar mates (bottom to top, then flush x = 10 and flush y = 15 between the two blocks), or Lock.",
+   "template": "mmns_asm_design_abs",
+   "title": "High priorityRigid joint (no motion).",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       15.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        5.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "joint": "rigid",
+     "solids": 2
+    }
+   },
+   "file": "a14b.asm",
+   "id": "A14b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       5,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "offset": 5,
+      "type": "flush"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a14b.step",
+   "steps": "High priorityRigid joint (no motion). P01a \"block\" at (0, 0, 0) grounded + P01a \"block2\" on top of it at (0, 0, 10), joined rigidly: block2's bottom face to block's top face, side faces aligned (x = ±10, y = ±15). 0 degrees of freedom. Free motion: none (0 degrees of freedom).How: Joint / Assemble: Rigid (Fusion, Inventor Joint, Onshape Fastened, Creo Rigid, FreeCAD Fixed). Constraint programs: three planar mates (bottom to top, then flush x = 10 and flush y = 15 between the two blocks), or Lock.",
+   "template": "mmns_asm_design_abs",
+   "title": "High priorityRigid joint (no motion).",
+   "twin_change": "block2 shifted 5 along +X inside the joint (offset), so at (5, 0, 10)",
+   "twin_of": "A14a",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       10.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         -1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "joint": "rigid",
+     "solids": 2
+    }
+   },
+   "file": "a14c.asm",
+   "id": "A14c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a",
+      "rotate": {
+       "axis": [
+        0,
+        0,
+        1
+       ],
+       "deg": 180
+      }
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         -10,
+         0,
+         5
+        ],
+        "normal": "-X"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         -15,
+         5
+        ],
+        "normal": "-Y"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a14c.step",
+   "steps": "High priorityRigid joint (no motion). P01a \"block\" at (0, 0, 0) grounded + P01a \"block2\" on top of it at (0, 0, 10), joined rigidly: block2's bottom face to block's top face, side faces aligned (x = ±10, y = ±15). 0 degrees of freedom. Free motion: none (0 degrees of freedom).How: Joint / Assemble: Rigid (Fusion, Inventor Joint, Onshape Fastened, Creo Rigid, FreeCAD Fixed). Constraint programs: three planar mates (bottom to top, then flush x = 10 and flush y = 15 between the two blocks), or Lock.",
+   "template": "mmns_asm_design_abs",
+   "title": "High priorityRigid joint (no motion).",
+   "twin_change": "block2 turned 180° about Z at (0, 0, 10): the shape looks the same, the matrix is kept",
+   "twin_of": "A14a",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       30.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 1,
+     "free": {
+      "block": {
+       "rot": [
+        "Z"
+       ],
+       "trans": []
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "joint": "revolute",
+     "joint_axis": [
+      0,
+      0,
+      1
+     ],
+     "limits": {
+      "rotation_deg": [
+       -45,
+       90
+      ]
+     },
+     "pose": {
+      "angle_deg": 0
+     },
+     "solids": 2
+    }
+   },
+   "file": "a15a.asm",
+   "id": "A15a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "ring",
+       "face": {
+        "contains": [
+         25,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block"
+      },
+      "b": {
+       "axis": "Z",
+       "component": "ring"
+      },
+      "type": "axis_align"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block",
+       "plane": "YZ"
+      },
+      "b": {
+       "component": "ring",
+       "plane": "YZ"
+      },
+      "limit": {
+       "axis": "Z",
+       "max": 90,
+       "min": -45
+      },
+      "type": "angle_limit"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a15a.step",
+   "steps": "High priorityA turning motion with rotation limits. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it, same origin (0, 0, 0), free to rotate about the Z axis through the ring's centre and nothing else, limited to −45° … +90°. Save at 0°. Free motion: block: rotation about Z; no translation.How: block's bottom face stays at z = 0 and its Z axis stays on the ring's Z axis; only the turn about Z is left. Use your program's own tools for that (see the tool table), and store the limits −45° and +90° where the program can; else say \"no limit\" on the card.",
+   "template": "mmns_asm_design_abs",
+   "title": "High priorityA turning motion with rotation limits.",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       30.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 1,
+     "free": {
+      "block": {
+       "rot": [
+        "Z"
+       ],
+       "trans": []
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.866025,
+         -0.5,
+         0.0
+        ],
+        [
+         0.5,
+         0.866025,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "joint": "revolute",
+     "joint_axis": [
+      0,
+      0,
+      1
+     ],
+     "limits": {
+      "rotation_deg": [
+       -45,
+       90
+      ]
+     },
+     "pose": {
+      "angle_deg": 30
+     },
+     "solids": 2
+    }
+   },
+   "file": "a15b.asm",
+   "id": "A15b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "block",
+      "recipe": "P01a",
+      "rotate": {
+       "axis": [
+        0,
+        0,
+        1
+       ],
+       "deg": 30
+      }
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "ring",
+       "face": {
+        "contains": [
+         25,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block"
+      },
+      "b": {
+       "axis": "Z",
+       "component": "ring"
+      },
+      "type": "axis_align"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block",
+       "plane": "YZ"
+      },
+      "b": {
+       "component": "ring",
+       "plane": "YZ"
+      },
+      "limit": {
+       "axis": "Z",
+       "max": 90,
+       "min": -45
+      },
+      "type": "angle_limit"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a15b.step",
+   "steps": "High priorityA turning motion with rotation limits. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it, same origin (0, 0, 0), free to rotate about the Z axis through the ring's centre and nothing else, limited to −45° … +90°. Save at 0°. Free motion: block: rotation about Z; no translation.How: block's bottom face stays at z = 0 and its Z axis stays on the ring's Z axis; only the turn about Z is left. Use your program's own tools for that (see the tool table), and store the limits −45° and +90° where the program can; else say \"no limit\" on the card.",
+   "template": "mmns_asm_design_abs",
+   "title": "High priorityA turning motion with rotation limits.",
+   "twin_change": "same, saved at +30° (block turned 30° counter-clockwise)",
+   "twin_of": "A15a",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       30.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 1,
+     "free": {
+      "block": {
+       "rot": [
+        "Z"
+       ],
+       "trans": []
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "joint": "revolute",
+     "joint_axis": [
+      0,
+      0,
+      1
+     ],
+     "limits": {
+      "rotation_deg": [
+       0,
+       180
+      ]
+     },
+     "pose": {
+      "angle_deg": 90
+     },
+     "solids": 2
+    }
+   },
+   "file": "a15c.asm",
+   "id": "A15c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "block",
+      "recipe": "P01a",
+      "rotate": {
+       "axis": [
+        0,
+        0,
+        1
+       ],
+       "deg": 90
+      }
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "ring",
+       "face": {
+        "contains": [
+         25,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block"
+      },
+      "b": {
+       "axis": "Z",
+       "component": "ring"
+      },
+      "type": "axis_align"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block",
+       "plane": "YZ"
+      },
+      "b": {
+       "component": "ring",
+       "plane": "YZ"
+      },
+      "limit": {
+       "axis": "Z",
+       "max": 180,
+       "min": 0
+      },
+      "type": "angle_limit"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a15c.step",
+   "steps": "High priorityA turning motion with rotation limits. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it, same origin (0, 0, 0), free to rotate about the Z axis through the ring's centre and nothing else, limited to −45° … +90°. Save at 0°. Free motion: block: rotation about Z; no translation.How: block's bottom face stays at z = 0 and its Z axis stays on the ring's Z axis; only the turn about Z is left. Use your program's own tools for that (see the tool table), and store the limits −45° and +90° where the program can; else say \"no limit\" on the card.",
+   "template": "mmns_asm_design_abs",
+   "title": "High priorityA turning motion with rotation limits.",
+   "twin_change": "limits 0° … 180°, saved at +90°",
+   "twin_of": "A15a",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       10.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 1,
+     "free": {
+      "block2": {
+       "rot": [],
+       "trans": [
+        "X"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "joint": "slider",
+     "joint_axis": [
+      1,
+      0,
+      0
+     ],
+     "limits": {
+      "travel_mm": [
+       -20,
+       20
+      ]
+     },
+     "pose": {
+      "travel_mm": 0
+     },
+     "solids": 2
+    }
+   },
+   "file": "a16a.asm",
+   "id": "A16a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "limit": {
+       "axis": "X",
+       "max": 20,
+       "min": -20
+      },
+      "type": "flush"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a16a.step",
+   "steps": "High priorityA sliding motion with travel limits. P01a \"block\" at (0, 0, 0), grounded + P01a \"block2\" sitting on it, free to slide along X and nothing else; its bottom face stays on block's top face and the y faces stay aligned. Travel limits −20 … +20 mm, measured as block2's x offset from the aligned position. Save at 0. Free motion: block2: translation along X; no rotation.How: use your program's own tools for a one-axis slide (see the tool table) and store the travel limits −20 and 20 where the program can.",
+   "template": "mmns_asm_design_abs",
+   "title": "High priorityA sliding motion with travel limits.",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       30.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 1,
+     "free": {
+      "block2": {
+       "rot": [],
+       "trans": [
+        "X"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        20.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "joint": "slider",
+     "joint_axis": [
+      1,
+      0,
+      0
+     ],
+     "limits": {
+      "travel_mm": [
+       -20,
+       20
+      ]
+     },
+     "pose": {
+      "travel_mm": 20
+     },
+     "solids": 2
+    }
+   },
+   "file": "a16b.asm",
+   "id": "A16b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       20,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "limit": {
+       "axis": "X",
+       "max": 20,
+       "min": -20
+      },
+      "type": "flush"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a16b.step",
+   "steps": "High priorityA sliding motion with travel limits. P01a \"block\" at (0, 0, 0), grounded + P01a \"block2\" sitting on it, free to slide along X and nothing else; its bottom face stays on block's top face and the y faces stay aligned. Travel limits −20 … +20 mm, measured as block2's x offset from the aligned position. Save at 0. Free motion: block2: translation along X; no rotation.How: use your program's own tools for a one-axis slide (see the tool table) and store the travel limits −20 and 20 where the program can.",
+   "template": "mmns_asm_design_abs",
+   "title": "High priorityA sliding motion with travel limits.",
+   "twin_change": "saved at +20 (block2 at (20, 0, 10), the limit)",
+   "twin_of": "A16a",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       50.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 1,
+     "free": {
+      "block2": {
+       "rot": [],
+       "trans": [
+        "X"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        40.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "joint": "slider",
+     "joint_axis": [
+      1,
+      0,
+      0
+     ],
+     "limits": {
+      "travel_mm": [
+       0,
+       40
+      ]
+     },
+     "pose": {
+      "travel_mm": 40
+     },
+     "solids": 2
+    }
+   },
+   "file": "a16c.asm",
+   "id": "A16c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       40,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         15,
+         5
+        ],
+        "normal": "+Y"
+       }
+      },
+      "offset": 0,
+      "type": "flush"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         10,
+         0,
+         5
+        ],
+        "normal": "+X"
+       }
+      },
+      "limit": {
+       "axis": "X",
+       "max": 40,
+       "min": 0
+      },
+      "type": "flush"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a16c.step",
+   "steps": "High priorityA sliding motion with travel limits. P01a \"block\" at (0, 0, 0), grounded + P01a \"block2\" sitting on it, free to slide along X and nothing else; its bottom face stays on block's top face and the y faces stay aligned. Travel limits −20 … +20 mm, measured as block2's x offset from the aligned position. Save at 0. Free motion: block2: translation along X; no rotation.How: use your program's own tools for a one-axis slide (see the tool table) and store the travel limits −20 and 20 where the program can.",
+   "template": "mmns_asm_design_abs",
+   "title": "High priorityA sliding motion with travel limits.",
+   "twin_change": "limits 0 … 40, saved at +40",
+   "twin_of": "A16a",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       30.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 2,
+     "free": {
+      "block": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "joint": "cylindrical",
+     "joint_axis": [
+      0,
+      0,
+      1
+     ],
+     "limits": {
+      "rotation_deg": null,
+      "travel_mm": [
+       0,
+       40
+      ]
+     },
+     "pose": {
+      "angle_deg": 0,
+      "travel_mm": 0
+     },
+     "solids": 2
+    }
+   },
+   "file": "a17a.asm",
+   "id": "A17a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block"
+      },
+      "b": {
+       "axis": "Z",
+       "component": "ring"
+      },
+      "type": "axis_align"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "b": {
+       "component": "ring",
+       "face": {
+        "contains": [
+         25,
+         0,
+         40
+        ],
+        "normal": "+Z"
+       }
+      },
+      "limit": {
+       "axis": "Z",
+       "max": 40,
+       "min": 0
+      },
+      "type": "flush"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a17a.step",
+   "steps": "A slide-and-turn motion about one axis. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it on the same Z axis, free to slide along Z and to turn about Z and nothing else. Travel limit 0 … 40 mm, turning unlimited. Save at travel 0, angle 0. Free motion: block: rotation about Z, translation along Z.How: keep the block's Z axis on the ring's Z axis and leave the slide along it and the turn about it free (see the tool table); store the travel limits 0 and 40 where the program can.",
+   "template": "mmns_asm_design_abs",
+   "title": "A slide-and-turn motion about one axis.",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -30.0,
+       -30.0,
+       0.0
+      ],
+      [
+       30.0,
+       30.0,
+       45.0
+      ]
+     ],
+     "dof": 2,
+     "free": {
+      "block": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.707107,
+         -0.707107,
+         0.0
+        ],
+        [
+         0.707107,
+         0.707107,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        35.0
+       ]
+      }
+     ],
+     "joint": "cylindrical",
+     "joint_axis": [
+      0,
+      0,
+      1
+     ],
+     "limits": {
+      "rotation_deg": null,
+      "travel_mm": [
+       0,
+       40
+      ]
+     },
+     "pose": {
+      "angle_deg": 45,
+      "travel_mm": 35
+     },
+     "solids": 2
+    }
+   },
+   "file": "a17b.asm",
+   "id": "A17b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       35
+      ],
+      "grounded": false,
+      "name": "block",
+      "recipe": "P01a",
+      "rotate": {
+       "axis": [
+        0,
+        0,
+        1
+       ],
+       "deg": 45
+      }
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block"
+      },
+      "b": {
+       "axis": "Z",
+       "component": "ring"
+      },
+      "type": "axis_align"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "b": {
+       "component": "ring",
+       "face": {
+        "contains": [
+         25,
+         0,
+         40
+        ],
+        "normal": "+Z"
+       }
+      },
+      "limit": {
+       "axis": "Z",
+       "max": 40,
+       "min": 0
+      },
+      "type": "flush"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a17b.step",
+   "steps": "A slide-and-turn motion about one axis. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it on the same Z axis, free to slide along Z and to turn about Z and nothing else. Travel limit 0 … 40 mm, turning unlimited. Save at travel 0, angle 0. Free motion: block: rotation about Z, translation along Z.How: keep the block's Z axis on the ring's Z axis and leave the slide along it and the turn about it free (see the tool table); store the travel limits 0 and 40 where the program can.",
+   "template": "mmns_asm_design_abs",
+   "title": "A slide-and-turn motion about one axis.",
+   "twin_change": "saved at travel 35 and turned 45° (block at (0, 0, 35) turned 45° about Z)",
+   "twin_of": "A17a",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       10.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 3,
+     "free": {
+      "block2": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "joint": "planar",
+     "joint_normal": [
+      0,
+      0,
+      1
+     ],
+     "limits": {
+      "rotation_deg": [
+       -90,
+       90
+      ],
+      "u_mm": [
+       -20,
+       20
+      ],
+      "v_mm": [
+       -20,
+       20
+      ]
+     },
+     "pose": {
+      "angle_deg": 0,
+      "u_mm": 0,
+      "v_mm": 0
+     },
+     "solids": 2
+    }
+   },
+   "file": "a18a.asm",
+   "id": "A18a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block2"
+      },
+      "b": {
+       "component": "block",
+       "plane": "YZ"
+      },
+      "limit": {
+       "axis": "X",
+       "max": 20,
+       "min": -20
+      },
+      "type": "axis_offset"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block2"
+      },
+      "b": {
+       "component": "block",
+       "plane": "XZ"
+      },
+      "limit": {
+       "axis": "Y",
+       "max": 20,
+       "min": -20
+      },
+      "type": "axis_offset"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "plane": "YZ"
+      },
+      "b": {
+       "component": "block",
+       "plane": "YZ"
+      },
+      "limit": {
+       "axis": "Z",
+       "max": 90,
+       "min": -90
+      },
+      "type": "angle_limit"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a18a.step",
+   "steps": "A motion on a plane (slides on it and turns about its normal). P01a \"block\" at (0, 0, 0), grounded + P01a \"block2\" lying on its top face, free to slide along X and Y and to turn about Z, and nothing else. Limits: X −20 … 20, Y −20 … 20, turn −90° … +90°. Save at the start pose (0, 0, 10), no turn. Free motion: block2: translation along X and Y, rotation about Z.How: keep block2's bottom face on block's top face and leave the slide in the plane and the turn about Z free (see the tool table); store the limits where the program can. Inventor: its Planar joint refuses limits, so make the pose and say \"no limit stored\" on the card (not a skip).",
+   "template": "mmns_asm_design_abs",
+   "title": "A motion on a plane (slides on it and turns about its normal).",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       31.160254,
+       22.990381,
+       20.0
+      ]
+     ],
+     "dof": 3,
+     "free": {
+      "block2": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.866025,
+         -0.5,
+         0.0
+        ],
+        [
+         0.5,
+         0.866025,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        15.0,
+        5.0,
+        10.0
+       ]
+      }
+     ],
+     "joint": "planar",
+     "joint_normal": [
+      0,
+      0,
+      1
+     ],
+     "limits": {
+      "rotation_deg": [
+       -90,
+       90
+      ],
+      "u_mm": [
+       -20,
+       20
+      ],
+      "v_mm": [
+       -20,
+       20
+      ]
+     },
+     "pose": {
+      "angle_deg": 30,
+      "u_mm": 15,
+      "v_mm": 5
+     },
+     "solids": 2
+    }
+   },
+   "file": "a18b.asm",
+   "id": "A18b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       15,
+       5,
+       10
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a",
+      "rotate": {
+       "axis": [
+        0,
+        0,
+        1
+       ],
+       "deg": 30
+      }
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block2"
+      },
+      "b": {
+       "component": "block",
+       "plane": "YZ"
+      },
+      "limit": {
+       "axis": "X",
+       "max": 20,
+       "min": -20
+      },
+      "type": "axis_offset"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block2"
+      },
+      "b": {
+       "component": "block",
+       "plane": "XZ"
+      },
+      "limit": {
+       "axis": "Y",
+       "max": 20,
+       "min": -20
+      },
+      "type": "axis_offset"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "plane": "YZ"
+      },
+      "b": {
+       "component": "block",
+       "plane": "YZ"
+      },
+      "limit": {
+       "axis": "Z",
+       "max": 90,
+       "min": -90
+      },
+      "type": "angle_limit"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a18b.step",
+   "steps": "A motion on a plane (slides on it and turns about its normal). P01a \"block\" at (0, 0, 0), grounded + P01a \"block2\" lying on its top face, free to slide along X and Y and to turn about Z, and nothing else. Limits: X −20 … 20, Y −20 … 20, turn −90° … +90°. Save at the start pose (0, 0, 10), no turn. Free motion: block2: translation along X and Y, rotation about Z.How: keep block2's bottom face on block's top face and leave the slide in the plane and the turn about Z free (see the tool table); store the limits where the program can. Inventor: its Planar joint refuses limits, so make the pose and say \"no limit stored\" on the card (not a skip).",
+   "template": "mmns_asm_design_abs",
+   "title": "A motion on a plane (slides on it and turns about its normal).",
+   "twin_change": "saved at (15, 5, 10) turned 30° about Z",
+   "twin_of": "A18a",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -30.0,
+       0.0
+      ],
+      [
+       35.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 3,
+     "free": {
+      "block2": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "block2",
+       "t": [
+        20.0,
+        -20.0,
+        10.0
+       ]
+      }
+     ],
+     "joint": "planar",
+     "joint_normal": [
+      0,
+      0,
+      1
+     ],
+     "limits": {
+      "rotation_deg": [
+       -90,
+       90
+      ],
+      "u_mm": [
+       -20,
+       20
+      ],
+      "v_mm": [
+       -20,
+       20
+      ]
+     },
+     "pose": {
+      "angle_deg": 90,
+      "u_mm": 20,
+      "v_mm": -20
+     },
+     "solids": 2
+    }
+   },
+   "file": "a18c.asm",
+   "id": "A18c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       20,
+       -20,
+       10
+      ],
+      "grounded": false,
+      "name": "block2",
+      "recipe": "P01a",
+      "rotate": {
+       "axis": [
+        0,
+        0,
+        1
+       ],
+       "deg": 90
+      }
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block2"
+      },
+      "b": {
+       "component": "block",
+       "plane": "YZ"
+      },
+      "limit": {
+       "axis": "X",
+       "max": 20,
+       "min": -20
+      },
+      "type": "axis_offset"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "axis": "Z",
+       "component": "block2"
+      },
+      "b": {
+       "component": "block",
+       "plane": "XZ"
+      },
+      "limit": {
+       "axis": "Y",
+       "max": 20,
+       "min": -20
+      },
+      "type": "axis_offset"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "block2",
+       "plane": "YZ"
+      },
+      "b": {
+       "component": "block",
+       "plane": "YZ"
+      },
+      "limit": {
+       "axis": "Z",
+       "max": 90,
+       "min": -90
+      },
+      "type": "angle_limit"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a18c.step",
+   "steps": "A motion on a plane (slides on it and turns about its normal). P01a \"block\" at (0, 0, 0), grounded + P01a \"block2\" lying on its top face, free to slide along X and Y and to turn about Z, and nothing else. Limits: X −20 … 20, Y −20 … 20, turn −90° … +90°. Save at the start pose (0, 0, 10), no turn. Free motion: block2: translation along X and Y, rotation about Z.How: keep block2's bottom face on block's top face and leave the slide in the plane and the turn about Z free (see the tool table); store the limits where the program can. Inventor: its Planar joint refuses limits, so make the pose and say \"no limit stored\" on the card (not a skip).",
+   "template": "mmns_asm_design_abs",
+   "title": "A motion on a plane (slides on it and turns about its normal).",
+   "twin_change": "saved at (20, −20, 10) turned 90° about Z (the limits at their ends)",
+   "twin_of": "A18a",
+   "uses": [
+    "p01a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       -10.0
+      ],
+      [
+       10.0,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 3,
+     "free": {
+      "pin": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": []
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        -10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "joint": "ball",
+     "joint_point": [
+      0,
+      0,
+      0
+     ],
+     "limits": {
+      "cone_half_angle_deg": null
+     },
+     "pose": {
+      "tilt_about_y_deg": 0
+     },
+     "solids": 2
+    }
+   },
+   "file": "a19a.asm",
+   "id": "A19a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       -10
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "pin",
+       "point": "origin"
+      },
+      "b": {
+       "assembly": true,
+       "point": "origin"
+      },
+      "type": "point_mate"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a19a.step",
+   "steps": "A turning motion about a point (any direction, no slide). P01a \"block\" placed at (0, 0, −10) (so its top face is z = 0), grounded + P16 \"pin\" with its bottom-circle centre held on the assembly origin (0, 0, 0), standing up (z 0 … 20), free to turn about X, Y and Z through that point. Free motion: pin: rotation about X, Y and Z; no translation.How: hold the pin's origin point on the assembly origin point and leave all three turns free (see the tool table). The pin overlaps the block a little when tilted: ignore the interference. Inventor and FreeCAD store no cone limit on a ball joint: make A19c at its pose and say \"no cone limit stored\" on the card (not a skip).",
+   "template": "mmns_asm_design_abs",
+   "title": "A turning motion about a point (any direction, no slide).",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       -10.0
+      ],
+      [
+       10.0,
+       15.0,
+       18.570508
+      ]
+     ],
+     "bbox_tol": 0.1,
+     "dof": 3,
+     "free": {
+      "pin": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": []
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        -10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.866025,
+         -0.5
+        ],
+        [
+         0.0,
+         0.5,
+         0.866025
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "joint": "ball",
+     "joint_point": [
+      0,
+      0,
+      0
+     ],
+     "limits": {
+      "cone_half_angle_deg": null
+     },
+     "pose": {
+      "tilt_about_x_deg": 30
+     },
+     "solids": 2
+    }
+   },
+   "file": "a19b.asm",
+   "id": "A19b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       -10
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a",
+      "rotate": {
+       "axis": [
+        1,
+        0,
+        0
+       ],
+       "deg": 30
+      }
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "pin",
+       "point": "origin"
+      },
+      "b": {
+       "assembly": true,
+       "point": "origin"
+      },
+      "type": "point_mate"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a19b.step",
+   "steps": "A turning motion about a point (any direction, no slide). P01a \"block\" placed at (0, 0, −10) (so its top face is z = 0), grounded + P16 \"pin\" with its bottom-circle centre held on the assembly origin (0, 0, 0), standing up (z 0 … 20), free to turn about X, Y and Z through that point. Free motion: pin: rotation about X, Y and Z; no translation.How: hold the pin's origin point on the assembly origin point and leave all three turns free (see the tool table). The pin overlaps the block a little when tilted: ignore the interference. Inventor and FreeCAD store no cone limit on a ball joint: make A19c at its pose and say \"no cone limit stored\" on the card (not a skip).",
+   "template": "mmns_asm_design_abs",
+   "title": "A turning motion about a point (any direction, no slide).",
+   "twin_change": "pin turned 30° about X (tilted toward −Y)",
+   "twin_of": "A19a",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "creo_skip": "Creo's Ball connection has no cone limit",
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       -10.0
+      ],
+      [
+       15.909903,
+       15.0,
+       15.909903
+      ]
+     ],
+     "bbox_tol": 0.1,
+     "dof": 3,
+     "free": {
+      "pin": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": []
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        -10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         0.707107,
+         0.0,
+         0.707107
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         -0.707107,
+         0.0,
+         0.707107
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "joint": "ball",
+     "joint_point": [
+      0,
+      0,
+      0
+     ],
+     "limits": {
+      "cone_half_angle_deg": 45
+     },
+     "pose": {
+      "tilt_about_y_deg": 45
+     },
+     "solids": 2
+    }
+   },
+   "file": "a19c.asm",
+   "id": "A19c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       -10
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a",
+      "rotate": {
+       "axis": [
+        0,
+        1,
+        0
+       ],
+       "deg": 45
+      }
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "pin",
+       "point": "origin"
+      },
+      "b": {
+       "assembly": true,
+       "point": "origin"
+      },
+      "cone_limit": 45,
+      "type": "point_mate"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a19c.step",
+   "steps": "A turning motion about a point (any direction, no slide). P01a \"block\" placed at (0, 0, −10) (so its top face is z = 0), grounded + P16 \"pin\" with its bottom-circle centre held on the assembly origin (0, 0, 0), standing up (z 0 … 20), free to turn about X, Y and Z through that point. Free motion: pin: rotation about X, Y and Z; no translation.How: hold the pin's origin point on the assembly origin point and leave all three turns free (see the tool table). The pin overlaps the block a little when tilted: ignore the interference. Inventor and FreeCAD store no cone limit on a ball joint: make A19c at its pose and say \"no cone limit stored\" on the card (not a skip).",
+   "template": "mmns_asm_design_abs",
+   "title": "A turning motion about a point (any direction, no slide).",
+   "twin_change": "pin turned 45° about Y, with a cone limit of 45° from Z set where the program can",
+   "twin_of": "A19a",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       50.0,
+       15.0,
+       10.0
+      ]
+     ],
+     "dof": 0,
+     "dof_scored": false,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P04a",
+       "path": "fillet",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         -1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P04a",
+       "path": "fillet_m",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "mirror_plane": "x = 20",
+     "probes": [
+      [
+       9.9,
+       14.9,
+       5,
+       "out"
+      ],
+      [
+       30.1,
+       14.9,
+       5,
+       "out"
+      ],
+      [
+       49.9,
+       14.9,
+       5,
+       "in"
+      ]
+     ],
+     "score_R": false,
+     "score_t": false,
+     "solids": 2
+    }
+   },
+   "file": "a20a.asm",
+   "id": "A20a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "fillet",
+      "recipe": "P04a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       40,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "fillet_m",
+      "recipe": "P04a",
+      "rotate": {
+       "axis": [
+        0,
+        1,
+        0
+       ],
+       "deg": 180
+      }
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a20a.step",
+   "steps": "A mirrored component. P04a \"fillet\" at (0, 0, 0), grounded, + its mirror image across the plane x = 20, named \"fillet_m\". The mirror is at (40, 0, 0), so its R2 rounded corner is at x = 30, y = +15 (the original's is at x = 10, y = +15). For a and b, a rotated copy of the same file or a new mirrored part are both fine: the result is scored on the bounding box and the probe points only, not on the placement matrix. The degrees of freedom are recorded as your program reports them, not scored.How: Work plane offset 20 from the YZ plane. Mirror Components (Inventor, SolidWorks), Mirror (Fusion), Mirror Part Instances (Onshape), Mirror Component (Creo): either a mirrored instance or a new part file is fine. Check the rounded corner is at x = 30.",
+   "template": "mmns_asm_design_abs",
+   "title": "A mirrored component.",
+   "uses": [
+    "p04a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       10.0,
+       95.0,
+       10.0
+      ]
+     ],
+     "dof": 0,
+     "dof_scored": false,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P04a",
+       "path": "fillet",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P04a",
+       "path": "fillet_m",
+       "t": [
+        0.0,
+        80.0,
+        0.0
+       ]
+      }
+     ],
+     "mirror_plane": "y = 40",
+     "probes": [
+      [
+       9.9,
+       14.9,
+       5,
+       "out"
+      ],
+      [
+       9.9,
+       65.1,
+       5,
+       "out"
+      ],
+      [
+       9.9,
+       94.9,
+       5,
+       "in"
+      ]
+     ],
+     "score_R": false,
+     "score_t": false,
+     "solids": 2
+    }
+   },
+   "file": "a20b.asm",
+   "id": "A20b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "fillet",
+      "recipe": "P04a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       80,
+       10
+      ],
+      "grounded": false,
+      "name": "fillet_m",
+      "recipe": "P04a",
+      "rotate": {
+       "axis": [
+        1,
+        0,
+        0
+       ],
+       "deg": 180
+      }
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a20b.step",
+   "steps": "A mirrored component. P04a \"fillet\" at (0, 0, 0), grounded, + its mirror image across the plane x = 20, named \"fillet_m\". The mirror is at (40, 0, 0), so its R2 rounded corner is at x = 30, y = +15 (the original's is at x = 10, y = +15). For a and b, a rotated copy of the same file or a new mirrored part are both fine: the result is scored on the bounding box and the probe points only, not on the placement matrix. The degrees of freedom are recorded as your program reports them, not scored.How: Work plane offset 20 from the YZ plane. Mirror Components (Inventor, SolidWorks), Mirror (Fusion), Mirror Part Instances (Onshape), Mirror Component (Creo): either a mirrored instance or a new part file is fine. Check the rounded corner is at x = 30.",
+   "template": "mmns_asm_design_abs",
+   "title": "A mirrored component.",
+   "twin_change": "mirror plane y = 40 instead (mirror at y = 80, rounded corner at y = 65)",
+   "twin_of": "A20a",
+   "uses": [
+    "p04a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       50.0,
+       15.0,
+       10.0
+      ]
+     ],
+     "dof": 0,
+     "dof_scored": false,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P04a",
+       "path": "fillet",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "mirrored_part": true,
+       "part": "P04a-mirrored",
+       "path": "fillet_m",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "mirror_plane": "x = 20",
+     "probes": [
+      [
+       9.9,
+       14.9,
+       5,
+       "out"
+      ],
+      [
+       30.1,
+       14.9,
+       5,
+       "out"
+      ],
+      [
+       49.9,
+       14.9,
+       5,
+       "in"
+      ]
+     ],
+     "score_R": true,
+     "solids": 2
+    }
+   },
+   "file": "a20c.asm",
+   "id": "A20c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "part_file": {
+      "base": "P04a",
+      "configurations": [],
+      "file": "P04a-mirrored",
+      "mirror": "X"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "fillet",
+      "recipe": "P04a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       40,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "fillet_m",
+      "recipe": "P04a-mirrored"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a20c.step",
+   "steps": "A mirrored component. P04a \"fillet\" at (0, 0, 0), grounded, + its mirror image across the plane x = 20, named \"fillet_m\". The mirror is at (40, 0, 0), so its R2 rounded corner is at x = 30, y = +15 (the original's is at x = 10, y = +15). For a and b, a rotated copy of the same file or a new mirrored part are both fine: the result is scored on the bounding box and the probe points only, not on the placement matrix. The degrees of freedom are recorded as your program reports them, not scored.How: Work plane offset 20 from the YZ plane. Mirror Components (Inventor, SolidWorks), Mirror (Fusion), Mirror Part Instances (Onshape), Mirror Component (Creo): either a mirrored instance or a new part file is fine. Check the rounded corner is at x = 30.",
+   "template": "mmns_asm_design_abs",
+   "title": "A mirrored component.",
+   "uses": [
+    "p04a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       90.0,
+       15.0,
+       30.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "pair#1/block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P16a",
+       "path": "pair#1/pin",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "pair#2/block",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair#2/pin",
+       "t": [
+        40.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "pair#3/block",
+       "t": [
+        80.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair#3/pin",
+       "t": [
+        80.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "pattern": {
+      "count": 3,
+      "direction": [
+       1,
+       0,
+       0
+      ],
+      "kind": "linear",
+      "spacing_mm": 40
+     },
+     "solids": 6
+    }
+   },
+   "file": "a21a.asm",
+   "id": "A21a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A21-pair",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "pair",
+      "recipe": "A21-pair"
+     },
+     "type": "assembly"
+    },
+    {
+     "pattern": {
+      "component": "pair",
+      "count": 3,
+      "direction": [
+       1,
+       0,
+       0
+      ],
+      "kind": "linear",
+      "spacing": 40
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a21a.step",
+   "steps": "A linear pattern of a subassembly. A21-pair = P01a \"block\" at (0, 0, 0) + P16 \"pin\" at (0, 0, 10). Top: A21-pair at (0, 0, 0), grounded, pattern of the whole subassembly, 3 instances along +X, spacing 40. Free motion: none (the pattern instances are placed by the pattern).How: Pattern Component / Component Pattern, pick the subassembly (not its parts), Rectangular / Linear, direction +X, count 3, spacing 40.",
+   "template": "mmns_asm_design_abs",
+   "title": "A linear pattern of a subassembly.",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       35.0,
+       15.0,
+       30.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "pair#1/block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P16a",
+       "path": "pair#1/pin",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "pair#2/block",
+       "t": [
+        25.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair#2/pin",
+       "t": [
+        25.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "pattern": {
+      "count": 2,
+      "direction": [
+       1,
+       0,
+       0
+      ],
+      "kind": "linear",
+      "spacing_mm": 25
+     },
+     "solids": 4
+    }
+   },
+   "file": "a21b.asm",
+   "id": "A21b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A21-pair",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "pair",
+      "recipe": "A21-pair"
+     },
+     "type": "assembly"
+    },
+    {
+     "pattern": {
+      "component": "pair",
+      "count": 2,
+      "direction": [
+       1,
+       0,
+       0
+      ],
+      "kind": "linear",
+      "spacing": 25
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a21b.step",
+   "steps": "A linear pattern of a subassembly. A21-pair = P01a \"block\" at (0, 0, 0) + P16 \"pin\" at (0, 0, 10). Top: A21-pair at (0, 0, 0), grounded, pattern of the whole subassembly, 3 instances along +X, spacing 40. Free motion: none (the pattern instances are placed by the pattern).How: Pattern Component / Component Pattern, pick the subassembly (not its parts), Rectangular / Linear, direction +X, count 3, spacing 40.",
+   "template": "mmns_asm_design_abs",
+   "title": "A linear pattern of a subassembly.",
+   "twin_change": "2 instances, spacing 25",
+   "twin_of": "A21a",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       10.0,
+       95.0,
+       30.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "pair#1/block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P16a",
+       "path": "pair#1/pin",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "pair#2/block",
+       "t": [
+        0.0,
+        40.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair#2/pin",
+       "t": [
+        0.0,
+        40.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "pair#3/block",
+       "t": [
+        0.0,
+        80.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair#3/pin",
+       "t": [
+        0.0,
+        80.0,
+        10.0
+       ]
+      }
+     ],
+     "pattern": {
+      "count": 3,
+      "direction": [
+       0,
+       1,
+       0
+      ],
+      "kind": "linear",
+      "spacing_mm": 40
+     },
+     "solids": 6
+    }
+   },
+   "file": "a21c.asm",
+   "id": "A21c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A21-pair",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "pair",
+      "recipe": "A21-pair"
+     },
+     "type": "assembly"
+    },
+    {
+     "pattern": {
+      "component": "pair",
+      "count": 3,
+      "direction": [
+       0,
+       1,
+       0
+      ],
+      "kind": "linear",
+      "spacing": 40
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a21c.step",
+   "steps": "A linear pattern of a subassembly. A21-pair = P01a \"block\" at (0, 0, 0) + P16 \"pin\" at (0, 0, 10). Top: A21-pair at (0, 0, 0), grounded, pattern of the whole subassembly, 3 instances along +X, spacing 40. Free motion: none (the pattern instances are placed by the pattern).How: Pattern Component / Component Pattern, pick the subassembly (not its parts), Rectangular / Linear, direction +X, count 3, spacing 40.",
+   "template": "mmns_asm_design_abs",
+   "title": "A linear pattern of a subassembly.",
+   "twin_change": "3 instances along +Y, spacing 40",
+   "twin_of": "A21a",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -37.990381,
+       -50.80127,
+       0.0
+      ],
+      [
+       50.0,
+       50.80127,
+       30.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "pair#1/block",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P16a",
+       "path": "pair#1/pin",
+       "t": [
+        40.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         -0.5,
+         -0.866025,
+         0.0
+        ],
+        [
+         0.866025,
+         -0.5,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "pair#2/block",
+       "t": [
+        -20.0,
+        34.641016,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         -0.5,
+         -0.866025,
+         0.0
+        ],
+        [
+         0.866025,
+         -0.5,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair#2/pin",
+       "t": [
+        -20.0,
+        34.641016,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         -0.5,
+         0.866025,
+         0.0
+        ],
+        [
+         -0.866025,
+         -0.5,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "pair#3/block",
+       "t": [
+        -20.0,
+        -34.641016,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         -0.5,
+         0.866025,
+         0.0
+        ],
+        [
+         -0.866025,
+         -0.5,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair#3/pin",
+       "t": [
+        -20.0,
+        -34.641016,
+        10.0
+       ]
+      }
+     ],
+     "pattern": {
+      "axis": "Z through origin",
+      "count": 3,
+      "kind": "circular",
+      "step_deg": 120
+     },
+     "solids": 6
+    }
+   },
+   "file": "a22a.asm",
+   "id": "A22a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A21-pair",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       40,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "pair",
+      "recipe": "A21-pair"
+     },
+     "type": "assembly"
+    },
+    {
+     "pattern": {
+      "axis": [
+       0,
+       0,
+       1
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "component": "pair",
+      "count": 3,
+      "kind": "circular",
+      "orientation": "rotate",
+      "step_deg": 120
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a22a.step",
+   "steps": "A circular pattern of a subassembly. A21-pair (same file as A21) placed at (40, 0, 0), grounded, pattern of the subassembly around the world Z axis through the origin, 3 instances, 120° between neighbours (the whole turn is 360°). Every instance turns with the pattern (the blocks are not kept parallel). Free motion: none (the pattern instances are placed by the pattern).How: Circular Pattern, axis: the Z origin axis, count 3, angle 360 (equal spacing), orientation turns with the pattern (\"rotate\", not \"fixed\").",
+   "template": "mmns_asm_design_abs",
+   "title": "A circular pattern of a subassembly.",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -50.0,
+       -15.0,
+       0.0
+      ],
+      [
+       50.0,
+       15.0,
+       30.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "pair#1/block",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P16a",
+       "path": "pair#1/pin",
+       "t": [
+        40.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         -1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": false,
+       "part": "P01a",
+       "path": "pair#2/block",
+       "t": [
+        -40.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         -1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         -1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair#2/pin",
+       "t": [
+        -40.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "pattern": {
+      "axis": "Z through origin",
+      "count": 2,
+      "kind": "circular",
+      "step_deg": 180
+     },
+     "solids": 4
+    }
+   },
+   "file": "a22b.asm",
+   "id": "A22b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A21-pair",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       40,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "pair",
+      "recipe": "A21-pair"
+     },
+     "type": "assembly"
+    },
+    {
+     "pattern": {
+      "axis": [
+       0,
+       0,
+       1
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "component": "pair",
+      "count": 2,
+      "kind": "circular",
+      "orientation": "rotate",
+      "step_deg": 180
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a22b.step",
+   "steps": "A circular pattern of a subassembly. A21-pair (same file as A21) placed at (40, 0, 0), grounded, pattern of the subassembly around the world Z axis through the origin, 3 instances, 120° between neighbours (the whole turn is 360°). Every instance turns with the pattern (the blocks are not kept parallel). Free motion: none (the pattern instances are placed by the pattern).How: Circular Pattern, axis: the Z origin axis, count 3, angle 360 (equal spacing), orientation turns with the pattern (\"rotate\", not \"fixed\").",
+   "template": "mmns_asm_design_abs",
+   "title": "A circular pattern of a subassembly.",
+   "twin_change": "2 instances, 180° between them (at (40, 0, 0) and (−40, 0, 0))",
+   "twin_of": "A22a",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       42.5,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 6,
+     "external_refs": [
+      "P01a",
+      "P16a"
+     ],
+     "free": {
+      "pin": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "external": true,
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "external": true,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "solids": 2
+    }
+   },
+   "file": "a23a.asm",
+   "id": "A23a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       40,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a23a.step",
+   "steps": "A linked (external) part. P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (40, 0, 0), both placed from their own files as linked references (an external reference, not an embedded copy). Save the assembly so it keeps the links. Free motion: pin: turns about X, Y, Z and moves along X, Y, Z (block is grounded).How: Fusion: Insert into Current Design with the link kept (not a copy), the two files unchanged; save as A23a.f3d and also A23a.f3z. Onshape: Insert a part from another document (linked). Inventor, SolidWorks, Creo, NX, CATIA, Solid Edge, Alibre: every placed part is already a file link, so place both from files and say so on the card. FreeCAD: App::Link to a body in another .FCStd. A23b: Inventor keeps every placed part as a link to its own file: there is no embedded copy to break",
+   "template": "mmns_asm_design_abs",
+   "title": "A linked (external) part.",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "creo_skip": "Creo has no embedded copy to break the link to",
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       42.5,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 6,
+     "external_refs": [
+      "P01a"
+     ],
+     "free": {
+      "pin": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "external": true,
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "external": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "solids": 2
+    }
+   },
+   "file": "a23b.asm",
+   "id": "A23b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       40,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    },
+    {
+     "break_link": {
+      "component": "pin"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a23b.step",
+   "steps": "A linked (external) part. P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (40, 0, 0), both placed from their own files as linked references (an external reference, not an embedded copy). Save the assembly so it keeps the links. Free motion: pin: turns about X, Y, Z and moves along X, Y, Z (block is grounded).How: Fusion: Insert into Current Design with the link kept (not a copy), the two files unchanged; save as A23a.f3d and also A23a.f3z. Onshape: Insert a part from another document (linked). Inventor, SolidWorks, Creo, NX, CATIA, Solid Edge, Alibre: every placed part is already a file link, so place both from files and say so on the card. FreeCAD: App::Link to a body in another .FCStd. A23b: Inventor keeps every placed part as a link to its own file: there is no embedded copy to break",
+   "template": "mmns_asm_design_abs",
+   "title": "A linked (external) part.",
+   "twin_change": "break the link on the pin (it becomes a local copy; the block stays linked)",
+   "twin_of": "A23a",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       42.5,
+       15.0,
+       20.0
+      ]
+     ],
+     "dof": 6,
+     "external_refs": [
+      "P01a",
+      "P16a"
+     ],
+     "free": {
+      "pin": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "external": true,
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "external": true,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "t": [
+        40.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "probes": [
+      [
+       0,
+       0,
+       11,
+       "in"
+      ],
+      [
+       0,
+       0,
+       13,
+       "out"
+      ]
+     ],
+     "solids": 2,
+     "source_edit": "the P01a part file edited to height 12 (= P01b) before the update"
+    }
+   },
+   "file": "a23c.asm",
+   "id": "A23c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "part_file": {
+      "base": "P01a",
+      "configurations": [],
+      "file": "A23c-block"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "A23c-block"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       40,
+       0,
+       0
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    },
+    {
+     "source_edit": {
+      "component": "block",
+      "extrude_depth": 12
+     },
+     "type": "assembly"
+    },
+    {
+     "step_check": {
+      "has_z": [
+       12
+      ],
+      "no_z": [
+       10
+      ]
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a23c.step",
+   "steps": "A linked (external) part. P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (40, 0, 0), both placed from their own files as linked references (an external reference, not an embedded copy). Save the assembly so it keeps the links. Free motion: pin: turns about X, Y, Z and moves along X, Y, Z (block is grounded).How: Fusion: Insert into Current Design with the link kept (not a copy), the two files unchanged; save as A23a.f3d and also A23a.f3z. Onshape: Insert a part from another document (linked). Inventor, SolidWorks, Creo, NX, CATIA, Solid Edge, Alibre: every placed part is already a file link, so place both from files and say so on the card. FreeCAD: App::Link to a body in another .FCStd. A23b: Inventor keeps every placed part as a link to its own file: there is no embedded copy to break",
+   "template": "mmns_asm_design_abs",
+   "title": "A linked (external) part.",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       60.0,
+       15.0,
+       30.0
+      ]
+     ],
+     "dof": 3,
+     "flexible_instances": [
+      "pair2"
+     ],
+     "free": {
+      "pair2/pin": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "flexible": false,
+       "grounded": true,
+       "part": "P01a",
+       "path": "pair1/block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "flexible": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair1/pin",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "flexible": true,
+       "grounded": true,
+       "part": "P01a",
+       "path": "pair2/block",
+       "t": [
+        50.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "flexible": true,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair2/pin",
+       "t": [
+        56.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "solids": 4
+    }
+   },
+   "file": "a24a.asm",
+   "id": "A24a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A24-pair",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "grounded": false,
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       },
+       {
+        "constraint": {
+         "a": {
+          "component": "pin",
+          "face": {
+           "contains": [
+            0,
+            0,
+            0
+           ],
+           "normal": "-Z"
+          }
+         },
+         "b": {
+          "component": "block",
+          "face": {
+           "contains": [
+            0,
+            0,
+            10
+           ],
+           "normal": "+Z"
+          }
+         },
+         "offset": 0,
+         "type": "mate"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "flexible": false,
+      "grounded": true,
+      "name": "pair1",
+      "recipe": "A24-pair"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       50,
+       0,
+       0
+      ],
+      "flexible": true,
+      "grounded": true,
+      "name": "pair2",
+      "recipe": "A24-pair"
+     },
+     "type": "assembly"
+    },
+    {
+     "drag": {
+      "against": "block",
+      "by": [
+       6,
+       0,
+       0
+      ],
+      "child": "pin",
+      "component": "pair2"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a24a.step",
+   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its centre is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: the subassembly's Flexible setting (to verify in the builder run). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
+   "template": "mmns_asm_design_abs",
+   "title": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly.",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       60.0,
+       15.0,
+       30.0
+      ]
+     ],
+     "dof": 6,
+     "flexible_instances": [
+      "pair1",
+      "pair2"
+     ],
+     "free": {
+      "pair1/pin": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      },
+      "pair2/pin": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "flexible": true,
+       "grounded": true,
+       "part": "P01a",
+       "path": "pair1/block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "flexible": true,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair1/pin",
+       "t": [
+        -6.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "flexible": true,
+       "grounded": true,
+       "part": "P01a",
+       "path": "pair2/block",
+       "t": [
+        50.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "flexible": true,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pair2/pin",
+       "t": [
+        56.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "solids": 4
+    }
+   },
+   "file": "a24b.asm",
+   "id": "A24b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "subassembly": {
+      "file": "A24-pair",
+      "ops": [
+       {
+        "insert": {
+         "at": [
+          0,
+          0,
+          0
+         ],
+         "grounded": true,
+         "name": "block",
+         "recipe": "P01a"
+        },
+        "type": "assembly"
+       },
+       {
+        "insert": {
+         "R_scored": false,
+         "at": [
+          0,
+          0,
+          10
+         ],
+         "grounded": false,
+         "name": "pin",
+         "recipe": "P16a"
+        },
+        "type": "assembly"
+       },
+       {
+        "constraint": {
+         "a": {
+          "component": "pin",
+          "face": {
+           "contains": [
+            0,
+            0,
+            0
+           ],
+           "normal": "-Z"
+          }
+         },
+         "b": {
+          "component": "block",
+          "face": {
+           "contains": [
+            0,
+            0,
+            10
+           ],
+           "normal": "+Z"
+          }
+         },
+         "offset": 0,
+         "type": "mate"
+        },
+        "type": "assembly"
+       }
+      ]
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "flexible": true,
+      "grounded": true,
+      "name": "pair1",
+      "recipe": "A24-pair"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       50,
+       0,
+       0
+      ],
+      "flexible": true,
+      "grounded": true,
+      "name": "pair2",
+      "recipe": "A24-pair"
+     },
+     "type": "assembly"
+    },
+    {
+     "drag": {
+      "against": "block",
+      "by": [
+       6,
+       0,
+       0
+      ],
+      "child": "pin",
+      "component": "pair2"
+     },
+     "type": "assembly"
+    },
+    {
+     "drag": {
+      "against": "block",
+      "by": [
+       -6,
+       0,
+       0
+      ],
+      "child": "pin",
+      "component": "pair1"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a24b.step",
+   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its centre is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: the subassembly's Flexible setting (to verify in the builder run). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
+   "template": "mmns_asm_design_abs",
+   "title": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly.",
+   "twin_change": "both instances flexible: pair1's pin moved 6 along −X (centre (−6, 0, 10)), pair2's pin at (56, 0, 10)",
+   "twin_of": "A24a",
+   "uses": [
+    "p01a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -30.0,
+       0.0
+      ],
+      [
+       90.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 3,
+     "free": {
+      "pin": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "suppressed": false,
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "suppressed": false,
+       "t": [
+        60.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "mate_suppressed": false,
+     "solids": 3
+    }
+   },
+   "file": "a25a.asm",
+   "id": "A25a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       60,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "pin",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "name": "pin_mate",
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a25a.step",
+   "steps": "Suppressed components and an unsuppressed twin. P01a \"block\" at (0, 0, 0), grounded; P16 \"pin\" at (0, 0, 10) Mated to the block's top face (bottom to top, offset 0; 3 degrees of freedom left); P02a \"ring\" at (60, 0, 0), grounded. Nothing suppressed. Free motion: pin: turns about Z and moves along X and Y. b: none. d: the pin turns about X, Y, Z and moves along X, Y, Z.How: As A01 and A02. Place the three, ground the block and ring, add the pin's Mate.",
+   "template": "mmns_asm_design_abs",
+   "title": "Suppressed components and an unsuppressed twin.",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -30.0,
+       0.0
+      ],
+      [
+       90.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 0,
+     "free": {},
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "suppressed": true,
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "suppressed": false,
+       "t": [
+        60.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "mate_suppressed": false,
+     "solids": 2
+    }
+   },
+   "file": "a25b.asm",
+   "id": "A25b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       60,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "pin",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "name": "pin_mate",
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "component": "pin",
+     "suppressed": true,
+     "type": "assembly"
+    }
+   ],
+   "step": "a25b.step",
+   "steps": "Suppressed components and an unsuppressed twin. P01a \"block\" at (0, 0, 0), grounded; P16 \"pin\" at (0, 0, 10) Mated to the block's top face (bottom to top, offset 0; 3 degrees of freedom left); P02a \"ring\" at (60, 0, 0), grounded. Nothing suppressed. Free motion: pin: turns about Z and moves along X and Y. b: none. d: the pin turns about X, Y, Z and moves along X, Y, Z.How: As A01 and A02. Place the three, ground the block and ring, add the pin's Mate.",
+   "template": "mmns_asm_design_abs",
+   "title": "Suppressed components and an unsuppressed twin.",
+   "twin_change": "suppress the pin",
+   "twin_of": "A25a",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       10.0,
+       15.0,
+       30.0
+      ]
+     ],
+     "dof": 3,
+     "free": {
+      "pin": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "suppressed": false,
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "suppressed": true,
+       "t": [
+        60.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "mate_suppressed": false,
+     "solids": 2
+    }
+   },
+   "file": "a25c.asm",
+   "id": "A25c",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       60,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "pin",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "name": "pin_mate",
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "component": "ring",
+     "suppressed": true,
+     "type": "assembly"
+    }
+   ],
+   "step": "a25c.step",
+   "steps": "Suppressed components and an unsuppressed twin. P01a \"block\" at (0, 0, 0), grounded; P16 \"pin\" at (0, 0, 10) Mated to the block's top face (bottom to top, offset 0; 3 degrees of freedom left); P02a \"ring\" at (60, 0, 0), grounded. Nothing suppressed. Free motion: pin: turns about Z and moves along X and Y. b: none. d: the pin turns about X, Y, Z and moves along X, Y, Z.How: As A01 and A02. Place the three, ground the block and ring, add the pin's Mate.",
+   "template": "mmns_asm_design_abs",
+   "title": "Suppressed components and an unsuppressed twin.",
+   "twin_change": "suppress the ring",
+   "twin_of": "A25a",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -30.0,
+       0.0
+      ],
+      [
+       90.0,
+       30.0,
+       40.0
+      ]
+     ],
+     "dof": 6,
+     "free": {
+      "pin": {
+       "rot": [
+        "X",
+        "Y",
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y",
+        "Z"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "suppressed": false,
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": true,
+       "part": "P02a",
+       "path": "ring",
+       "suppressed": false,
+       "t": [
+        60.0,
+        0.0,
+        0.0
+       ]
+      }
+     ],
+     "mate_suppressed": true,
+     "solids": 3
+    }
+   },
+   "file": "a25d.asm",
+   "id": "A25d",
+   "kind": "assembly",
+   "ops": [
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "block",
+      "recipe": "P01a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       60,
+       0,
+       0
+      ],
+      "grounded": true,
+      "name": "ring",
+      "recipe": "P02a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "pin",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "name": "pin_mate",
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "suppress_constraint": "pin_mate",
+     "type": "assembly"
+    }
+   ],
+   "step": "a25d.step",
+   "steps": "Suppressed components and an unsuppressed twin. P01a \"block\" at (0, 0, 0), grounded; P16 \"pin\" at (0, 0, 10) Mated to the block's top face (bottom to top, offset 0; 3 degrees of freedom left); P02a \"ring\" at (60, 0, 0), grounded. Nothing suppressed. Free motion: pin: turns about Z and moves along X and Y. b: none. d: the pin turns about X, Y, Z and moves along X, Y, Z.How: As A01 and A02. Place the three, ground the block and ring, add the pin's Mate.",
+   "template": "mmns_asm_design_abs",
+   "title": "Suppressed components and an unsuppressed twin.",
+   "twin_change": "suppress the pin's Mate only (the pin stays where it is, free)",
+   "twin_of": "A25a",
+   "uses": [
+    "p01a.prt",
+    "p02a.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       10.0,
+       15.0,
+       32.0
+      ]
+     ],
+     "dof": 3,
+     "free": {
+      "pin": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "config": "Tall",
+       "grounded": true,
+       "part": "P01b",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "t": [
+        0.0,
+        0.0,
+        12.0
+       ]
+      }
+     ],
+     "solids": 2
+    }
+   },
+   "file": "a26a.asm",
+   "id": "A26a",
+   "kind": "assembly",
+   "ops": [
+    {
+     "part_file": {
+      "active": "Tall",
+      "base": "P01a",
+      "configurations": [
+       {
+        "extrude_depth": 12,
+        "name": "Tall"
+       }
+      ],
+      "file": "A26a-block"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "config": "Tall",
+      "grounded": true,
+      "name": "block",
+      "recipe": "A26a-block"
+     },
+     "type": "assembly"
+    },
+    {
+     "reopen": true,
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       12
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "pin",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         12
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "step_check": {
+      "has_z": [
+       12
+      ],
+      "no_z": [
+       10
+      ]
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a26a.step",
+   "steps": "A part configuration switched in the assembly. A part with two configurations: \"Default\" = P01a (10 high) and \"Tall\" = P01b (12 high). Assembly: the part \"block\" at (0, 0, 0), grounded, with Tall active; P16 \"pin\" Mated bottom to the block's top face, centred (0, 0, 12). Save with Tall active. Free motion: pin: turns about Z and moves along X and Y.How: SolidWorks Configurations, Inventor iPart / Design Variants, Onshape Configurations, Creo Family Table, CATIA Design Table, NX Part Family, Solid Edge Family of Parts, Fusion Configurations. If your program has no part configurations, say \"n/a\". Add the Mate for the pin; check the pin rides up when the configuration changes.",
+   "template": "mmns_asm_design_abs",
+   "title": "A part configuration switched in the assembly.",
+   "uses": [
+    "p01a.prt",
+    "p01b.prt",
+    "p16a.prt"
+   ]
+  },
+  {
+   "expect": {
+    "assembly": {
+     "bbox": [
+      [
+       -10.0,
+       -15.0,
+       0.0
+      ],
+      [
+       10.0,
+       15.0,
+       30.0
+      ]
+     ],
+     "dof": 3,
+     "free": {
+      "pin": {
+       "rot": [
+        "Z"
+       ],
+       "trans": [
+        "X",
+        "Y"
+       ]
+      }
+     },
+     "instances": [
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "config": "Default",
+       "grounded": true,
+       "part": "P01a",
+       "path": "block",
+       "t": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "R": [
+        [
+         1.0,
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         1.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "R_scored": false,
+       "grounded": false,
+       "part": "P16a",
+       "path": "pin",
+       "t": [
+        0.0,
+        0.0,
+        10.0
+       ]
+      }
+     ],
+     "solids": 2
+    }
+   },
+   "file": "a26b.asm",
+   "id": "A26b",
+   "kind": "assembly",
+   "ops": [
+    {
+     "part_file": {
+      "active": "Default",
+      "base": "P01a",
+      "configurations": [
+       {
+        "extrude_depth": 12,
+        "name": "Tall"
+       }
+      ],
+      "file": "A26b-block"
+     },
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "config": "Default",
+      "grounded": true,
+      "name": "block",
+      "recipe": "A26b-block"
+     },
+     "type": "assembly"
+    },
+    {
+     "reopen": true,
+     "type": "assembly"
+    },
+    {
+     "insert": {
+      "R_scored": false,
+      "at": [
+       0,
+       0,
+       10
+      ],
+      "grounded": false,
+      "name": "pin",
+      "recipe": "P16a"
+     },
+     "type": "assembly"
+    },
+    {
+     "constraint": {
+      "a": {
+       "component": "pin",
+       "face": {
+        "contains": [
+         0,
+         0,
+         0
+        ],
+        "normal": "-Z"
+       }
+      },
+      "b": {
+       "component": "block",
+       "face": {
+        "contains": [
+         0,
+         0,
+         10
+        ],
+        "normal": "+Z"
+       }
+      },
+      "offset": 0,
+      "type": "mate"
+     },
+     "type": "assembly"
+    },
+    {
+     "step_check": {
+      "has_z": [
+       10
+      ],
+      "no_z": [
+       12
+      ]
+     },
+     "type": "assembly"
+    }
+   ],
+   "step": "a26b.step",
+   "steps": "A part configuration switched in the assembly. A part with two configurations: \"Default\" = P01a (10 high) and \"Tall\" = P01b (12 high). Assembly: the part \"block\" at (0, 0, 0), grounded, with Tall active; P16 \"pin\" Mated bottom to the block's top face, centred (0, 0, 12). Save with Tall active. Free motion: pin: turns about Z and moves along X and Y.How: SolidWorks Configurations, Inventor iPart / Design Variants, Onshape Configurations, Creo Family Table, CATIA Design Table, NX Part Family, Solid Edge Family of Parts, Fusion Configurations. If your program has no part configurations, say \"n/a\". Add the Mate for the pin; check the pin rides up when the configuration changes.",
+   "template": "mmns_asm_design_abs",
+   "title": "A part configuration switched in the assembly.",
+   "twin_change": "save with Default active (block 10 high, pin at (0, 0, 10))",
+   "twin_of": "A26a",
+   "uses": [
+    "p01a.prt",
+    "p01b.prt",
+    "p16a.prt"
    ]
   }
  ],

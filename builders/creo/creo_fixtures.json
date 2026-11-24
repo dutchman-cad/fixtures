@@ -1,6 +1,6 @@
 {
  "app": "Creo",
- "builder": "2026.11.23.1",
+ "builder": "2026.11.24.1",
  "creo_tools": [
   [
    "Planes XY · XZ · YZ (coordinates as written)",
@@ -81,6 +81,18 @@
   [
    "Model state (A08) · View representation (A09)",
    "Family Table: a second instance with P02a suppressed (save with the generic active) · View Manager: a Combined State \"View1\" with P02a hidden"
+  ],
+  [
+   "Same part twice · Nesting (A11–A13)",
+   "Assemble twice; sub-assemblies assembled into the top; type the position in the placement offsets"
+  ],
+  [
+   "Joints (A14–A19)",
+   "User Defined set, built by hand: Rigid (A14) · Pin with rotation limits (A15) · Slider with translation Min/Max (A16) · Cylinder with travel limits (A17) · Planar (A18; its turn limit to verify in the builder run) · Ball (A19) A19c: Creo's Ball connection has no cone limit"
+  ],
+  [
+   "Mirror · Pattern · Link · Flexible · Suppress · Config (A20–A26)",
+   "Mirror Component (A20) writes a new mirrored part file, which counts for a and b like c · Pattern of the sub-assembly component (A21, A22) · files are links: place both from files and say so on the card (A23) A23b: Creo has no embedded copy to break the link to · Flexible component (A24; a moved component in it to verify in the builder run) · Suppress (A25; A25d, disabling the constraint, to verify in the builder run) · Family Table (A26)"
   ]
  ],
  "designs": [

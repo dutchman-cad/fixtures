@@ -52,8 +52,19 @@ In booklet order, for each design in `creo_fixtures.json`:
 4. Otherwise the design is `not_scripted`, with the reason, never skipped silently.
 
 Then it checks a part against the answer key: volume within 1e-4 (relative) and bounding box within 0.01 mm,
-where the key has them. A part that doesn't match is `failed` with the numbers and is not saved. Assemblies have no
-volume in the key; their check is ours, on the zip. Then it blanks personal parameters (`MODELED_BY`, `AUTHOR`,
+where the key has them. An assembly from A11 on is checked against its entry in the answer key's `assemblies`
+(`expect.assembly` in `creo_fixtures.json`):
+- the number of active parts and of assembly levels;
+- the bounding box (0.01 mm, or the key's `bbox_tol`);
+- every part's position `t` (0.01 mm) and turn `R` (1e-4) in the top assembly, where the key scores them.
+
+Creo has no instance names, so parts are matched to the key by part file and position. A family-table member or a
+new mirrored part carries its own name and is matched by position. A suppressed part must be there and suppressed.
+Motion keys (`free`, `dof`, `limits`, `pose`, `probes`) are not read by this builder; they are listed under
+`measured.not_checked`. A10 and earlier assemblies have no key: we check those from the zip.
+
+A design that doesn't match is `failed` with the numbers and is not saved. A twin the booklet's Creo tool table says
+Creo cannot make (A19c, A23b) is `not_scripted` with that reason. Then it blanks personal parameters (`MODELED_BY`, `AUTHOR`,
 `CREATED_BY` and the like), saves, and exports `p01a.stp` next to it.
 
 `results.json` rows: `{"id": "P01a", "status": "ok" | "failed" | "not_scripted", "error": "<Creo's exact error

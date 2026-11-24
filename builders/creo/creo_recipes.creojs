@@ -200,4 +200,92 @@ var RECIPES = {
   // A10a: (ctx) => ctx.notScripted('not written yet'),
   // A10b: green
   // A10b: (ctx) => ctx.notScripted('not written yet'),
+  // A11a: P01a placed twice, same part, different placements.
+  // A11a: (ctx) => ctx.notScripted('not written yet'),
+  // A11b: block2 at (40, 0, 20) turned 180° about X (upside down, still z 10…20)
+  // A11b: (ctx) => ctx.notScripted('not written yet'),
+  // A11c: block2 at (40, 0, 0) turned 90° about Y (lying on its side, z −10…10)
+  // A11c: (ctx) => ctx.notScripted('not written yet'),
+  // A12a: A nested subassembly, 2 levels.
+  // A12a: (ctx) => ctx.notScripted('not written yet'),
+  // A12b: ground the sub in the top too
+  // A12b: (ctx) => ctx.notScripted('not written yet'),
+  // A12c: the sub placed at (60, 0, 0) turned 90° about Z
+  // A12c: (ctx) => ctx.notScripted('not written yet'),
+  // A13a: A nested subassembly, 3 levels.
+  // A13a: (ctx) => ctx.notScripted('not written yet'),
+  // A13b: add a second A13-mid instance "mid2" at (80, 0, 0) turned 90° about Z, not grounded
+  // A13b: (ctx) => ctx.notScripted('not written yet'),
+  // A14a: High priorityRigid joint (no motion).
+  // A14a: (ctx) => ctx.notScripted('not written yet'),
+  // A14b: block2 shifted 5 along +X inside the joint (offset), so at (5, 0, 10)
+  // A14b: (ctx) => ctx.notScripted('not written yet'),
+  // A14c: block2 turned 180° about Z at (0, 0, 10): the shape looks the same, the matrix is kept
+  // A14c: (ctx) => ctx.notScripted('not written yet'),
+  // A15a: High priorityA turning motion with rotation limits.
+  // A15a: (ctx) => ctx.notScripted('not written yet'),
+  // A15b: same, saved at +30° (block turned 30° counter-clockwise)
+  // A15b: (ctx) => ctx.notScripted('not written yet'),
+  // A15c: limits 0° … 180°, saved at +90°
+  // A15c: (ctx) => ctx.notScripted('not written yet'),
+  // A16a: High priorityA sliding motion with travel limits.
+  // A16a: (ctx) => ctx.notScripted('not written yet'),
+  // A16b: saved at +20 (block2 at (20, 0, 10), the limit)
+  // A16b: (ctx) => ctx.notScripted('not written yet'),
+  // A16c: limits 0 … 40, saved at +40
+  // A16c: (ctx) => ctx.notScripted('not written yet'),
+  // A17a: A slide-and-turn motion about one axis.
+  // A17a: (ctx) => ctx.notScripted('not written yet'),
+  // A17b: saved at travel 35 and turned 45° (block at (0, 0, 35) turned 45° about Z)
+  // A17b: (ctx) => ctx.notScripted('not written yet'),
+  // A18a: A motion on a plane (slides on it and turns about its normal).
+  // A18a: (ctx) => ctx.notScripted('not written yet'),
+  // A18b: saved at (15, 5, 10) turned 30° about Z
+  // A18b: (ctx) => ctx.notScripted('not written yet'),
+  // A18c: saved at (20, −20, 10) turned 90° about Z (the limits at their ends)
+  // A18c: (ctx) => ctx.notScripted('not written yet'),
+  // A19a: A turning motion about a point (any direction, no slide).
+  // A19a: (ctx) => ctx.notScripted('not written yet'),
+  // A19b: pin turned 30° about X (tilted toward −Y)
+  // A19b: (ctx) => ctx.notScripted('not written yet'),
+  // A19c: pin turned 45° about Y, with a cone limit of 45° from Z set where the program can
+  // A19c: (ctx) => ctx.notScripted('not written yet'),
+  // A20a: A mirrored component.
+  // A20a: (ctx) => ctx.notScripted('not written yet'),
+  // A20b: mirror plane y = 40 instead (mirror at y = 80, rounded corner at y = 65)
+  // A20b: (ctx) => ctx.notScripted('not written yet'),
+  // A20c: A mirrored component.
+  // A20c: (ctx) => ctx.notScripted('not written yet'),
+  // A21a: A linear pattern of a subassembly.
+  // A21a: (ctx) => ctx.notScripted('not written yet'),
+  // A21b: 2 instances, spacing 25
+  // A21b: (ctx) => ctx.notScripted('not written yet'),
+  // A21c: 3 instances along +Y, spacing 40
+  // A21c: (ctx) => ctx.notScripted('not written yet'),
+  // A22a: A circular pattern of a subassembly.
+  // A22a: (ctx) => ctx.notScripted('not written yet'),
+  // A22b: 2 instances, 180° between them (at (40, 0, 0) and (−40, 0, 0))
+  // A22b: (ctx) => ctx.notScripted('not written yet'),
+  // A23a: A linked (external) part.
+  // A23a: (ctx) => ctx.notScripted('not written yet'),
+  // A23b: break the link on the pin (it becomes a local copy; the block stays linked)
+  // A23b: (ctx) => ctx.notScripted('not written yet'),
+  // A23c: A linked (external) part.
+  // A23c: (ctx) => ctx.notScripted('not written yet'),
+  // A24a: Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly.
+  // A24a: (ctx) => ctx.notScripted('not written yet'),
+  // A24b: both instances flexible: pair1's pin moved 6 along −X (centre (−6, 0, 10)), pair2's pin at (56, 0, 10)
+  // A24b: (ctx) => ctx.notScripted('not written yet'),
+  // A25a: Suppressed components and an unsuppressed twin.
+  // A25a: (ctx) => ctx.notScripted('not written yet'),
+  // A25b: suppress the pin
+  // A25b: (ctx) => ctx.notScripted('not written yet'),
+  // A25c: suppress the ring
+  // A25c: (ctx) => ctx.notScripted('not written yet'),
+  // A25d: suppress the pin's Mate only (the pin stays where it is, free)
+  // A25d: (ctx) => ctx.notScripted('not written yet'),
+  // A26a: A part configuration switched in the assembly.
+  // A26a: (ctx) => ctx.notScripted('not written yet'),
+  // A26b: save with Default active (block 10 high, pin at (0, 0, 10))
+  // A26b: (ctx) => ctx.notScripted('not written yet'),
 };

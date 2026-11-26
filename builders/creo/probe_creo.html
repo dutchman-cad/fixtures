@@ -22,9 +22,9 @@ function creoProbe(version) {
   // Home folders become %USERPROFILE%: nothing personal leaves the page.
   // Plain and JSON-escaped (C:\\Users\\name) paths alike; C:\Users\Public stays.
   const scrub = (text) => String(text)
-    .replace(/[A-Za-z]:[\\\/]+(Users|Documents and Settings)[\\\/]+(?!(Public|Default|All Users)([\\\/"]|$))[^\\\/"'<>|\r\n]+/gi, '%USERPROFILE%')
-    .replace(/\/(home|Users)\/(?!Shared(\/|$))[^\/"'<>|\r\n]+/g, '/%USERPROFILE%')
-    .replace(/OneDrive[^\\\/"]*/gi, '%OneDrive%');
+    .replace(/(?:[A-Za-z]:)?[\\\/]+(Users|Documents and Settings)[\\\/]+(?!(Public|Default|All Users|Shared)([\\\/"]|$))[^\\\/"'<>|\r\n]+(?:[^"'<>|\r\n\\]|\\(?!"))*/gi, '%USERPROFILE%')
+    .replace(/\/(home|Users)\/(?!(Shared|Public)(\/|$))[^\/"'<>|\r\n]+(?:[^"'<>|\r\n\\]|\\(?!"))*/g, '/%USERPROFILE%')
+    .replace(/OneDrive(?:[^"'<>|\r\n\\]|\\(?!"))*/gi, '%OneDrive%').replace(/\\\\[^\\\/"'<>|\r\n]+\\(?:[^"'<>|\r\n\\]|\\(?!"))*/g, '%SHARE%');
   // Creo writes the folder it saves in into each file: the probe saves nothing inside a user folder or OneDrive.
   const personal = (path) => /OneDrive/i.test(path) ||
     /^[A-Za-z]:[\\\/]+(Users|Documents and Settings)[\\\/]+(?!(Public|Default|All Users)([\\\/]|$))/i.test(path) ||
@@ -116,7 +116,7 @@ function creoProbe(version) {
 }
 </script>
 <script>
-  const PROBE_VERSION = '2026.11.26.1';
+  const PROBE_VERSION = '2026.11.26.2';
   function show(text) {
     document.getElementById('out').value = text;
     try {

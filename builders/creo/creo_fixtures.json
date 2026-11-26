@@ -1,6 +1,6 @@
 {
  "app": "Creo",
- "builder": "2026.11.24.2",
+ "builder": "2026.11.26.1",
  "creo_tools": [
   [
    "Planes XY · XZ · YZ (coordinates as written)",
@@ -15409,7 +15409,7 @@
     }
    ],
    "step": "a24a.step",
-   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its centre is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: the subassembly's Flexible setting (to verify in the builder run). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
+   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its centre is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: no API call moves a Mated child inside a flexible instance, so A24 is not scripted there (skipped). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
    "template": "mmns_asm_design_abs",
    "title": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly.",
    "uses": [
@@ -15700,7 +15700,7 @@
     }
    ],
    "step": "a24b.step",
-   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its centre is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: the subassembly's Flexible setting (to verify in the builder run). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
+   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its centre is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: no API call moves a Mated child inside a flexible instance, so A24 is not scripted there (skipped). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
    "template": "mmns_asm_design_abs",
    "title": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly.",
    "twin_change": "both instances flexible: pair1's pin moved 6 along −X (centre (−6, 0, 10)), pair2's pin at (56, 0, 10)",

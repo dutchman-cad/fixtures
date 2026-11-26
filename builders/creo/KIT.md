@@ -21,7 +21,9 @@ its expected values; `creo_fixtures.json` carries both, so you need nothing else
 
 ## Run it
 
-1. Make a new, empty folder, for example `Documents\CreoFixtures\run1`. Every run gets its own new folder.
+1. Make a new, empty folder outside your user folder: `C:\Users\Public\FixtureOut\creo-1` (the next run gets
+   `creo-2`, and so on). Creo writes the folder it saves in into every file, so the builder refuses a folder inside
+   your user folder, OneDrive or a network share.
 2. Put `build_creo.html`, `creo_recipes.creojs` and `pack_creo.ps1` in it, and copy `creojs.js` from your Creo.JS
    setup next to them (we don't ship PTC's files).
 3. Start Creo. **File → Manage Session → Select Working Directory**, and pick that folder.
@@ -33,7 +35,7 @@ its expected values; `creo_fixtures.json` carries both, so you need nothing else
 7. Open Windows PowerShell and run:
 
    ```powershell
-   powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\Documents\CreoFixtures\run1\pack_creo.ps1" -Folder "$env:USERPROFILE\Documents\CreoFixtures\run1"
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\Users\Public\FixtureOut\creo-1\pack_creo.ps1" -Folder "C:\Users\Public\FixtureOut\creo-1"
    ```
 
 8. It ends with `N recipes: X built, Y failed, Z not scripted` and the zip's path. Send that zip to **Dutchy** in a
@@ -123,12 +125,18 @@ name, and run the builder. It opens your file, checks it against the answer key,
 
 ## Privacy
 
-Nothing in `results.json` or the log is a path or a name. Before each save the builder blanks personal parameters;
-`pack_creo.ps1` then scans every file for your Windows user name, PC name and home folder and leaves out any file
-that has one (it names it). Your files stay private unless you tell us they may join the public test collection
+Nothing in `results.json` or the log is a path or a name. The builder runs only in a folder outside your user
+folder (Creo writes the folder it saves in into every file), and blanks personal parameters before each save.
+`pack_creo.ps1` refuses a folder inside your user folder or OneDrive. It scans every file, raw and inside its
+compressed streams, for your user folder, OneDrive, user name and PC name. A design whose file has one is marked
+`failed` in the zipped `results.json`, and its files are left out (it names them). The log and `results.json` go in
+with those replaced by `%USERPROFILE%`, `%USERNAME%` and `%COMPUTERNAME%`. Each STEP copy in the zip carries only its bare file
+name in its header, `Fixture Builder` as author and no organisation; the copy in your folder is unchanged. Your files stay private unless you tell us they may join the public test collection
 (CC0).
 
 ## Sending work back
+
+Native CAD files (.prt, .asm…) carry your Windows user and computer name inside them; we keep native files private and publish only STEP and files we've checked clean.
 
 - **Fixtures:** the zip `pack_creo.ps1` made, to **Dutchy** in a Discord direct message.
 - **Code:** your `creo_recipes.creojs`, zipped, to Dutchy in a Discord direct message or in your Creo thread.

@@ -20,7 +20,15 @@ function creoProbe(version) {
   const report = { probe: version, engine: 'Creo.JS', checks: {} };
   let passed = 0, total = 0;
   // Home folders become %USERPROFILE%: nothing personal leaves the page.
-  const scrub = (text) => String(text).replace(/[A-Za-z]:\\Users\\[^\\\/"]+/gi, '%USERPROFILE%').replace(/\/(home|Users)\/[^\/"]+/g, '/%USERPROFILE%');
+  // Plain and JSON-escaped (C:\\Users\\name) paths alike; C:\Users\Public stays.
+  const scrub = (text) => String(text)
+    .replace(/[A-Za-z]:[\\\/]+(Users|Documents and Settings)[\\\/]+(?!(Public|Default|All Users)([\\\/"]|$))[^\\\/"'<>|\r\n]+/gi, '%USERPROFILE%')
+    .replace(/\/(home|Users)\/(?!Shared(\/|$))[^\/"'<>|\r\n]+/g, '/%USERPROFILE%')
+    .replace(/OneDrive[^\\\/"]*/gi, '%OneDrive%');
+  // Creo writes the folder it saves in into each file: the probe saves nothing inside a user folder or OneDrive.
+  const personal = (path) => /OneDrive/i.test(path) ||
+    /^[A-Za-z]:[\\\/]+(Users|Documents and Settings)[\\\/]+(?!(Public|Default|All Users)([\\\/]|$))/i.test(path) ||
+    /^[\\\/]{2}/.test(path) || /^\/(home|Users)\/(?!Shared(\/|$))/.test(path);
   function check(name, fn) {
     total++;
     const t0 = Date.now();
@@ -48,6 +56,16 @@ function creoProbe(version) {
   const s = keep.s;
   if (!s) return JSON.stringify(Object.assign(report, { passed, total }));
   check('working_folder', () => s.GetCurrentDirectory());
+  let here = '';
+  try { here = String(s.GetCurrentDirectory() || ''); } catch (e) { }
+  if (personal(here)) {
+    total++;
+    report.checks.working_folder_public = { status: 'failed', error: 'Creo\'s working directory is inside your user folder, OneDrive or a ' +
+      'network share; nothing was saved. Select C:\\Users\\Public\\FixtureOut\\creo-probe (make it first) as the working directory and run again.' };
+    report.passed = passed;
+    report.total = total;
+    return JSON.stringify(report, null, 1);
+  }
   check('config_options', () => {
     const c = {};
     for (const o of ['template_solidpart', 'template_designasm', 'template_sheetmetalpart', 'pro_unit_length', 'web_link_file_read']) {
@@ -98,7 +116,7 @@ function creoProbe(version) {
 }
 </script>
 <script>
-  const PROBE_VERSION = '2026.11.23.1';
+  const PROBE_VERSION = '2026.11.26.1';
   function show(text) {
     document.getElementById('out').value = text;
     try {

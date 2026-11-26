@@ -31,7 +31,8 @@ The probes below tell us what a given Creo install can script. Each takes about 
 
 5. Wait until it prints `Creo probe: N of M checks passed`. It may take a minute before Creo answers; no Creo
    window opens unless the background start fails, in which case it tries once more with a window.
-6. The last line is the path of a zip, in a new `probe_creo-…` folder under `Documents\CreoProbe`. Send that zip
+6. The last line is the path of a zip, in a new `probe_creo-…` folder under `C:\Users\Public\FixtureOut\CreoProbe`
+   (outside your user folder: Creo writes the folder it saves in into every file). Send that zip
    to **Dutchy** in a Discord direct message.
 
 If several Creo releases are installed, the probe uses the newest. To probe another one, add its program, for
@@ -43,7 +44,8 @@ step 4. To read the install without starting Creo at all, add `-NoStart`.
 The same checks, through Creo.JS instead of the VB API. It needs the `creojs.js` file from your own Creo.JS setup
 (we don't ship PTC's files).
 
-1. Make a new empty folder, for example `Documents\CreoProbeJS`.
+1. Make a new empty folder outside your user folder: `C:\Users\Public\FixtureOut\creo-probe`. The probe saves
+   nothing in a folder inside your user folder, OneDrive or a network share.
 2. Download `probe_creo.html` into it, and copy `creojs.js` from your Creo.JS setup next to it (the same file your
    own Creo.JS pages load).
 3. Start Creo. Set the working directory to that folder: **File → Manage Session → Select Working Directory**.
@@ -76,6 +78,8 @@ Your user name, PC name and home folder are replaced by `%USERNAME%`, `%COMPUTER
 anything is written. Every file is scanned before it goes into the zip, and one that still contains your user or
 PC name is left out (the log says which). The probe never opens your own files, never attaches to a Creo you have
 open, and never changes `config.pro` or any other option file: options it needs are set for its own session only.
+
+Native CAD files (.prt, .asm…) carry your Windows user and computer name inside them; we keep native files private and publish only STEP and files we've checked clean.
 
 ## If the VB API is not installed
 

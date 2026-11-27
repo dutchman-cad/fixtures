@@ -111,7 +111,7 @@ those, or make a design by hand and let the builder check and pack it.
 
 The rules each design follows (from the booklet):
 
-- Real Creo features, as the steps and the Creo tool table say; fully constrained sketches; millimetres.
+- Real Creo features, as the steps and the Creo tool table say; fully constrained sketches; millimeters.
 - Start from the design's `template` (`mmns_part_solid_abs`, `mmns_part_sheetmetal_abs`, `mmns_asm_design_abs`).
 - A twin is its base with the one change in `twin_change`, nothing else.
 - Assemblies use the part files named in `uses`, from the same folder.
@@ -131,7 +131,7 @@ folder (Creo writes the folder it saves in into every file), and blanks personal
 compressed streams, for your user folder, OneDrive, user name and PC name. A design whose file has one is marked
 `failed` in the zipped `results.json`, and its files are left out (it names them). The log and `results.json` go in
 with those replaced by `%USERPROFILE%`, `%USERNAME%` and `%COMPUTERNAME%`. Each STEP copy in the zip carries only its bare file
-name in its header, `Fixture Builder` as author and no organisation; the copy in your folder is unchanged. Your files stay private unless you tell us they may join the public test collection
+name in its header, `Fixture Builder` as author and no organization; the copy in your folder is unchanged. Your files stay private unless you tell us they may join the public test collection
 (CC0).
 
 ## Sending work back

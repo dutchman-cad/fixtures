@@ -159,8 +159,8 @@ function ScanBytes([byte[]]$bytes) {
 }
 
 # A STEP file's header names the folder it was exported to and often the person: FILE_NAME('<path>', time,
-# (author), (organisation), preprocessor, system, authorisation). The copy that goes in the zip carries the bare file
-# name, 'Fixture Builder' as author and no organisation or authorisation.
+# (author), (organization), preprocessor, system, authorization). The copy that goes in the zip carries the bare file
+# name, 'Fixture Builder' as author and no organization or authorization.
 function CleanStep([byte[]]$bytes, [string]$bareName) {
     $latin = [Text.Encoding]::GetEncoding(28591)
     $q = "'(?:[^']|'')*'"

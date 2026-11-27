@@ -1,6 +1,6 @@
 {
  "app": "Creo",
- "builder": "2026.11.26.2",
+ "builder": "2026.11.26.3",
  "creo_tools": [
   [
    "Planes XY · XZ · YZ (coordinates as written)",
@@ -143,9 +143,9 @@
     }
    ],
    "step": "p01a.step",
-   "steps": "Sketch on XY: rectangle 20 (X) × 30 (Y) centred on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1 Reference drawing (PNG)How: Start 2D Sketch on XY. Center Point Rectangle, centre clicked on the origin point. Dimension 20 and 30. Finish Sketch. Extrude, distance 10, one direction.",
+   "steps": "Sketch on XY: rectangle 20 (X) × 30 (Y) centered on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1 Reference drawing (PNG)How: Start 2D Sketch on XY. Center Point Rectangle, center clicked on the origin point. Dimension 20 and 30. Finish Sketch. Extrude, distance 10, one direction.",
    "template": "mmns_part_solid_abs",
-   "title": "Sketch on XY: rectangle 20 (X) × 30 (Y) centred on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1"
+   "title": "Sketch on XY: rectangle 20 (X) × 30 (Y) centered on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1"
   },
   {
    "expect": {
@@ -201,9 +201,9 @@
     "to": 12
    },
    "step": "p01b.step",
-   "steps": "Sketch on XY: rectangle 20 (X) × 30 (Y) centred on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1 Reference drawing (PNG)How: Start 2D Sketch on XY. Center Point Rectangle, centre clicked on the origin point. Dimension 20 and 30. Finish Sketch. Extrude, distance 10, one direction.",
+   "steps": "Sketch on XY: rectangle 20 (X) × 30 (Y) centered on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1 Reference drawing (PNG)How: Start 2D Sketch on XY. Center Point Rectangle, center clicked on the origin point. Dimension 20 and 30. Finish Sketch. Extrude, distance 10, one direction.",
    "template": "mmns_part_solid_abs",
-   "title": "Sketch on XY: rectangle 20 (X) × 30 (Y) centred on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1",
+   "title": "Sketch on XY: rectangle 20 (X) × 30 (Y) centered on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1",
    "twin_change": "extrude 12",
    "twin_of": "P01a"
   },
@@ -408,9 +408,9 @@
     }
    ],
    "step": "p03a.step",
-   "steps": "Copy of P01a. Simple hole Ø5 through all, at the centre of the top face (0, 0, 10). Reference drawing (PNG)How: Hole command. Placement: On Point, using a sketch point at the top-face centre (new sketch on that face, Point at the projected centre). Through All.",
+   "steps": "Copy of P01a. Simple hole Ø5 through all, at the center of the top face (0, 0, 10). Reference drawing (PNG)How: Hole command. Placement: On Point, using a sketch point at the top-face center (new sketch on that face, Point at the projected center). Through All.",
    "template": "mmns_part_solid_abs",
-   "title": "Copy of P01a. Simple hole Ø5 through all, at the centre of the top face (0, 0, 10)."
+   "title": "Copy of P01a. Simple hole Ø5 through all, at the center of the top face (0, 0, 10)."
   },
   {
    "expect": {
@@ -482,9 +482,9 @@
     }
    ],
    "step": "p03b.step",
-   "steps": "Copy of P01a. Simple hole Ø5 through all, at the centre of the top face (0, 0, 10). Reference drawing (PNG)How: Hole command. Placement: On Point, using a sketch point at the top-face centre (new sketch on that face, Point at the projected centre). Through All.",
+   "steps": "Copy of P01a. Simple hole Ø5 through all, at the center of the top face (0, 0, 10). Reference drawing (PNG)How: Hole command. Placement: On Point, using a sketch point at the top-face center (new sketch on that face, Point at the projected center). Through All.",
    "template": "mmns_part_solid_abs",
-   "title": "Copy of P01a. Simple hole Ø5 through all, at the centre of the top face (0, 0, 10).",
+   "title": "Copy of P01a. Simple hole Ø5 through all, at the center of the top face (0, 0, 10).",
    "twin_change": "counterbore Ø9, depth 3",
    "twin_of": "P03a"
   },
@@ -1775,9 +1775,9 @@
     }
    ],
    "step": "p08a.step",
-   "steps": "Disc Ø60 × 5 centred on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z. Reference drawing (PNG)How: Extrude the disc, Hole command for one hole, then Circular Pattern (Pattern Features) about the Z axis.",
+   "steps": "Disc Ø60 × 5 centered on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z. Reference drawing (PNG)How: Extrude the disc, Hole command for one hole, then Circular Pattern (Pattern Features) about the Z axis.",
    "template": "mmns_part_solid_abs",
-   "title": "Disc Ø60 × 5 centred on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z."
+   "title": "Disc Ø60 × 5 centered on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z."
   },
   {
    "expect": {
@@ -1861,9 +1861,9 @@
     "to": 8
    },
    "step": "p08b.step",
-   "steps": "Disc Ø60 × 5 centred on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z. Reference drawing (PNG)How: Extrude the disc, Hole command for one hole, then Circular Pattern (Pattern Features) about the Z axis.",
+   "steps": "Disc Ø60 × 5 centered on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z. Reference drawing (PNG)How: Extrude the disc, Hole command for one hole, then Circular Pattern (Pattern Features) about the Z axis.",
    "template": "mmns_part_solid_abs",
-   "title": "Disc Ø60 × 5 centred on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z.",
+   "title": "Disc Ø60 × 5 centered on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z.",
    "twin_change": "8",
    "twin_of": "P08a"
   },
@@ -1964,9 +1964,9 @@
     }
    ],
    "step": "p09a.step",
-   "steps": "Copy of P01a. Boss 5×5×5 centred on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0). Reference drawing (PNG)How: Sketch on the end face, Extrude Join for the boss, then Mirror (features) with the XZ plane.",
+   "steps": "Copy of P01a. Boss 5×5×5 centered on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0). Reference drawing (PNG)How: Sketch on the end face, Extrude Join for the boss, then Mirror (features) with the XZ plane.",
    "template": "mmns_part_solid_abs",
-   "title": "Copy of P01a. Boss 5×5×5 centred on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0)."
+   "title": "Copy of P01a. Boss 5×5×5 centered on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0)."
   },
   {
    "expect": {
@@ -2071,9 +2071,9 @@
     "to": 6
    },
    "step": "p09b.step",
-   "steps": "Copy of P01a. Boss 5×5×5 centred on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0). Reference drawing (PNG)How: Sketch on the end face, Extrude Join for the boss, then Mirror (features) with the XZ plane.",
+   "steps": "Copy of P01a. Boss 5×5×5 centered on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0). Reference drawing (PNG)How: Sketch on the end face, Extrude Join for the boss, then Mirror (features) with the XZ plane.",
    "template": "mmns_part_solid_abs",
-   "title": "Copy of P01a. Boss 5×5×5 centred on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0).",
+   "title": "Copy of P01a. Boss 5×5×5 centered on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0).",
    "twin_change": "boss 6 (along X) × 5 × 5",
    "twin_of": "P09a"
   },
@@ -2344,9 +2344,9 @@
     }
    ],
    "step": "p11a.step",
-   "steps": "Square 20 × 20 centred on the origin on XY. Circle Ø10 centred on the Z axis on a work plane offset +30. Loft. Reference drawing (PNG)How: Work Plane offset from XY. Two sketches. Loft between the two profiles.",
+   "steps": "Square 20 × 20 centered on the origin on XY. Circle Ø10 centered on the Z axis on a work plane offset +30. Loft. Reference drawing (PNG)How: Work Plane offset from XY. Two sketches. Loft between the two profiles.",
    "template": "mmns_part_solid_abs",
-   "title": "Square 20 × 20 centred on the origin on XY. Circle Ø10 centred on the Z axis on a work plane offset +30. Loft."
+   "title": "Square 20 × 20 centered on the origin on XY. Circle Ø10 centered on the Z axis on a work plane offset +30. Loft."
   },
   {
    "expect": {
@@ -2414,9 +2414,9 @@
     }
    ],
    "step": "p11b.step",
-   "steps": "Square 20 × 20 centred on the origin on XY. Circle Ø10 centred on the Z axis on a work plane offset +30. Loft. Reference drawing (PNG)How: Work Plane offset from XY. Two sketches. Loft between the two profiles.",
+   "steps": "Square 20 × 20 centered on the origin on XY. Circle Ø10 centered on the Z axis on a work plane offset +30. Loft. Reference drawing (PNG)How: Work Plane offset from XY. Two sketches. Loft between the two profiles.",
    "template": "mmns_part_solid_abs",
-   "title": "Square 20 × 20 centred on the origin on XY. Circle Ø10 centred on the Z axis on a work plane offset +30. Loft.",
+   "title": "Square 20 × 20 centered on the origin on XY. Circle Ø10 centered on the Z axis on a work plane offset +30. Loft.",
    "twin_change": "offset 40",
    "twin_of": "P11a"
   },
@@ -2583,9 +2583,9 @@
     }
    ],
    "step": "p13a.step",
-   "steps": "Work plane offset +15 from XY. Circle Ø10 centred on the Z axis, extrude 5 upward. Reference drawing (PNG)How: Work Plane, Offset from Plane. Sketch on it, Extrude.",
+   "steps": "Work plane offset +15 from XY. Circle Ø10 centered on the Z axis, extrude 5 upward. Reference drawing (PNG)How: Work Plane, Offset from Plane. Sketch on it, Extrude.",
    "template": "mmns_part_solid_abs",
-   "title": "Work plane offset +15 from XY. Circle Ø10 centred on the Z axis, extrude 5 upward."
+   "title": "Work plane offset +15 from XY. Circle Ø10 centered on the Z axis, extrude 5 upward."
   },
   {
    "expect": {
@@ -2636,9 +2636,9 @@
     }
    ],
    "step": "p13b.step",
-   "steps": "Work plane offset +15 from XY. Circle Ø10 centred on the Z axis, extrude 5 upward. Reference drawing (PNG)How: Work Plane, Offset from Plane. Sketch on it, Extrude.",
+   "steps": "Work plane offset +15 from XY. Circle Ø10 centered on the Z axis, extrude 5 upward. Reference drawing (PNG)How: Work Plane, Offset from Plane. Sketch on it, Extrude.",
    "template": "mmns_part_solid_abs",
-   "title": "Work plane offset +15 from XY. Circle Ø10 centred on the Z axis, extrude 5 upward.",
+   "title": "Work plane offset +15 from XY. Circle Ø10 centered on the Z axis, extrude 5 upward.",
    "twin_change": "offset 20",
    "twin_of": "P13a"
   },
@@ -7862,9 +7862,9 @@
     }
    ],
    "step": "a10a.step",
-   "steps": "A01a + colour override in the assembly: P01a blue. Reference drawing (PNG)How: Select P01a in the assembly and set its appearance override from the Appearance dropdown.",
+   "steps": "A01a + color override in the assembly: P01a blue. Reference drawing (PNG)How: Select P01a in the assembly and set its appearance override from the Appearance dropdown.",
    "template": "mmns_asm_design_abs",
-   "title": "A01a + colour override in the assembly: P01a blue.",
+   "title": "A01a + color override in the assembly: P01a blue.",
    "uses": [
     "p01a.prt",
     "p02a.prt"
@@ -7911,9 +7911,9 @@
     }
    ],
    "step": "a10b.step",
-   "steps": "A01a + colour override in the assembly: P01a blue. Reference drawing (PNG)How: Select P01a in the assembly and set its appearance override from the Appearance dropdown.",
+   "steps": "A01a + color override in the assembly: P01a blue. Reference drawing (PNG)How: Select P01a in the assembly and set its appearance override from the Appearance dropdown.",
    "template": "mmns_asm_design_abs",
-   "title": "A01a + colour override in the assembly: P01a blue.",
+   "title": "A01a + color override in the assembly: P01a blue.",
    "twin_change": "green",
    "twin_of": "A10a",
    "uses": [
@@ -10267,7 +10267,7 @@
     }
    ],
    "step": "a15a.step",
-   "steps": "High priorityA turning motion with rotation limits. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it, same origin (0, 0, 0), free to rotate about the Z axis through the ring's centre and nothing else, limited to −45° … +90°. Save at 0°. Free motion: block: rotation about Z; no translation.How: block's bottom face stays at z = 0 and its Z axis stays on the ring's Z axis; only the turn about Z is left. Use your program's own tools for that (see the tool table), and store the limits −45° and +90° where the program can; else say \"no limit\" on the card.",
+   "steps": "High priorityA turning motion with rotation limits. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it, same origin (0, 0, 0), free to rotate about the Z axis through the ring's center and nothing else, limited to −45° … +90°. Save at 0°. Free motion: block: rotation about Z; no translation.How: block's bottom face stays at z = 0 and its Z axis stays on the ring's Z axis; only the turn about Z is left. Use your program's own tools for that (see the tool table), and store the limits −45° and +90° where the program can; else say \"no limit\" on the card.",
    "template": "mmns_asm_design_abs",
    "title": "High priorityA turning motion with rotation limits.",
    "uses": [
@@ -10477,7 +10477,7 @@
     }
    ],
    "step": "a15b.step",
-   "steps": "High priorityA turning motion with rotation limits. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it, same origin (0, 0, 0), free to rotate about the Z axis through the ring's centre and nothing else, limited to −45° … +90°. Save at 0°. Free motion: block: rotation about Z; no translation.How: block's bottom face stays at z = 0 and its Z axis stays on the ring's Z axis; only the turn about Z is left. Use your program's own tools for that (see the tool table), and store the limits −45° and +90° where the program can; else say \"no limit\" on the card.",
+   "steps": "High priorityA turning motion with rotation limits. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it, same origin (0, 0, 0), free to rotate about the Z axis through the ring's center and nothing else, limited to −45° … +90°. Save at 0°. Free motion: block: rotation about Z; no translation.How: block's bottom face stays at z = 0 and its Z axis stays on the ring's Z axis; only the turn about Z is left. Use your program's own tools for that (see the tool table), and store the limits −45° and +90° where the program can; else say \"no limit\" on the card.",
    "template": "mmns_asm_design_abs",
    "title": "High priorityA turning motion with rotation limits.",
    "twin_change": "same, saved at +30° (block turned 30° counter-clockwise)",
@@ -10689,7 +10689,7 @@
     }
    ],
    "step": "a15c.step",
-   "steps": "High priorityA turning motion with rotation limits. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it, same origin (0, 0, 0), free to rotate about the Z axis through the ring's centre and nothing else, limited to −45° … +90°. Save at 0°. Free motion: block: rotation about Z; no translation.How: block's bottom face stays at z = 0 and its Z axis stays on the ring's Z axis; only the turn about Z is left. Use your program's own tools for that (see the tool table), and store the limits −45° and +90° where the program can; else say \"no limit\" on the card.",
+   "steps": "High priorityA turning motion with rotation limits. P02a \"ring\" at (0, 0, 0), grounded + P01a \"block\" inside it, same origin (0, 0, 0), free to rotate about the Z axis through the ring's center and nothing else, limited to −45° … +90°. Save at 0°. Free motion: block: rotation about Z; no translation.How: block's bottom face stays at z = 0 and its Z axis stays on the ring's Z axis; only the turn about Z is left. Use your program's own tools for that (see the tool table), and store the limits −45° and +90° where the program can; else say \"no limit\" on the card.",
    "template": "mmns_asm_design_abs",
    "title": "High priorityA turning motion with rotation limits.",
    "twin_change": "limits 0° … 180°, saved at +90°",
@@ -12652,7 +12652,7 @@
     }
    ],
    "step": "a19a.step",
-   "steps": "A turning motion about a point (any direction, no slide). P01a \"block\" placed at (0, 0, −10) (so its top face is z = 0), grounded + P16 \"pin\" with its bottom-circle centre held on the assembly origin (0, 0, 0), standing up (z 0 … 20), free to turn about X, Y and Z through that point. Free motion: pin: rotation about X, Y and Z; no translation.How: hold the pin's origin point on the assembly origin point and leave all three turns free (see the tool table). The pin overlaps the block a little when tilted: ignore the interference. Inventor and FreeCAD store no cone limit on a ball joint: make A19c at its pose and say \"no cone limit stored\" on the card (not a skip).",
+   "steps": "A turning motion about a point (any direction, no slide). P01a \"block\" placed at (0, 0, −10) (so its top face is z = 0), grounded + P16 \"pin\" with its bottom-circle center held on the assembly origin (0, 0, 0), standing up (z 0 … 20), free to turn about X, Y and Z through that point. Free motion: pin: rotation about X, Y and Z; no translation.How: hold the pin's origin point on the assembly origin point and leave all three turns free (see the tool table). The pin overlaps the block a little when tilted: ignore the interference. Inventor and FreeCAD store no cone limit on a ball joint: make A19c at its pose and say \"no cone limit stored\" on the card (not a skip).",
    "template": "mmns_asm_design_abs",
    "title": "A turning motion about a point (any direction, no slide).",
    "uses": [
@@ -12814,7 +12814,7 @@
     }
    ],
    "step": "a19b.step",
-   "steps": "A turning motion about a point (any direction, no slide). P01a \"block\" placed at (0, 0, −10) (so its top face is z = 0), grounded + P16 \"pin\" with its bottom-circle centre held on the assembly origin (0, 0, 0), standing up (z 0 … 20), free to turn about X, Y and Z through that point. Free motion: pin: rotation about X, Y and Z; no translation.How: hold the pin's origin point on the assembly origin point and leave all three turns free (see the tool table). The pin overlaps the block a little when tilted: ignore the interference. Inventor and FreeCAD store no cone limit on a ball joint: make A19c at its pose and say \"no cone limit stored\" on the card (not a skip).",
+   "steps": "A turning motion about a point (any direction, no slide). P01a \"block\" placed at (0, 0, −10) (so its top face is z = 0), grounded + P16 \"pin\" with its bottom-circle center held on the assembly origin (0, 0, 0), standing up (z 0 … 20), free to turn about X, Y and Z through that point. Free motion: pin: rotation about X, Y and Z; no translation.How: hold the pin's origin point on the assembly origin point and leave all three turns free (see the tool table). The pin overlaps the block a little when tilted: ignore the interference. Inventor and FreeCAD store no cone limit on a ball joint: make A19c at its pose and say \"no cone limit stored\" on the card (not a skip).",
    "template": "mmns_asm_design_abs",
    "title": "A turning motion about a point (any direction, no slide).",
    "twin_change": "pin turned 30° about X (tilted toward −Y)",
@@ -12980,7 +12980,7 @@
     }
    ],
    "step": "a19c.step",
-   "steps": "A turning motion about a point (any direction, no slide). P01a \"block\" placed at (0, 0, −10) (so its top face is z = 0), grounded + P16 \"pin\" with its bottom-circle centre held on the assembly origin (0, 0, 0), standing up (z 0 … 20), free to turn about X, Y and Z through that point. Free motion: pin: rotation about X, Y and Z; no translation.How: hold the pin's origin point on the assembly origin point and leave all three turns free (see the tool table). The pin overlaps the block a little when tilted: ignore the interference. Inventor and FreeCAD store no cone limit on a ball joint: make A19c at its pose and say \"no cone limit stored\" on the card (not a skip).",
+   "steps": "A turning motion about a point (any direction, no slide). P01a \"block\" placed at (0, 0, −10) (so its top face is z = 0), grounded + P16 \"pin\" with its bottom-circle center held on the assembly origin (0, 0, 0), standing up (z 0 … 20), free to turn about X, Y and Z through that point. Free motion: pin: rotation about X, Y and Z; no translation.How: hold the pin's origin point on the assembly origin point and leave all three turns free (see the tool table). The pin overlaps the block a little when tilted: ignore the interference. Inventor and FreeCAD store no cone limit on a ball joint: make A19c at its pose and say \"no cone limit stored\" on the card (not a skip).",
    "template": "mmns_asm_design_abs",
    "title": "A turning motion about a point (any direction, no slide).",
    "twin_change": "pin turned 45° about Y, with a cone limit of 45° from Z set where the program can",
@@ -13350,6 +13350,7 @@
          1.0
         ]
        ],
+       "R_scored": false,
        "grounded": false,
        "mirrored_part": true,
        "part": "P04a-mirrored",
@@ -13414,6 +13415,7 @@
     },
     {
      "insert": {
+      "R_scored": false,
       "at": [
        40,
        0,
@@ -14461,7 +14463,7 @@
     }
    ],
    "step": "a22a.step",
-   "steps": "A circular pattern of a subassembly. A21-pair (same file as A21) placed at (40, 0, 0), grounded, pattern of the subassembly around the world Z axis through the origin, 3 instances, 120° between neighbours (the whole turn is 360°). Every instance turns with the pattern (the blocks are not kept parallel). Free motion: none (the pattern instances are placed by the pattern).How: Circular Pattern, axis: the Z origin axis, count 3, angle 360 (equal spacing), orientation turns with the pattern (\"rotate\", not \"fixed\").",
+   "steps": "A circular pattern of a subassembly. A21-pair (same file as A21) placed at (40, 0, 0), grounded, pattern of the subassembly around the world Z axis through the origin, 3 instances, 120° between neighbors (the whole turn is 360°). Every instance turns with the pattern (the blocks are not kept parallel). Free motion: none (the pattern instances are placed by the pattern).How: Circular Pattern, axis: the Z origin axis, count 3, angle 360 (equal spacing), orientation turns with the pattern (\"rotate\", not \"fixed\").",
    "template": "mmns_asm_design_abs",
    "title": "A circular pattern of a subassembly.",
    "uses": [
@@ -14679,7 +14681,7 @@
     }
    ],
    "step": "a22b.step",
-   "steps": "A circular pattern of a subassembly. A21-pair (same file as A21) placed at (40, 0, 0), grounded, pattern of the subassembly around the world Z axis through the origin, 3 instances, 120° between neighbours (the whole turn is 360°). Every instance turns with the pattern (the blocks are not kept parallel). Free motion: none (the pattern instances are placed by the pattern).How: Circular Pattern, axis: the Z origin axis, count 3, angle 360 (equal spacing), orientation turns with the pattern (\"rotate\", not \"fixed\").",
+   "steps": "A circular pattern of a subassembly. A21-pair (same file as A21) placed at (40, 0, 0), grounded, pattern of the subassembly around the world Z axis through the origin, 3 instances, 120° between neighbors (the whole turn is 360°). Every instance turns with the pattern (the blocks are not kept parallel). Free motion: none (the pattern instances are placed by the pattern).How: Circular Pattern, axis: the Z origin axis, count 3, angle 360 (equal spacing), orientation turns with the pattern (\"rotate\", not \"fixed\").",
    "template": "mmns_asm_design_abs",
    "title": "A circular pattern of a subassembly.",
    "twin_change": "2 instances, 180° between them (at (40, 0, 0) and (−40, 0, 0))",
@@ -15409,7 +15411,7 @@
     }
    ],
    "step": "a24a.step",
-   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its centre is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: no API call moves a Mated child inside a flexible instance, so A24 is not scripted there (skipped). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
+   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its center is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: no API call moves a Mated child inside a flexible instance, so A24 is not scripted there (skipped). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
    "template": "mmns_asm_design_abs",
    "title": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly.",
    "uses": [
@@ -15700,10 +15702,10 @@
     }
    ],
    "step": "a24b.step",
-   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its centre is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: no API call moves a Mated child inside a flexible instance, so A24 is not scripted there (skipped). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
+   "steps": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly. A24-pair = P01a \"block\" at (0, 0, 0), grounded + P16 \"pin\" at (0, 0, 10), pin bottom Mated to the block's top face (3 degrees of freedom left: slide in X and Y, turn). Top: \"pair1\" at (0, 0, 0), rigid, and \"pair2\" at (50, 0, 0), flexible, both grounded; in pair2 only, move the pin 6 along +X, so its center is at (56, 0, 10). Free motion: pair2/pin (flexible, moved 6 along +X): translation along X and Y, rotation about Z; the rigid pair1 has none. b: pair1/pin and pair2/pin each the same.How: Inventor: right-click the subassembly, Flexible. SolidWorks: Component Properties, Solve as Flexible. Solid Edge: Flexible subassembly. Onshape: subassembly instance, Flexible (the default there). Creo: Flexible component. Alibre: no API call moves a Mated child inside a flexible instance, so A24 is not scripted there (skipped). NX, CATIA: say \"n/a\" unless your version has it. Then drag the pin in the flexible instance.",
    "template": "mmns_asm_design_abs",
    "title": "Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly.",
-   "twin_change": "both instances flexible: pair1's pin moved 6 along −X (centre (−6, 0, 10)), pair2's pin at (56, 0, 10)",
+   "twin_change": "both instances flexible: pair1's pin moved 6 along −X (center (−6, 0, 10)), pair2's pin at (56, 0, 10)",
    "twin_of": "A24a",
    "uses": [
     "p01a.prt",
@@ -16719,7 +16721,7 @@
     }
    ],
    "step": "a26a.step",
-   "steps": "A part configuration switched in the assembly. A part with two configurations: \"Default\" = P01a (10 high) and \"Tall\" = P01b (12 high). Assembly: the part \"block\" at (0, 0, 0), grounded, with Tall active; P16 \"pin\" Mated bottom to the block's top face, centred (0, 0, 12). Save with Tall active. Free motion: pin: turns about Z and moves along X and Y.How: SolidWorks Configurations, Inventor iPart / Design Variants, Onshape Configurations, Creo Family Table, CATIA Design Table, NX Part Family, Solid Edge Family of Parts, Fusion Configurations. If your program has no part configurations, say \"n/a\". Add the Mate for the pin; check the pin rides up when the configuration changes.",
+   "steps": "A part configuration switched in the assembly. A part with two configurations: \"Default\" = P01a (10 high) and \"Tall\" = P01b (12 high). Assembly: the part \"block\" at (0, 0, 0), grounded, with Tall active; P16 \"pin\" Mated bottom to the block's top face, centered (0, 0, 12). Save with Tall active. Free motion: pin: turns about Z and moves along X and Y.How: SolidWorks Configurations, Inventor iPart / Design Variants, Onshape Configurations, Creo Family Table, CATIA Design Table, NX Part Family, Solid Edge Family of Parts, Fusion Configurations. If your program has no part configurations, say \"n/a\". Add the Mate for the pin; check the pin rides up when the configuration changes.",
    "template": "mmns_asm_design_abs",
    "title": "A part configuration switched in the assembly.",
    "uses": [
@@ -16908,7 +16910,7 @@
     }
    ],
    "step": "a26b.step",
-   "steps": "A part configuration switched in the assembly. A part with two configurations: \"Default\" = P01a (10 high) and \"Tall\" = P01b (12 high). Assembly: the part \"block\" at (0, 0, 0), grounded, with Tall active; P16 \"pin\" Mated bottom to the block's top face, centred (0, 0, 12). Save with Tall active. Free motion: pin: turns about Z and moves along X and Y.How: SolidWorks Configurations, Inventor iPart / Design Variants, Onshape Configurations, Creo Family Table, CATIA Design Table, NX Part Family, Solid Edge Family of Parts, Fusion Configurations. If your program has no part configurations, say \"n/a\". Add the Mate for the pin; check the pin rides up when the configuration changes.",
+   "steps": "A part configuration switched in the assembly. A part with two configurations: \"Default\" = P01a (10 high) and \"Tall\" = P01b (12 high). Assembly: the part \"block\" at (0, 0, 0), grounded, with Tall active; P16 \"pin\" Mated bottom to the block's top face, centered (0, 0, 12). Save with Tall active. Free motion: pin: turns about Z and moves along X and Y.How: SolidWorks Configurations, Inventor iPart / Design Variants, Onshape Configurations, Creo Family Table, CATIA Design Table, NX Part Family, Solid Edge Family of Parts, Fusion Configurations. If your program has no part configurations, say \"n/a\". Add the Mate for the pin; check the pin rides up when the configuration changes.",
    "template": "mmns_asm_design_abs",
    "title": "A part configuration switched in the assembly.",
    "twin_change": "save with Default active (block 10 high, pin at (0, 0, 10))",
@@ -16920,7 +16922,7 @@
    ]
   }
  ],
- "how": "Make the Inventor part, sheet-metal, and assembly recipes above (P, S, and A IDs, except those marked Inventor only) with the Creo tools below, and save them as p01a.prt, s02b.prt, a02a.asm. Start from the millimetre templates (mmns_part_solid_abs, mmns_part_sheetmetal_abs, and mmns_asm_design_abs; untick Use default template to pick them). Creo keeps names in lower case and numbers each save (p01a.prt.3): that's fine, send the newest one. For a twin, open its a file, File → Save As → Save a Copy under the twin's name, then open the copy and make the one change. Each release is its own set, since a newer release's files don't open in an older one. Make each file fresh in this release: start a new part there, don't open and re-save a file from another release. Derive twins from this release's own base, as usual. Check the extrude/thickness arrow points to +Z (toward you from FRONT); flip it if not. Same rules: one change per twin, every twin from a, fully constrained sketches. If a step has no exact match, use the closest tool and write what you did on the card.",
+ "how": "Make the Inventor part, sheet-metal, and assembly recipes above (P, S, and A IDs, except those marked Inventor only) with the Creo tools below, and save them as p01a.prt, s02b.prt, a02a.asm. Start from the millimeter templates (mmns_part_solid_abs, mmns_part_sheetmetal_abs, and mmns_asm_design_abs; untick Use default template to pick them). Creo keeps names in lower case and numbers each save (p01a.prt.3): that's fine, send the newest one. For a twin, open its a file, File → Save As → Save a Copy under the twin's name, then open the copy and make the one change. Each release is its own set, since a newer release's files don't open in an older one. Make each file fresh in this release: start a new part there, don't open and re-save a file from another release. Derive twins from this release's own base, as usual. Check the extrude/thickness arrow points to +Z (toward you from FRONT); flip it if not. Same rules: one change per twin, every twin from a, fully constrained sketches. If a step has no exact match, use the closest tool and write what you did on the card.",
  "source": "Recipe booklet (recipes.html), Creo section, and expect.json, the answer key",
  "templates": {
   "assembly": "mmns_asm_design_abs",

@@ -19,7 +19,7 @@ The probes below tell us what a given Creo install can script. Each takes about 
 
 ## Run the probe
 
-1. Save your work and close Creo. The probe starts a Creo session of its own in the background, and some licences
+1. Save your work and close Creo. The probe starts a Creo session of its own in the background, and some licenses
    allow only one session at a time.
 2. Download `probe_creo.ps1` into your Downloads folder.
 3. Click **Start**, type `PowerShell`, and click **Windows PowerShell** (not PowerShell 7, not ISE).

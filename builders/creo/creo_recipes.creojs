@@ -4,7 +4,7 @@
 // hand-made file when there is one, makes a twin whose only change is one number from its base, or reports
 // it not scripted. Original code only: never paste PTC sample code here.
 var RECIPES = {
-  // P01a: Sketch on XY: rectangle 20 (X) × 30 (Y) centred on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1
+  // P01a: Sketch on XY: rectangle 20 (X) × 30 (Y) centered on the origin, dimensioned. Extrude 10 upward (+Z). Fig. 1
   // Template route, as an example: a block you made once by hand and saved as template_block.prt in this
   // folder (20 x 30 x 10, the extrude depth its only 10 mm dimension), copied and edited to the recipe.
   // P01a: (ctx) => ctx.fromTemplate('template_block.prt', [[10, 10]]),
@@ -14,7 +14,7 @@ var RECIPES = {
   // P02a: (ctx) => ctx.notScripted('not written yet'),
   // P02b: angle 270°
   // P02b: (ctx) => ctx.notScripted('not written yet'),
-  // P03a: Copy of P01a. Simple hole Ø5 through all, at the centre of the top face (0, 0, 10).
+  // P03a: Copy of P01a. Simple hole Ø5 through all, at the center of the top face (0, 0, 10).
   // P03a: (ctx) => ctx.notScripted('not written yet'),
   // P03b: counterbore Ø9, depth 3
   // P03b: (ctx) => ctx.notScripted('not written yet'),
@@ -48,11 +48,11 @@ var RECIPES = {
   // P07a: (ctx) => ctx.notScripted('not written yet'),
   // P07b: 4 × 2
   // P07b: (ctx) => ctx.notScripted('not written yet'),
-  // P08a: Disc Ø60 × 5 centred on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z.
+  // P08a: Disc Ø60 × 5 centered on the origin. One Ø6 hole at (20, 0). Circular pattern of 6 about Z.
   // P08a: (ctx) => ctx.notScripted('not written yet'),
   // P08b: 8
   // P08b: (ctx) => ctx.notScripted('not written yet'),
-  // P09a: Copy of P01a. Boss 5×5×5 centred on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0).
+  // P09a: Copy of P01a. Boss 5×5×5 centered on the +Y end face (y = +15), sticking out in +Y. Mirror it across the XZ plane (y = 0).
   // P09a: (ctx) => ctx.notScripted('not written yet'),
   // P09b: boss 6 (along X) × 5 × 5
   // P09b: (ctx) => ctx.notScripted('not written yet'),
@@ -60,7 +60,7 @@ var RECIPES = {
   // P10a: (ctx) => ctx.notScripted('not written yet'),
   // P10b: circle Ø5
   // P10b: (ctx) => ctx.notScripted('not written yet'),
-  // P11a: Square 20 × 20 centred on the origin on XY. Circle Ø10 centred on the Z axis on a work plane offset +30. Loft.
+  // P11a: Square 20 × 20 centered on the origin on XY. Circle Ø10 centered on the Z axis on a work plane offset +30. Loft.
   // P11a: (ctx) => ctx.notScripted('not written yet'),
   // P11b: offset 40
   // P11b: (ctx) => ctx.notScripted('not written yet'),
@@ -68,7 +68,7 @@ var RECIPES = {
   // P12a: (ctx) => ctx.notScripted('not written yet'),
   // P12b: plate_w = 25
   // P12b: (ctx) => ctx.notScripted('not written yet'),
-  // P13a: Work plane offset +15 from XY. Circle Ø10 centred on the Z axis, extrude 5 upward.
+  // P13a: Work plane offset +15 from XY. Circle Ø10 centered on the Z axis, extrude 5 upward.
   // P13a: (ctx) => ctx.notScripted('not written yet'),
   // P13b: offset 20
   // P13b: (ctx) => ctx.notScripted('not written yet'),
@@ -196,7 +196,7 @@ var RECIPES = {
   // A09a: (ctx) => ctx.notScripted('not written yet'),
   // A09b: save with View1 active
   // A09b: (ctx) => ctx.notScripted('not written yet'),
-  // A10a: A01a + colour override in the assembly: P01a blue.
+  // A10a: A01a + color override in the assembly: P01a blue.
   // A10a: (ctx) => ctx.notScripted('not written yet'),
   // A10b: green
   // A10b: (ctx) => ctx.notScripted('not written yet'),
@@ -274,7 +274,7 @@ var RECIPES = {
   // A23c: (ctx) => ctx.notScripted('not written yet'),
   // A24a: Inventor, SolidWorks, Solid Edge, Alibre Design, Onshape and Creo onlyA flexible subassembly.
   // A24a: (ctx) => ctx.notScripted('not written yet'),
-  // A24b: both instances flexible: pair1's pin moved 6 along −X (centre (−6, 0, 10)), pair2's pin at (56, 0, 10)
+  // A24b: both instances flexible: pair1's pin moved 6 along −X (center (−6, 0, 10)), pair2's pin at (56, 0, 10)
   // A24b: (ctx) => ctx.notScripted('not written yet'),
   // A25a: Suppressed components and an unsuppressed twin.
   // A25a: (ctx) => ctx.notScripted('not written yet'),
